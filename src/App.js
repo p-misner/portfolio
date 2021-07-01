@@ -31,14 +31,20 @@ function App() {
       }
       p {
         font-weight:300;
-        font-size:24px;
-        line-height:36px;
-
+        font-size:20px;
+        line-height:30px;
+        margin-top:24px;
       }
       button {
-        font-size: 18px;
+        font-size: 16px;
         font-weight:300;
         text-transform: uppercase;
+        margin-top:24px;
+        background-color: #082939;
+        color: ${props=> props.inputColor || "white"};
+        border:none;
+        padding: 12px 24px;
+        cursor: pointer;
       }
       
   `;
@@ -48,6 +54,7 @@ function App() {
 
   const Wrapper = styled.div`
     width: 90vw;
+    max-width: 900px;
     background-color:rgba(0,255,0,0.1);
     margin: 0px auto;
   `;
