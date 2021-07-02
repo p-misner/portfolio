@@ -1,13 +1,12 @@
-import React, {Fragment} from 'react';
-import {NavBar} from "./HomePage/Navigation.js";
-import {Home} from "./HomePage/Hero.js";
+import React from 'react';
+import {NavBar} from "./HomePage/Navigation";
+import {Home} from "./HomePage/Home";
 import {Project_VRDriving, Project_RSE, Project_JustAcc} from './Projects/Project_JustAcc.js';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import styled, { createGlobalStyle } from "styled-components"
 import './App.css';
 
-function App() {
-  const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
       body{
         color:#082939;
         font-family: 'Poppins', sans-serif;
@@ -30,6 +29,7 @@ function App() {
       h2 {
         font-weight: 600;
         font-size:36px;
+        line-height:50px;
         
       }
       h3 {
@@ -50,11 +50,12 @@ function App() {
         text-transform: uppercase;
         margin-top:24px;
         background-color: #082939;
+        border:  2px solid #082939;
         color: ${props=> props.inputColor || "white"};
-        border:none;
         padding: 12px 24px;
         cursor: pointer;
       }
+
       caption {
         text-align: center;
         width: 80vw;
@@ -62,7 +63,6 @@ function App() {
         font-style:italic;
         margin-top: -24px;
       }
-      
   `;
 
   const Content = styled.div`
@@ -73,7 +73,11 @@ function App() {
     max-width: 900px;
     background-color:rgba(0,255,0,0.1);
     margin: 0px auto;
-  `;
+`;
+
+
+function App() {
+  
 
 
   return (
@@ -92,5 +96,6 @@ function App() {
     </Content>
   );
 }
+
 
 export default App;

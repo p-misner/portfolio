@@ -31,6 +31,14 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
+const DropdownMenu = styled.div`
+    display:flex;
+    flex-direction:column;
+    max-width:78px;
+    position:fixed;
+
+  `;
+
 
 export function NavBar(){
   return (
@@ -56,13 +64,7 @@ function Card({label}){
     width:200px;
     padding:15px 0px 8px 0px;
   `;
-  const DropdownMenu = styled.div`
-    display:flex;
-    flex-direction:column;
-    max-width:78px;
-    position:fixed;
-
-  `;
+  
 
   return(
     <div onMouseEnter={()=> setMenuOpen(true)} onMouseLeave={()=>setMenuOpen(false)}>

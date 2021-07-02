@@ -10,6 +10,9 @@ import vr from "../Images/vr_cover.png";
 const TopSpacer = styled.div`
 height:160px;
 `;
+const BottomSpacer = styled.div`
+height:30vh;
+`;
 const ProjectSpacer = styled.div`
 height:0px;
 `;
@@ -39,7 +42,7 @@ const ProjectWrapper = styled.div`
     height: 540px;
     @media (max-width: 767px){
         height:auto;
-        max-height: 650px;
+        max-height: 730px;
     }
 `;
 
@@ -80,11 +83,29 @@ const TextGroup = styled.div`
         margin:0px;
     }
 `;
+const ButtonGroup = styled.div`
+display: inline-flex;
+`;
 const ProjectButton = styled.button`
     color: ${props=> props.inputColor || "white"};  
    
     &:hover{
-        font-weight:600;
+        // font-weight:600;
+    }
+    @media (max-width: 767px){
+        
+        margin-bottom:48px;
+    }
+`;
+
+const ProjectButtonOutline = styled.button`
+    color:  #082939;
+    background-color: transparent;
+    border:  2px solid #082939;
+    margin-left:24px;
+   
+    &:hover{
+        // font-weight:600;
     }
     @media (max-width: 767px){
         
@@ -103,14 +124,16 @@ export const Home =()=>{
                 subheader="An interactive data dashboard built with d3.js and React exploring how Covid-19 impacted accessibility to food, grocery and health care in major cities. Created for the UrbanismX Lab at Tufts University."
                 image={justacc}
                 link="/justaccessibility"
+                projectdemo={{display:true, link:"https://justaccessibility.herokuapp.com"}}
             />
              <BigProject 
                 fillColor="#E56F56"
                 direction={1}
-                header="Ready.Set.Excel. Diagnostics"
-                subheader="helo helo"
+                header="Redesigning Results for Adaptive Assessments"
+                subheader="Information design communicating results of adaptive diagnostic math assessments aimed at identifying student skills gaps in math.  Created for Ready.Set.Excel, an educational nonprofit supporting students in the San Francisco Bay Area.  "
                 image={rse}
                 link="/rse"
+                projectdemo={{display:false}}
             />
              <BigProject 
                 fillColor="#E8C370" 
@@ -119,6 +142,7 @@ export const Home =()=>{
                 subheader="VR driving simulations designed and created to research the impact of autonomous vehicles on human-vehicle interaction. "
                 image={vr}
                 link="/vrdriving"
+                projectdemo={{display:false}}
             />
 
         </div>
@@ -136,13 +160,13 @@ const Hero = ()=>{
                 <HeroBody>Creative Technologist. Designer. Engineer. I thrive at the intersection of design and technology. From coding web maps to tinkering with datasets using d3.js, I love taking messy data and turning it into something both beautiful and understandable. </HeroBody>
                 <HeroBody>View my <BoldedLink inputColor="#E8C370">resumé</BoldedLink>, <BoldedLink inputColor="#3C8696">get in touch</BoldedLink>, or check out my <BoldedLink inputColor="#E56F56">past work</BoldedLink>. </HeroBody>
             </Wrapper>
-            <TopSpacer/>
+            <BottomSpacer/>
             
         </div>
     );
 }
 
-const BigProject = ({direction, fillColor,image, header, subheader,link })=>{
+const BigProject = ({direction, fillColor,image, header, subheader,link, projectdemo })=>{
     
 
     
@@ -154,7 +178,16 @@ const BigProject = ({direction, fillColor,image, header, subheader,link })=>{
             <TextGroup>
                 <h2>{header}</h2>
                 <p >{subheader}  </p>
-                <Link to={link}><ProjectButton inputColor={fillColor}> View Project</ProjectButton></Link>
+                <ButtonGroup>
+                    <Link to={link}><ProjectButton inputColor={fillColor}> Read Case Study</ProjectButton></Link>
+                    {
+                        projectdemo.display
+                        ?
+                        <a href={projectdemo.link} target="_blank" rel="noreferrer noopener"> <ProjectButtonOutline inputColor={fillColor}>View Project</ProjectButtonOutline></a>
+                        :
+                        null
+                    }
+                </ButtonGroup>
             </TextGroup>  
 
             </ContentWrapper>

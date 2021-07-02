@@ -1,11 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import GoToTop from './GoToTop';
+
 import justaccBig from '../Images/justacc_multiple.png';
 import justaccDataDort from '../Images/justacc_DataSorting.png';
 import justaccWireframe from '../Images/PrototypeProcess.png';
 import raceMapGif from '../Images/JustAccGif.gif';
 import accIndexGif from '../Images/AccIndexGif.gif';
 import lineGraphGif from '../Images/LineGraphsGif.gif';
+
+import rseBig from "../Images/rse_multiplescreens.png";
+import rseSiteAnalysis from "../Images/rse_siteanalysis.png";
+import rseOrigGraphs from "../Images/rse_originalgraphs.png";
+import rseHierarchy from "../Images/rse_hierarchy.png";
 
 const ContentWrapper = styled.div`
     margin: 160px auto 80px auto;
@@ -49,6 +56,7 @@ const RoleColumn = styled.div`
     display: flex;
     flex-direction:column;
     margin: 0px 12px 0px 0px;
+    max-width: ${props=> props.maxWidth ||"null"};
 `;
 const Column = styled.div`
     display: flex;
@@ -61,6 +69,7 @@ const HorizontalInfo = styled.div`
     flex-direction:row;
     justify-content:flex-start;
     align-items: flex-start;
+    margin: 0 auto;
     
 `;
 
@@ -103,6 +112,17 @@ const ColoredPara = styled.p`
     color: ${props=> props.inputColor || "#082939"};
 `;
 
+const BulletList = styled.ul`
+    list-style:square;
+    padding-left:48px;
+    max-width: 68vw;
+
+`;
+const BulletListItem = styled.li`
+    font-weight: 300;
+    line-height:30px;
+`;
+
 export const Project_JustAcc = ()=>{
     return (
         <ContentWrapper>
@@ -122,7 +142,7 @@ export const Project_JustAcc = ()=>{
                     <SmallBody> Priya Misner <ItalicBody>(Website and Visualization)</ItalicBody> </SmallBody>
                 </RoleColumn>
                 <RoleColumn>
-                    <h3>Role</h3>
+                    <h3>Tasks</h3>
                     <SmallBody> Designed charts, maps, and user flow based on an exisiting research paper and data.  </SmallBody>
                     <SmallBody> Coded the data dashboard for both web and mobile screens. </SmallBody>
                 </RoleColumn>
@@ -157,7 +177,7 @@ export const Project_JustAcc = ()=>{
             <h2> From Data to Design </h2>
             <ShortenedBody> With twenty-five cities worth of .csv files to Excel sheets with rows of statistics to the conclusions drawn in the 
                 research paper draft, there was a lot of information to sort through before any thought of design could begin. Armed with the graphing capabilities 
-                of Excel, <BoldedLink><a>kepler.gl</a></BoldedLink>,  and a notebook, I realized that the data files could be easily split into two groups. One set of data 
+                of Excel, <BoldedLink><a href="https://kepler.gl/"> kepler.gl</a></BoldedLink>,  and a notebook, I realized that the data files could be easily split into two groups. One set of data 
                 compared the cities to each other while the geographical data displayed how areas of a specific city had changed during the pandemic.   </ShortenedBody>
             <BigImage src={justaccDataDort}/>
             <caption>Organizing data files and categorizing variable types into two groups </caption>
@@ -212,7 +232,7 @@ export const Project_JustAcc = ()=>{
                         </Column>
                         <Column>
                         <ColoredPara > 
-                              s
+                              _
                         </ColoredPara>
                         </Column>
                     </HorizontalInfo>
@@ -230,19 +250,19 @@ export const Project_JustAcc = ()=>{
                  framework. The package <BoldedLink><a href="https://visgl.github.io/react-map-gl/" target="_blank" rel="noreferrer noopener">React-Map-GL </a></BoldedLink> 
                  was used to allow the feature's of <BoldedLink><a href="https://www.mapbox.com/mapbox-gljs" target="_blank" rel="noreferrer noopener">Mapbox GL JS </a></BoldedLink> 
                  to be used inside a React application. All graphs and charts were built with the help of <BoldedLink><a href="https://d3js.org/" target="_blank" rel="noreferrer noopener">d3.js </a></BoldedLink>.
-                 Major thanks to Amanda Wattenberg's <BoldedLink><a href="https://wattenberger.com/blog/react-and-d3" target="_blank" rel="noreferrer noopener">article </a></BoldedLink>  on using React and d3.js together.
-                Dropdown menus were created using the <BoldedLink><a href="react-select.com/" target="_blank" rel="noreferrer noopener">react-select </a></BoldedLink> package and the navigation icons were modified   
-                from <BoldedLink><a href="thenounproject.com/" target="_blank" rel="noreferrer noopener">The Noun Project</a></BoldedLink>. 
+                 Major thanks to Amanda Wattenberger's <BoldedLink><a href="https://wattenberger.com/blog/react-and-d3" target="_blank" rel="noreferrer noopener">article </a></BoldedLink>  on using React and d3.js together.
+                Dropdown menus were created using the <BoldedLink><a href="https://www.react-select.com/" target="_blank" rel="noreferrer noopener">react-select </a></BoldedLink> package and the navigation icons were modified   
+                from <BoldedLink><a href="https://www.thenounproject.com/" target="_blank" rel="noreferrer noopener">The Noun Project</a></BoldedLink>. 
             </ShortenedBody>
 
             <ShortenedBody>
-                The beta version of the Just Accessibility dashboard is being <BoldedLink><a href="justaccessibility.herokuapp.com/" target="_blank" rel="noreferrer noopener">hosted on Heroku</a></BoldedLink> but the final version will 
+                The beta version of the Just Accessibility dashboard is being <BoldedLink><a href="https://justaccessibility.herokuapp.com/" target="_blank" rel="noreferrer noopener">hosted on Heroku</a></BoldedLink> but the final version will 
                 be hosted on the UrbanismX website using Tufts University servers.
 
             </ShortenedBody>
         
 
-
+            <GoToTop />
         </ContentWrapper>
     );
 }
@@ -250,9 +270,121 @@ export const Project_JustAcc = ()=>{
 export const Project_RSE = ()=>{
     return (
         <ContentWrapper>
-            <h1>Redesigning Ready.Set.Excel's Graphs </h1>
-            <HeroBody>An interactive data dashboard built under <BoldedLink><a href="https://sites.google.com/view/shan-jiang/publications">Dr. Shan Jiang</a></BoldedLink> at Tufts University's <BoldedLink><a href="https://as.tufts.edu/uep/people/faculty/shan-jiang">UrbanismX Lab</a></BoldedLink>. The visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. </HeroBody>
+            <h1>Redesigning Results for Adaptive Assessments </h1>
+            <HeroBody>
+                Information design communicating the results of adaptive diagnostic math assessments aimed at identifying student skills gaps in math. Created 
+                for <BoldedLink><a href="https://www.readysetexcel.org/" target="_blank" rel="noreferrer noopener">Ready.Set.Excel. </a></BoldedLink>an 
+                educational nonprofit supporting students in the San Francisco Bay Area.  
+            </HeroBody>
+            <BigImage src={rseBig}/>
+            <HorizontalInfo>
+                <RoleColumn>
+                    <h3>Duration</h3>
+                    <SmallBody> 4 months</SmallBody>
+                    <ItalicBody> March. 2021-June 2021</ItalicBody>
+                </RoleColumn>
+                <RoleColumn>
+                    <h3>Role</h3>
+                    <SmallBody> Sole Designer  </SmallBody>
+                    
+                </RoleColumn>
+                <RoleColumn maxWidth="500px">
+                    <h3>Tasks</h3>
+                    <SmallBody> Performed site analysis on current system to identify strengths and weaknesses  </SmallBody>
+                    <SmallBody> Redesigned charts and tables reporting results  </SmallBody>
+                    <SmallBody> Defined hierarchy of features and charts  </SmallBody>
+                    <SmallBody> Tested new designs on users  </SmallBody>
+                </RoleColumn>
+                <RoleColumn>
+                    <h3>Tools</h3>
+                    <SmallBody> Pen and Paper </SmallBody>
+                    <SmallBody> Figma </SmallBody>
+                    <SmallBody> Adobe Illustrator </SmallBody>
+                    <SmallBody> User Testing </SmallBody>
+                    <SmallBody> Information Design  </SmallBody>
+                </RoleColumn>
 
+            </HorizontalInfo>
+            <Spacer />
+            <h2>The Challenge</h2>
+            <ShortenedBody>
+                For many students struggling in math, their lack of understanding often stems from fundamental math concepts they 
+                failed to grasp in elementary and middle school. Ready.Set.Excel. has developed an innovative, adaptive assessment that adjusts based 
+                on student responses to figure out where student's misunderstanding begin.
+            </ShortenedBody>
+            <ShortenedBody>
+                Teachers loved the assessment and found Ready.Set.Excel's analysis of students to be very accurate... once they were 
+                able to figure out how to read the assessment results. The big hurdles Ready.Set.Excel. faced in communicating the results 
+                of their adaptive assessments were:  
+            </ShortenedBody>
+            <BulletList>
+                <BulletListItem>Demonstrating that not all students recieved the same questions</BulletListItem>
+                <BulletListItem>Indicating which students were struggling and which students were meeting grade level expectations</BulletListItem>
+                <BulletListItem>Emphasizing that a low percentage score on a concept did not necessarily indicate failure. </BulletListItem>
+            </BulletList>
+           
+            <Spacer />
+            <h2>Site Analysis</h2>
+            <ShortenedBody> Ready.Set.Excel. had lots of useful features built into their website including filtering by first or last name, 
+                displaying the most missed question, graphs displaying scores by concept among many other features. However, getting to a feature 
+                took a lot of clicks. For example, for a teacher to view their class' score on a bar graph they had to:
+            </ShortenedBody>
+            <ShortenedBody> Login ➝ Select Class Name from Dropdown ➝ 
+                Click Results/Analysis Tab ➝ Click Class Cateogry Score Button ➝ View Class Graphs.</ShortenedBody>
+            <ShortenedBody>
+                That's five clicks for a pretty common action! Some actions took as many as nine clicks. 
+            </ShortenedBody>
+            <BigImage src={rseSiteAnalysis}/>
+
+            <ShortenedBody>
+                Another big point of confusion for many teachers was the fact that a 50% on the diagnostic assessment 
+                could mean that student was performing above grade expectations. For example, for rising 6th graders, 
+                students are only expected to get a 40% on the Fraction Equivalence concept. But, separating the score 
+                from  every teacher's perception that 50% meant failure was proving difficult. 
+            </ShortenedBody>
+            <ShortenedBody>
+                The category bubbles graph was 
+                much clearer to teachers as it indicated pictorally what students got wrong or right and if they were 
+                presented with upper or lower level questions.
+
+            </ShortenedBody>
+            <BigImage src={rseOrigGraphs}/>
+
+            <Spacer />
+            <h2>A New Information Hierarchy</h2>
+            <ShortenedBody>
+                More so than the graphs themselves, teacher's biggest complaint about Ready.Set.Excel's results was that the 
+                information was hard to locate and the current site was difficult to navigate. As a first step, I focused on
+                the information hierarchy of the assessment results page over the visual style of the charts.
+            </ShortenedBody>
+            <ShortenedBody>
+                After conversations with the Ready.Set.Excel. team, teachers and looking at other products in the same space (i.e. Schoology and SchoolLoop), the 
+                common thread was wanting to begin with an overview of how a class was doing before diving into specific students or specific assessments. With 
+                this goal of starting at the macro level and also minimizing clicks when accessing more specific information, I set to work. The user entered the dashboard 
+                and after selecting their class, were taken to an overivew page if the whole class. If the teacher wanted to see more details, clicking on a student name or
+                expanding a graph wouldprovide more details. Users could now get to the class overview bar graph in two clicks. 
+            </ShortenedBody>
+            <BigImage src={rseHierarchy}/>
+
+            <Spacer />
+            <h2>Redesigning Result Graphs</h2>
+            <ShortenedBody >
+
+            </ShortenedBody>
+
+            <Spacer />
+            <h2>Redesigning Result Tables</h2>
+            <ShortenedBody >
+
+            </ShortenedBody>
+
+            <Spacer />
+            <h2>Conclusions</h2>
+            <ShortenedBody >
+
+            </ShortenedBody>
+            
+            <GoToTop />
         </ContentWrapper>
     );
 }
@@ -262,7 +394,7 @@ export const Project_VRDriving = ()=>{
         <ContentWrapper>
             <h1>Virtual Reality Driving</h1>
             <HeroBody>An interactive data dashboard built under <BoldedLink><a href="https://sites.google.com/view/shan-jiang/publications">Dr. Shan Jiang</a></BoldedLink> at Tufts University's <BoldedLink><a href="https://as.tufts.edu/uep/people/faculty/shan-jiang">UrbanismX Lab</a></BoldedLink>. The visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. </HeroBody>
-
+            <GoToTop />
         </ContentWrapper>
     );
 }
