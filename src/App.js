@@ -42,7 +42,7 @@ function App() {
         font-size:17px;
         line-height:30px;
         margin-top:24px;
-        color: ${props=> props.inputColor || "#082939"}
+        
       }
       button {
         font-size: 16px;

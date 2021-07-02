@@ -195,8 +195,9 @@ export const Project_JustAcc = ()=>{
                         <Column>
                         <MiddleImage src={accIndexGif}/>
                         <ColoredPara inputColor="#EBF3F4"> 
-                            The Black vs White Accessibility Comparison map uses both color and interactive buttons 
-                            to display the geographical areas where the pandemic impacted resident's access to Grocery services. 
+                            The Accessibility Index map displays the Accessibility Index (rated from 1 to 10) using a diverging color gradient. 
+                            By toggling <BoldBody>Display Increase </BoldBody>and <BoldBody>Display Decrease</BoldBody>, most city maps follow the trend that the suburbs improved in accessibility 
+                            during the pandemic while  accessibility in a city's center worsened.
                         </ColoredPara>
                         </Column>
                     </HorizontalInfo>
@@ -204,8 +205,8 @@ export const Project_JustAcc = ()=>{
                         <Column>
                         <MiddleImage src={lineGraphGif}/>
                         <ColoredPara inputColor="#EBF3F4"> 
-                            The Black vs White Accessibility Comparison map uses both color and interactive buttons 
-                            to display the geographical areas where the pandemic impacted resident's access to Grocery services. 
+                            Showing the relationship between Accessibility Index and distance from a city's center, this line graph allows users 
+                            to add and remove cities at will. Other features include adding a geographic group of cities and highlighting specific cities on click.
                         </ColoredPara>
                        
                         </Column>
@@ -224,6 +225,21 @@ export const Project_JustAcc = ()=>{
 
             <Spacer />
             <h2> Development Details</h2>
+            <ShortenedBody>
+                This dashboard was built using <BoldedLink><a href="https://reactjs.org/" target="_blank" rel="noreferrer noopener">React</a></BoldedLink> as the frontend
+                 framework. The package <BoldedLink><a href="https://visgl.github.io/react-map-gl/" target="_blank" rel="noreferrer noopener">React-Map-GL </a></BoldedLink> 
+                 was used to allow the feature's of <BoldedLink><a href="https://www.mapbox.com/mapbox-gljs" target="_blank" rel="noreferrer noopener">Mapbox GL JS </a></BoldedLink> 
+                 to be used inside a React application. All graphs and charts were built with the help of <BoldedLink><a href="https://d3js.org/" target="_blank" rel="noreferrer noopener">d3.js </a></BoldedLink>.
+                 Major thanks to Amanda Wattenberg's <BoldedLink><a href="https://wattenberger.com/blog/react-and-d3" target="_blank" rel="noreferrer noopener">article </a></BoldedLink>  on using React and d3.js together.
+                Dropdown menus were created using the <BoldedLink><a href="react-select.com/" target="_blank" rel="noreferrer noopener">react-select </a></BoldedLink> package and the navigation icons were modified   
+                from <BoldedLink><a href="thenounproject.com/" target="_blank" rel="noreferrer noopener">The Noun Project</a></BoldedLink>. 
+            </ShortenedBody>
+
+            <ShortenedBody>
+                The beta version of the Just Accessibility dashboard is being <BoldedLink><a href="justaccessibility.herokuapp.com/" target="_blank" rel="noreferrer noopener">hosted on Heroku</a></BoldedLink> but the final version will 
+                be hosted on the UrbanismX website using Tufts University servers.
+
+            </ShortenedBody>
         
 
 
