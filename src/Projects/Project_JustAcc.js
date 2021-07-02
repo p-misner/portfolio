@@ -13,6 +13,16 @@ import rseBig from "../Images/rse_multiplescreens.png";
 import rseSiteAnalysis from "../Images/rse_siteanalysis.png";
 import rseOrigGraphs from "../Images/rse_originalgraphs.png";
 import rseHierarchy from "../Images/rse_hierarchy.png";
+import rseOriginal from "../Images/rse_original.png";
+import rseVersion2 from "../Images/rse_version2.png";
+import rseVersion3 from "../Images/rse_version3.png";
+import rseVersion4 from "../Images/rse_version4.png";
+import rseVersion5 from "../Images/rse_version5.png";
+import rseVersion6 from "../Images/rse_version6.png";
+import rseTableFinalMore from "../Images/rse_moretables.png";
+import rseTableColor from "../Images/rse_tablecolors.png";
+import rseTableStyle from "../Images/rse_tablestyleguide.png";
+
 
 const ContentWrapper = styled.div`
     margin: 160px auto 80px auto;
@@ -110,6 +120,11 @@ const ColoredHeader2 = styled.h2`
 
 const ColoredPara = styled.p`
     color: ${props=> props.inputColor || "#082939"};
+`;
+const CaptionPara = styled.p`
+    font-size:15px;
+    font-weight:200;
+    line-height:24px;
 `;
 
 const BulletList = styled.ul`
@@ -360,23 +375,102 @@ export const Project_RSE = ()=>{
             <ShortenedBody>
                 After conversations with the Ready.Set.Excel. team, teachers and looking at other products in the same space (i.e. Schoology and SchoolLoop), the 
                 common thread was wanting to begin with an overview of how a class was doing before diving into specific students or specific assessments. With 
-                this goal of starting at the macro level and also minimizing clicks when accessing more specific information, I set to work. The user entered the dashboard 
-                and after selecting their class, were taken to an overivew page if the whole class. If the teacher wanted to see more details, clicking on a student name or
-                expanding a graph wouldprovide more details. Users could now get to the class overview bar graph in two clicks. 
+                this goal of <BoldBody>starting with an overview</BoldBody> and  <BoldBody>minimizing clicks </BoldBody> when accessing more specific information, I set to work. 
             </ShortenedBody>
+            
             <BigImage src={rseHierarchy}/>
-
+            <ShortenedBody>    
+                In the new site hierarchy the user is immediately taken to a class overview page after selecting the class. If the teacher wanted to see more details, clicking on a student name or
+                expanding a graph would reveal further information. Users could now view the class overview bar graph in two clicks. 
+            </ShortenedBody>
             <Spacer />
             <h2>Redesigning Result Graphs</h2>
+            <BigImage src={rseVersion6}/>
             <ShortenedBody >
+                The goal of the original bar graph used by Ready.Set.Excel. was to show if a student was 
+                meeting grade expectations on a math concept. However, if a teacher didn't understand or notice the dotted line indicating the grade expectation, they would incorrectly rely on
+                the percentage to tell them if a student was succeeding. To get to the final graph currently being used by Ready.Set.Excel, I went through a lot of different iterations. 
 
             </ShortenedBody>
+            <HorizontalInfo>
+                <Column>
+                    <MiddleImage src={rseOriginal}/>
+                    
+                    <CaptionPara> 
+                        <BoldBody>Original Graph </BoldBody> Used to display student and class results.
+                    </CaptionPara>
+                </Column>
+                <Column>
+                    <MiddleImage src={rseVersion2}/>
+                    <CaptionPara> 
+                        <BoldBody>V2: Modernized Original </BoldBody> My first draft simply modernized the existing draft. While it looked a bit better than the orignal, it had all the same issues as before.
+                    </CaptionPara>
+                </Column>
+                <Column>
+                    <MiddleImage src={rseVersion3}/>
+                    
+                    <CaptionPara> 
+                        <BoldBody>V3: Red Bad, Green Good </BoldBody> I wanted to use color as a clear indicator of success and failure. This version still has the percent numbers, but I was pleased with how it emphasized the expectation line.
+                    </CaptionPara>
+                </Column>
+            </HorizontalInfo>
+            <HorizontalInfo>
+                
+                <Column>
+                    <MiddleImage src={rseVersion4}/>
+                    <CaptionPara> 
+                        <BoldBody>V4: No Numbers, Just Color </BoldBody> As a different tact to solving the percentage perception problem, I used the 3 stages of problem solving to display the results. While getting rid of the numbers was a good move, this solution was visually too messy.
+                    </CaptionPara>
+                </Column>
+                <Column>
+                    <MiddleImage src={rseVersion5}/>
+                    
+                    <CaptionPara> 
+                        <BoldBody>V5: Starting At The Expectation Line </BoldBody> Combining the best parts of v3 and v4, I created a bar graph that used the expectation line as a starting point rather than zero. The use of color emphasized clearly who was succeeding (or not).
+                    </CaptionPara>
+                </Column>
+                <Column>
+                    <ColoredPara inputColor="#ffffff"> 
+                        __
+                    </ColoredPara>
+                </Column>
+            </HorizontalInfo>
+            
+           
+
 
             <Spacer />
             <h2>Redesigning Result Tables</h2>
+            
+            {/* <BigImage src={rseTableFinal}/> */}
+            <BigImage src={rseTableFinalMore}/>
             <ShortenedBody >
-
+                A lot of the information buried within the original Ready.Set.Excel. results page came in the form of tables: tables of students 
+                enrolled in a class section, tables of assessment results, tables of concept weaknesses and strengths. While tables are a great way
+                to present a lot of data concisely, having so many different tables each in a different style made them difficult to scan. 
             </ShortenedBody>
+            <ShortenedBody >
+                Ready.Set.Excel. needed a unified table style that could be applied to all their tabular data. Further, these tables had to be 
+                easy to scan to allow teachers to quickly skim through all their students results with ease. I was heavily inspired by the  
+                tables <BoldedLink><a href="https://www.fivethirtyeight.com/">Five Thirty Eight</a></BoldedLink> uses to display sports statistics 
+                (<UnboldedLink><a href="https://fivethirtyeight.com/features/nfl-week-13-playoff-implications-be-thankful-for-meaningful-games-this-thanksgiving/" target="_blank" rel="noopener noreferrer">Example 1</a></UnboldedLink>
+                , <UnboldedLink><a href="https://projects.fivethirtyeight.com/soccer-predictions/premier-league/" target="_blank" rel="noopener noreferrer">2</a></UnboldedLink>
+                , and <UnboldedLink><a href="https://fivethirtyeight.com/features/how-fivethirtyeight-calculates-pollster-ratings/" target="_blank" rel="noopener noreferrer">3</a></UnboldedLink>). 
+            </ShortenedBody>
+            <BigImage src={rseTableColor}/>
+            <ShortenedBody>
+                While designing the tables, one of the big decisions I made was the color scheme of the table cells. A cell's background would be 
+                colored according to their score. Effectively, the two color schemes differed in which group they chose to highlight and which group to deemphasize.
+            </ShortenedBody>
+            <ShortenedBody >  
+                 The Monochromatic
+                Color Scheme focused on the worst scores, while high scores faded into the background. The Diverging Color Scheme focused on the top and bottom 
+                scores while deemphasizing the middle. Since Ready.Set.Excel. wanted to celebrate student's successes while also identifying their weaknesses, I chose to use the  Diverging Color Scheme.
+            </ShortenedBody>
+            <ShortenedBody>
+                To ensure all the tables felt cohesive, I created a style guide defining how tables could be put together. 
+            </ShortenedBody>
+            <BigImage src={rseTableStyle}/>
 
             <Spacer />
             <h2>Conclusions</h2>
