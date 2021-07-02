@@ -37,11 +37,11 @@ export function NavBar(){
     <NavWrapper>
       <NavList>
         <ListItem><StyledLink to="/">about</StyledLink></ListItem>
-        <ListItem><StyledLink to="/about">experience</StyledLink></ListItem>
+        <ListItem><StyledLink to="/">resume</StyledLink></ListItem>
         <ListItem>
             <Card label="projects ⤸" />
         </ListItem>
-        <ListItem><StyledLink to="/contact">explorations</StyledLink></ListItem>
+        <ListItem><StyledLink to="/">explorations</StyledLink></ListItem>
       </NavList>
     </NavWrapper>
   );

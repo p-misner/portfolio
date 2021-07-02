@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+
 import justacc from "../Images/justacc_cover.png";
 import rse from "../Images/rse_cover.png";
 import vr from "../Images/vr_cover.png";
+
+
 const TopSpacer = styled.div`
 height:160px;
 `;
@@ -96,7 +100,7 @@ export const Home =()=>{
                 fillColor="#C5DBDF" 
                 direction={-1}
                 header="Just Accessibility"
-                subheader="An interactive data dashboard built with d3.js and React exploring how Covid-19 impacted accessibility to key services in major cities. Created for the UrbanismX Lab at Tufts University."
+                subheader="An interactive data dashboard built with d3.js and React exploring how Covid-19 impacted accessibility to food, grocery and health care in major cities. Created for the UrbanismX Lab at Tufts University."
                 image={justacc}
                 link="/justaccessibility"
             />
@@ -106,7 +110,7 @@ export const Home =()=>{
                 header="Ready.Set.Excel. Diagnostics"
                 subheader="helo helo"
                 image={rse}
-                link="/justaccessibility"
+                link="/rse"
             />
              <BigProject 
                 fillColor="#E8C370" 
@@ -114,7 +118,7 @@ export const Home =()=>{
                 header="Virtual Reality Driving"
                 subheader="VR driving simulations designed and created to research the impact of autonomous vehicles on human-vehicle interaction. "
                 image={vr}
-                link="/justaccessibility"
+                link="/vrdriving"
             />
 
         </div>
@@ -128,7 +132,7 @@ const Hero = ()=>{
         <div>
             <TopSpacer/>
             <Wrapper>
-                <h1>Hi There. I'm Priya </h1>
+                <h1>Hi There. I'm Priya. </h1>
                 <HeroBody>Creative Technologist. Designer. Engineer. I thrive at the intersection of design and technology. From coding web maps to tinkering with datasets using d3.js, I love taking messy data and turning it into something both beautiful and understandable. </HeroBody>
                 <HeroBody>View my <BoldedLink inputColor="#E8C370">resumé</BoldedLink>, <BoldedLink inputColor="#3C8696">get in touch</BoldedLink>, or check out my <BoldedLink inputColor="#E56F56">past work</BoldedLink>. </HeroBody>
             </Wrapper>
@@ -138,7 +142,7 @@ const Hero = ()=>{
     );
 }
 
-const BigProject = ({direction, fillColor,image, header, subheader })=>{
+const BigProject = ({direction, fillColor,image, header, subheader,link })=>{
     
 
     
@@ -150,7 +154,7 @@ const BigProject = ({direction, fillColor,image, header, subheader })=>{
             <TextGroup>
                 <h2>{header}</h2>
                 <p >{subheader}  </p>
-                <ProjectButton inputColor={fillColor}> View Project</ProjectButton>
+                <Link to={link}><ProjectButton inputColor={fillColor}> View Project</ProjectButton></Link>
             </TextGroup>  
 
             </ContentWrapper>

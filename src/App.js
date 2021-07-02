@@ -12,13 +12,15 @@ function App() {
         color:#082939;
         font-family: 'Poppins', sans-serif;
         margin:0px;
+        
       }
       a:hover{
         opacity:0.5
       }
-      a:visited {
+      a:visited, a {
         color:#082939;
       }
+     
       h1 {
         font-weight: 600;
         font-size:72px;
@@ -28,12 +30,19 @@ function App() {
       h2 {
         font-weight: 600;
         font-size:36px;
+        
+      }
+      h3 {
+        font-weight:500;
+        font-size:17px;
+        line-height:24px;
       }
       p {
         font-weight:300;
-        font-size:20px;
+        font-size:17px;
         line-height:30px;
         margin-top:24px;
+        color: ${props=> props.inputColor || "#082939"}
       }
       button {
         font-size: 16px;
@@ -45,6 +54,13 @@ function App() {
         border:none;
         padding: 12px 24px;
         cursor: pointer;
+      }
+      caption {
+        text-align: center;
+        width: 80vw;
+        font-weight: 200;
+        font-style:italic;
+        margin-top: -24px;
       }
       
   `;
