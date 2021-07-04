@@ -320,12 +320,12 @@ const ExplorationProject = ({fill,link, img, header, subheader})=>{
 const Explorations = ()=>{
     return(
         <Wrapper>
-                        <TopSpacer />
-
+            <TopSpacer />
             <h2> Explorations</h2>
+            <HeroBody> Smaller scale projects and ideas I've been tinkering with </HeroBody>
             <HorizontalRow>
                 <ExplorationProject 
-                    fill="#F8EDD4"
+                    fill="#E8C370"
                     img={commuterFlow}
                     link={"./networkflow"}
                     header="Network Flow"
@@ -333,21 +333,21 @@ const Explorations = ()=>{
 
                 />
                  <ExplorationProject 
-                    fill="#F7D4CC"
+                    fill="#E56F56"
                     img={superMario}
                     link={"./pandemicmario"}
                     header="Pandemic Super Mario"
                     subheader="Using machine learning and LEGO Mindstorms to play Super Mario during a pandemic"
                 />
                  <ExplorationProject 
-                    fill="#FBE3D1"
+                    fill="#c6dbdf"
                     img={thirtyDay}
                     link={"./chartcollection"}
                     header="Chart Collection"
                     subheader="Graphs and charts created for twitter's #30DayChartChallenge"
                 />
-                <ExplorationProject 
-                    fill="#C5DBDF"
+                {/* <ExplorationProject 
+                    fill="#E8C370"
                     img={usLegislation}
                     link={"#"}
                     header="State Legislative Calendars"
@@ -356,12 +356,12 @@ const Explorations = ()=>{
                 />
                
                 <ExplorationProject 
-                    fill="#F8EDD4" 
+                    fill="#F2A267" 
                     img={greenEggs}
                     link={"#"}
                     header="Green Eggs and Ham"
                     subheader="A collapsible radial tree depicting Dr. Seuss' words"
-                />
+                /> */}
             </HorizontalRow>
             
         </Wrapper>

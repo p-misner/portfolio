@@ -113,7 +113,7 @@ export function PandemicMario(){
     return (
         <ContentWrapper>
             <h1> Pandemic Mario</h1>
-            <HeroBody> Control Mario using your hands and a LEGO Mindstorm and help him as he tries to avoid catching the coronavirus. A final project for a college robotics course. </HeroBody>
+            <HeroBody> Control Mario using your hands and a LEGO Mindstorm. Help him as he tries to avoid catching the coronavirus. A final project for a college robotics course. </HeroBody>
             {/* <HalfSpacer /> */}
             <Video  src="https://www.youtube.com/embed/gRAhf-MZgH0" frameborder="0" allow="accelerometer; autoplay; gyroscope; picture-in-picture" allowfullscreen></Video>
             

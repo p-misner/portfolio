@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+// import ReactPlayer from 'react-player/lazy'
 import GoToTop from './GoToTop';
 
 import justaccBig from '../Images/justacc_multiple.png';
@@ -23,7 +24,7 @@ import rseTableFinalMore from "../Images/rse_moretables.png";
 import rseTableColor from "../Images/rse_tablecolors.png";
 import rseTableStyle from "../Images/rse_tablestyleguide.png";
 
-
+import airsimcover from "../Images/airsim_cover.png";
 const ContentWrapper = styled.div`
     margin: 160px auto 80px auto;
     width: 85vw;
@@ -478,10 +479,10 @@ export const Project_RSE = ()=>{
             <BigImage src={rseTableStyle}/>
 
             <Spacer />
-            <h2>Conclusions</h2>
+            {/* <h2>Conclusions</h2>
             <ShortenedBody >
 
-            </ShortenedBody>
+            </ShortenedBody> */}
             
             <GoToTop />
         </ContentWrapper>
@@ -492,7 +493,18 @@ export const Project_VRDriving = ()=>{
     return (
         <ContentWrapper>
             <h1>Virtual Reality Driving</h1>
-            <HeroBody>An interactive data dashboard built under <BoldedLink><a href="https://sites.google.com/view/shan-jiang/publications" target="_blank" rel="noreferrer noopener">Dr. Shan Jiang</a></BoldedLink> at Tufts University's <BoldedLink><a href="https://as.tufts.edu/uep/people/faculty/shan-jiang" target="_blank" rel="noreferrer noopener">UrbanismX Research Group</a></BoldedLink>. The visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. </HeroBody>
+            <HeroBody> 
+                An overview of the driving related research  projects I designed and lead while studying at Tufts University as well as my internship with 
+                the <BoldedLink><a href="https://www.volpe.dot.gov/our-work/safety-management-and-human-factors/transportation-human-factors" >Transportation Human Factors</a></BoldedLink>  team 
+                at <BoldedLink><a href="https://www.volpe.dot.gov/" target="_blank" rel="noreferrer noopener">Volpe.</a> </BoldedLink>   
+            </HeroBody>
+            <BigImage src={airsimcover} />
+
+            <Spacer />
+
+            <h2>Senior Thesis: Low-Cost VR Driving Simulator</h2>
+            
+            
             <GoToTop />
         </ContentWrapper>
     );

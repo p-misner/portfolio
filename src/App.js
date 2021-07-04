@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {NavBar} from "./HomePage/Navigation";
 import {Footer} from "./HomePage/Footer";
 import {Home} from "./HomePage/Home";

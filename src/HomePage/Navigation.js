@@ -44,12 +44,11 @@ export function NavBar(){
   return (
     <NavWrapper>
       <NavList>
-        <ListItem><StyledLink to="/">about</StyledLink></ListItem>
-        <ListItem><StyledLink to="/">experience</StyledLink></ListItem>
+        <ListItem><StyledLink to="/#experience">experience</StyledLink></ListItem>
         <ListItem>
             <Card label="projects ⤸" />
         </ListItem>
-        <ListItem><StyledLink to="/">explorations</StyledLink></ListItem>
+        <ListItem><StyledLink to="/#explorations">explorations</StyledLink></ListItem>
       </NavList>
     </NavWrapper>
   );
