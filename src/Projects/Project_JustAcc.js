@@ -80,6 +80,7 @@ const HorizontalInfo = styled.div`
     justify-content:flex-start;
     align-items: flex-start;
     margin: 0 auto;
+    flex-wrap:wrap;
     
 `;
 
@@ -142,7 +143,11 @@ export const Project_JustAcc = ()=>{
     return (
         <ContentWrapper>
             <h1>Just Accessibility</h1>
-            <HeroBody>An interactive data dashboard built under <BoldedLink><a href="https://sites.google.com/view/shan-jiang/publications">Dr. Shan Jiang</a></BoldedLink> at Tufts University's <BoldedLink><a href="https://as.tufts.edu/uep/people/faculty/shan-jiang">UrbanismX Lab</a></BoldedLink>. The visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. </HeroBody>
+            <HeroBody>
+                An interactive data dashboard built under <BoldedLink><a href="https://sites.google.com/view/shan-jiang/publications" target="_blank" rel="noreferrer noopener">Dr. Shan Jiang</a></BoldedLink> at 
+                Tufts University's <BoldedLink><a href="https://as.tufts.edu/uep/people/faculty/shan-jiang" target="_blank" rel="noreferrer noopener">UrbanismX Research Group</a></BoldedLink>.  
+             visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. 
+            </HeroBody>
             <BigImage src={justaccBig}/>
             <HorizontalInfo>
                 <RoleColumn>
@@ -333,7 +338,7 @@ export const Project_RSE = ()=>{
                 of their adaptive assessments were:  
             </ShortenedBody>
             <BulletList>
-                <BulletListItem>Demonstrating that not all students recieved the same questions</BulletListItem>
+                <BulletListItem>Demonstrating that not all students received the same questions</BulletListItem>
                 <BulletListItem>Indicating which students were struggling and which students were meeting grade level expectations</BulletListItem>
                 <BulletListItem>Emphasizing that a low percentage score on a concept did not necessarily indicate failure. </BulletListItem>
             </BulletList>
@@ -452,7 +457,7 @@ export const Project_RSE = ()=>{
             <ShortenedBody >
                 Ready.Set.Excel. needed a unified table style that could be applied to all their tabular data. Further, these tables had to be 
                 easy to scan to allow teachers to quickly skim through all their students results with ease. I was heavily inspired by the  
-                tables <BoldedLink><a href="https://www.fivethirtyeight.com/">Five Thirty Eight</a></BoldedLink> uses to display sports statistics 
+                tables <BoldedLink><a href="https://www.fivethirtyeight.com/" target="_blank" rel="noreferrer noopener">Five Thirty Eight</a></BoldedLink> uses to display sports statistics 
                 (<UnboldedLink><a href="https://fivethirtyeight.com/features/nfl-week-13-playoff-implications-be-thankful-for-meaningful-games-this-thanksgiving/" target="_blank" rel="noopener noreferrer">Example 1</a></UnboldedLink>
                 , <UnboldedLink><a href="https://projects.fivethirtyeight.com/soccer-predictions/premier-league/" target="_blank" rel="noopener noreferrer">2</a></UnboldedLink>
                 , and <UnboldedLink><a href="https://fivethirtyeight.com/features/how-fivethirtyeight-calculates-pollster-ratings/" target="_blank" rel="noopener noreferrer">3</a></UnboldedLink>). 
@@ -487,7 +492,7 @@ export const Project_VRDriving = ()=>{
     return (
         <ContentWrapper>
             <h1>Virtual Reality Driving</h1>
-            <HeroBody>An interactive data dashboard built under <BoldedLink><a href="https://sites.google.com/view/shan-jiang/publications">Dr. Shan Jiang</a></BoldedLink> at Tufts University's <BoldedLink><a href="https://as.tufts.edu/uep/people/faculty/shan-jiang">UrbanismX Lab</a></BoldedLink>. The visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. </HeroBody>
+            <HeroBody>An interactive data dashboard built under <BoldedLink><a href="https://sites.google.com/view/shan-jiang/publications" target="_blank" rel="noreferrer noopener">Dr. Shan Jiang</a></BoldedLink> at Tufts University's <BoldedLink><a href="https://as.tufts.edu/uep/people/faculty/shan-jiang" target="_blank" rel="noreferrer noopener">UrbanismX Research Group</a></BoldedLink>. The visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. </HeroBody>
             <GoToTop />
         </ContentWrapper>
     );

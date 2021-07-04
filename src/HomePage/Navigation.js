@@ -45,7 +45,7 @@ export function NavBar(){
     <NavWrapper>
       <NavList>
         <ListItem><StyledLink to="/">about</StyledLink></ListItem>
-        <ListItem><StyledLink to="/">resume</StyledLink></ListItem>
+        <ListItem><StyledLink to="/">experience</StyledLink></ListItem>
         <ListItem>
             <Card label="projects ⤸" />
         </ListItem>
@@ -67,7 +67,7 @@ function Card({label}){
   
 
   return(
-    <div onMouseEnter={()=> setMenuOpen(true)} onMouseLeave={()=>setMenuOpen(false)}>
+    <div onMouseEnter={()=> setMenuOpen(true)} onClick={()=> setMenuOpen(!menuOpen)} onMouseLeave={()=>setMenuOpen(false)}>
       <div>{label}</div>
       {
         menuOpen 

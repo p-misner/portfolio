@@ -1,6 +1,10 @@
 import React from 'react';
 import {NavBar} from "./HomePage/Navigation";
+import {Footer} from "./HomePage/Footer";
 import {Home} from "./HomePage/Home";
+import {NetworkFlow} from "./Explorations/networkFlow";
+import {PandemicMario} from "./Explorations/PandemicMario";
+import {ChartCollection} from "./Explorations/ChartCollection";
 import {Project_VRDriving, Project_RSE, Project_JustAcc} from './Projects/Project_JustAcc.js';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import styled, { createGlobalStyle } from "styled-components"
@@ -66,14 +70,9 @@ const GlobalStyle = createGlobalStyle`
   `;
 
   const Content = styled.div`
+    overflow-x:hidden;
   `;
 
-  const Wrapper = styled.div`
-    width: 90vw;
-    max-width: 900px;
-    background-color:rgba(0,255,0,0.1);
-    margin: 0px auto;
-`;
 
 
 function App() {
@@ -89,7 +88,11 @@ function App() {
         <Route path="/justaccessibility"  component={Project_JustAcc} />
         <Route path="/rse"  component={Project_RSE} />
         <Route path="/vrdriving"  component={Project_VRDriving} />
+        <Route path="/networkflow"  component={NetworkFlow} />
+        <Route path="/pandemicmario"  component={PandemicMario} />
+        <Route path="/chartcollection"  component={ChartCollection} />
 
+        <Footer />
       </Router>
       <GlobalStyle />
 
