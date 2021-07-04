@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import GoToTop from "../Projects/GoToTop";
 
-import commuterFlow from "../Images/explorations/commuterflow.png";
 import flowGif from "../Images/explorations/flow.gif";
 import comparisonGif from "../Images/explorations/comparison.gif";
 
@@ -102,6 +102,7 @@ export function NetworkFlow(){
                 I built the map using React and deck.gl, a WebGL-powered visualization framework for large scale datasets. Though the data I 
                 received was mostly clean and formatted, I used python with pandas to perform minor data cleaning operations.  
             </ShortenedBody>
+            <GoToTop />
         </ContentWrapper>
       
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import GoToTop from "../Projects/GoToTop";
 
 import build from "../Images/explorations/mario/physicalrobot.JPG";
 import stages from "../Images/explorations/mario/mariomodel.png";
@@ -199,8 +200,7 @@ export function PandemicMario(){
             <BigImage src={hands}/>
             <ItalicCaption> Reproductions of what the hand poses would look like to control Mario. From left to right: Start Pose, Jump Pose, No Pose </ItalicCaption>
 
-
-
+            <GoToTop />
         </ContentWrapper>
         
     )

@@ -342,7 +342,7 @@ const Explorations = ()=>{
                  <ExplorationProject 
                     fill="#FBE3D1"
                     img={thirtyDay}
-                    link={"#"}
+                    link={"./chartcollection"}
                     header="Chart Collection"
                     subheader="Graphs and charts created for twitter's #30DayChartChallenge"
                 />
