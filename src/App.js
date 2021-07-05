@@ -28,12 +28,21 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 600;
         font-size:72px;
         padding:0px;
+        @media (max-width:800px){
+
+          font-size: 48px;
+        }
 
       }
       h2 {
         font-weight: 600;
         font-size:36px;
         line-height:50px;
+        @media (max-width:800px){
+          font-size: 32px;
+          line-height:40px;
+        }
+        
         
       }
       h3 {
@@ -46,6 +55,7 @@ const GlobalStyle = createGlobalStyle`
         font-size:17px;
         line-height:30px;
         margin-top:24px;
+       
         
       }
       button {

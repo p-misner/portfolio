@@ -20,6 +20,10 @@ const HeroBody = styled.p`
     margin-top:24px;
     font-size: 26px;
     line-height:38px;
+    @media (max-width:800px){
+        font-size:20px;
+        line-height:28px;
+    }
 `;
 const BigImage = styled.img`
     width: 85vw;
@@ -111,7 +115,7 @@ export function ChartCollection(){
     return (
         <ContentWrapper>
             <h1>Chart Collection</h1>
-            <HeroBody>Graphs and charts created for twitter's #30DayChartChallenge</HeroBody>
+            <HeroBody>Graphs and charts created for Twitter's #30DayChartChallenge</HeroBody>
             <HalfSpacer />
             <div>
                 <Gallery photos={photos} onClick={openLightbox} />

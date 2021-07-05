@@ -5,13 +5,13 @@ import GoToTop from './GoToTop';
 
 import justaccBig from '../Images/justacc_multiple.png';
 import justaccDataDort from '../Images/justacc_DataSorting.png';
-import justaccWireframe from '../Images/PrototypeProcess.png';
+import justaccWireframe from '../Images/PrototypeProcessGreen.png';
 import raceMapGif from '../Images/JustAccGif.gif';
 import accIndexGif from '../Images/AccIndexGif.gif';
 import lineGraphGif from '../Images/LineGraphsGif.gif';
 
 import rseBig from "../Images/rse_multiplescreens.png";
-import rseSiteAnalysis from "../Images/rse_siteanalysis.png";
+import rseSiteAnalysis from "../Images/rse_siteanalysis_blue.png";
 import rseOrigGraphs from "../Images/rse_originalgraphs.png";
 import rseHierarchy from "../Images/rse_hierarchy.png";
 import rseOriginal from "../Images/rse_original.png";
@@ -21,22 +21,37 @@ import rseVersion4 from "../Images/rse_version4.png";
 import rseVersion5 from "../Images/rse_version5.png";
 import rseVersion6 from "../Images/rse_version6.png";
 import rseTableFinalMore from "../Images/rse_moretables.png";
-import rseTableColor from "../Images/rse_tablecolors.png";
+import rseTableColor from "../Images/rse_tablecolors_blue.png";
 import rseTableStyle from "../Images/rse_tablestyleguide.png";
 
 import airsimcover from "../Images/airsim_cover.png";
+import brainstorm from "../Images/vr/brainstorm.JPG";
+import research from "../Images/vr/researchposter.png";
+import cartrigger from "../Images/vr/cartriggers.png";
+import pause from "../Images/vr/pause.png";
+import stages from "../Images/vr/stages.png";
+import users from "../Images/vr/users.png";
+
+
 const ContentWrapper = styled.div`
     margin: 160px auto 80px auto;
-    width: 85vw;
+    width: 90vw;
+    max-width:1200px;
 `;
 const Spacer = styled.div`
     height: 128px;
-
+`;
+const HalfSpacer = styled.div`
+    height: 64px;
 `;
 const HeroBody = styled.p`
     margin-top:24px;
     font-size: 26px;
     line-height:38px;
+    @media (max-width:800px){
+        font-size:20px;
+        line-height:28px;
+    }
 `;
 const BoldedLink = styled.span`
     font-weight:500;
@@ -63,6 +78,12 @@ const MiddleImage = styled.img`
     margin: 32px 0px 0px 0px;
     height: auto;
 `;
+const Video = styled.iframe`
+    width:85vw;
+    height:45vw;
+    margin: 32px auto;
+
+`;
 const RoleColumn = styled.div`
     display: flex;
     flex-direction:column;
@@ -81,7 +102,12 @@ const HorizontalInfo = styled.div`
     justify-content:flex-start;
     align-items: flex-start;
     margin: 0 auto;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
+
+    @media (max-width:800px){
+        flex-wrap: wrap;
+    }
+    }
     
 `;
 
@@ -150,6 +176,7 @@ export const Project_JustAcc = ()=>{
              visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. 
             </HeroBody>
             <BigImage src={justaccBig}/>
+           
             <HorizontalInfo>
                 <RoleColumn>
                     <h3>Duration</h3>
@@ -281,7 +308,6 @@ export const Project_JustAcc = ()=>{
                 be hosted on the UrbanismX website using Tufts University servers.
 
             </ShortenedBody>
-        
 
             <GoToTop />
         </ContentWrapper>
@@ -502,8 +528,105 @@ export const Project_VRDriving = ()=>{
 
             <Spacer />
 
-            <h2>Senior Thesis: Low-Cost VR Driving Simulator</h2>
+            <h2>Senior Honors Thesis: Low-Cost VR Driving Simulator</h2>
+            <ShortenedBody>
+
+                For my senior thesis, I worked under <BoldedLink href="https://engineering.tufts.edu/me/people/faculty/james-intriligator" >Professor James Intrilligator</BoldedLink> and <BoldedLink href="https://sites.tufts.edu/humanfactors/faculty/" >Professor Hal Miller Jacobs</BoldedLink> in 
+                the Tufts Human Factors department. I led a team of four other students to design and develop a realistic autonomous driving experience 
+                via a virtual reality headset. The main goal of the project was to offer a cheaper, more portable alternative to 
+                a full-scale  driving simulator.
+            </ShortenedBody>
+            <ShortenedBody>
+                I recieved honors for my thesis as well as IRB approval to conduct a study on autonomous driving using the simulator. I was awarded a Fulbright-Nehru Student Research Fellowship to continue the 
+                work in India. Both the fellowship and the research study have been suspended due to Covid-19.
+            </ShortenedBody>
+            <HorizontalInfo>
+                <Column>
+                    <MiddleImage src={brainstorm}/>
+                    <CaptionPara> 
+                        <BoldBody>Feature Brainstorm </BoldBody>  Priya Misner and Julie Yeung brainstorming possible features and scenarios for the simulator
+                    </CaptionPara>
+                </Column>
+
+                <Column>
+                    <MiddleImage src={research}/>
+                    <CaptionPara> 
+                        <BoldBody>Presentation </BoldBody> Presenting our first prototype and research poster with team members Korri Lampedusa and Julie Yeung at the ENP 94 Poster Session.
+                    </CaptionPara>
+                </Column>
+               
+            </HorizontalInfo>
             
+            <ShortenedBody>
+                The suburban environment was created using Microsoft AirSim and the Unity game engine. For the vehicle, we downloaded a five passenger sedan from the Unity Asset Store and added an 
+                interactive infotainment screen to the dashboard of the vehicle. While initially we planned on integrating a GT Force Gaming Wheel into the simulation, a virtual driving wheel controlled 
+                via the Oculus Hand Controllers was more intuitive for the user to interact with.
+            </ShortenedBody>
+            <ShortenedBody>    
+                 Key features included path planning and stop/go triggers for autonomous driving, VR tunneling to limit VR sickness,
+                custom distractions tasks and basic data collection.
+            </ShortenedBody>
+            <HorizontalInfo>
+                <Column>
+                    <MiddleImage src={cartrigger}/>
+                    <CaptionPara> 
+                        <BoldBody>Path Planning </BoldBody>  Users can plot out a path for the car to follow by simply attaching a prewritten script and dragging and dropping cubes.
+                    </CaptionPara>
+                </Column>
+
+                <Column>
+                    <MiddleImage src={pause}/>
+                    <CaptionPara> 
+                        <BoldBody>Stop/Go Triggers </BoldBody> Control the car's movement by placing a trigger in the vehicles's path
+                    </CaptionPara>
+                </Column>
+               
+            </HorizontalInfo>
+            <ShortenedBody >
+                A video of a test run taken just before the pandemic put the research on pause.
+            </ShortenedBody>
+            <Video src="https://www.youtube.com/embed/_TRtJpTSgFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+
+
+            <Spacer />
+            <h2>Research Project: Pedestrian Crossing Simulator</h2>
+            <ShortenedBody>
+                As part of a research seminar on autonomous systems, I worked in a group of three to design and implement an experiment evaluating the comfort levels of pedestrians in crossing the road at any given time. We looked into 
+                how a pedestrian's comfort levels changed in response to their distance from oncoming traffic and in response to different types of vehicles (large, small, autonomous, manual). 
+            </ShortenedBody>
+            <ShortenedBody>
+                Along with designing the experiment, I was responsible for creating a simulation in Unity that modeled a two lane road where cars drove past a pedestrian and analyzing the data. My group partners conducted the 
+                literature review, created the demographic survey and 3D printed a dial that fit over a potentiometer 
+            </ShortenedBody>
+            <HalfSpacer />
+            <h3>  Methods and Simulation </h3>
+            <ShortenedBody>
+                Ten participants were recruited for this experiment; the majority were students in the Mechanical Engineering department. The experiment is a within-subjects design, meaning that each participant experienced each 
+                experimental condition. Specifically, each participant was exposed to no fewer than three of each simulated car type over 18 cars. The cars range in size, speed, and type (autonomous, non-autonomous). Two different 
+                versions of the videos were created to add randomization and account for unforseen confounds.
+            </ShortenedBody>
+            <HorizontalInfo>
+                <Column>
+                    <MiddleImage src={stages}/>
+                    <CaptionPara> 
+                        <BoldBody>Stills from Study </BoldBody>  Images of the virtual truck driving by on a road.
+                    </CaptionPara>
+                </Column>
+
+                <Column>
+                    <MiddleImage src={users}/>
+                    <CaptionPara> 
+                        <BoldBody>User Testing </BoldBody> Users twisted a dial to indicate comfortability as they watched the vehicles pass them by.
+                    </CaptionPara>
+                </Column>
+               
+            </HorizontalInfo>
+            <ShortenedBody>
+                Prior to starting the video, participants read through a page of instructions detailing an interpretation of the dial and how it should be used, that they can say "pause" or "stop" at any time and that cars of a red color signified autonomous vehicles. After watching the full simulation, the experimenter saved the data to their computer and distributed a post-questionnaire to the participant. The post questionnaire aims to gather demographic information of each participant, as well as some further questions related to their experience watching the simulation.
+            </ShortenedBody>
+            <ShortenedBody>
+            I created mixed a customizable driving simulation using the Unity game engine that generated vehicles in a roadway while allowing vehicle appearance, vehicle speed and the driving environment to be changed. During the 8 minute simulation, 18 cars appeared (three cases for each dependent variable, with the remainder a control). Only one car appeared on the road at a time with a short gap between one car exiting the environment and the next car appearing. While initially the simulation worked inside an Oculus Rift, it was easier recruit study participants if I saved the simulation as a video and played it on my personal laptop. 
+            </ShortenedBody>
             
             <GoToTop />
         </ContentWrapper>

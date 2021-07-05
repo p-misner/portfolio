@@ -12,11 +12,12 @@ import superMario from "../Images/explorations/supermario.png";
 import greenEggs from "../Images/explorations/greeneggs.png";
 import thirtyDay from "../Images/explorations/30day.png";
 
+import resume from "../Images/PriyaMisnerResume.pdf"
 const TopSpacer = styled.div`
     height:160px;
 `;
 const BottomSpacer = styled.div`
-    height:30vh;
+    height:25vh;
 `;
 const ProjectSpacer = styled.div`
     height:0px;
@@ -30,8 +31,12 @@ const HeroBody = styled.p`
     margin-top:24px;
     font-size: 26px;
     line-height:38px;
+    @media (max-width:800px){
+        font-size:20px;
+        line-height:28px;
+    }
 `;
-const BoldedLink = styled.span`
+const BoldedLink = styled.a`
     font-weight:500;
     color: ${props => props.inputColor || "#082939"};
     text-decoration: underline;
@@ -40,6 +45,9 @@ const BoldedLink = styled.span`
     &:hover{
         // font-weight:600;
         opacity:0.6;
+    }
+    &:visited {
+        color: ${props => props.inputColor || "#082939"}; 
     }
 `;
 const ProjectWrapper = styled.div`
@@ -217,8 +225,9 @@ export const Home =()=>{
             <BigProject 
                 fillColor="#C5DBDF" 
                 direction={-1}
-                header="Just Accessibility"
-                subheader="An interactive data dashboard built with d3.js and React exploring how Covid-19 impacted accessibility to food, grocery and health care in major cities. Created for the UrbanismX Research Group at Tufts University."
+                header="Geographic Visualization for Covid-19's Impact on Essential Services"
+                subheader="An interactive data dashboard built with d3.js and React exploring how Covid-19 impacted accessibility to food, grocery and health care in major cities. "
+                subheader2="Employed by UrbanismX Research Group at Tufts University."
                 image={justacc}
                 link="/justaccessibility"
                 projectdemo={{display:true, link:"https://justaccessibility.herokuapp.com"}}
@@ -258,9 +267,10 @@ const Hero = ()=>{
         <div>
             <TopSpacer/>
             <Wrapper>
-                <h1>Hi There. I'm Priya. </h1>
-                <HeroBody>Creative Technologist. Designer. Engineer. I thrive at the intersection of design and technology. From coding web maps to tinkering with datasets using d3.js, I love taking messy data and turning it into something both beautiful and understandable. </HeroBody>
-                <HeroBody>View my <BoldedLink inputColor="#E8C370">resumé</BoldedLink>, <BoldedLink inputColor="#3C8696">get in touch</BoldedLink>, or check out my <BoldedLink inputColor="#E56F56">past work</BoldedLink>. </HeroBody>
+                <h1>Hi There.  I'm Priya. </h1>
+                <HeroBody>Creative Coder. <BoldedLink > <a href="https://engineering.tufts.edu/news-events/news/safer-driving" target="_blank" rel="noreferrer noopener">Fulbright Scholar</a>.</BoldedLink> Designer. Mechanical Engineer. 
+                I thrive at the intersection of design and technology. From coding geographic data maps to finding insights in datasets visually, I love taking dense data and turning it into something beautiful and meaningful. </HeroBody>
+                <HeroBody>View my <BoldedLink inputColor="#E8C370" href={resume} download>resumé</BoldedLink>, <BoldedLink inputColor="#3C8696" href="mailto:priyamisner@gmail.com">get in touch</BoldedLink>, or check out my <BoldedLink inputColor="#E56F56" onClick={()=>window.scrollBy(0, window.innerHeight*0.7)}>past work</BoldedLink>. </HeroBody>
             </Wrapper>
             <BottomSpacer/>
             
@@ -299,7 +309,7 @@ const BigProject = ({direction, fillColor,image, header, subheader,link, project
     );
 }
 
-const ExplorationProject = ({fill,link, img, header, subheader})=>{
+const ExplorationProject = ({fill,link, img, header, subheader, buttontext})=>{
     return(
         
             <ExplorationCard fill={fill}>
@@ -307,7 +317,7 @@ const ExplorationProject = ({fill,link, img, header, subheader})=>{
                 <ExplorationText>
                     <ExplorationH3> {header}</ExplorationH3>
                     <ExplorationBody> {subheader}</ExplorationBody>
-                    <ExplorationLink to={link}>View Project</ExplorationLink>
+                    <ExplorationLink to={link}>{buttontext}</ExplorationLink>
                 </ExplorationText>
                 
             </ExplorationCard>
@@ -330,6 +340,7 @@ const Explorations = ()=>{
                     link={"./networkflow"}
                     header="Network Flow"
                     subheader="Prototype network flow visualization built with deck.gl and React"
+                    buttontext="View Project"
 
                 />
                  <ExplorationProject 
@@ -337,22 +348,24 @@ const Explorations = ()=>{
                     img={superMario}
                     link={"./pandemicmario"}
                     header="Pandemic Super Mario"
-                    subheader="Using machine learning and LEGO Mindstorms to play Super Mario during a pandemic"
+                    subheader="Using machine learning and LEGO Mindstorms to play Super Mario during the pandemic"
+                    buttontext="View Project"
                 />
                  <ExplorationProject 
                     fill="#c6dbdf"
                     img={thirtyDay}
                     link={"./chartcollection"}
                     header="Chart Collection"
-                    subheader="Graphs and charts created for twitter's #30DayChartChallenge"
+                    subheader="Graphs and charts created for Twitter's #30DayChartChallenge"
+                    buttontext="View Project"
                 />
-                {/* <ExplorationProject 
+                <ExplorationProject 
                     fill="#E8C370"
                     img={usLegislation}
                     link={"#"}
                     header="State Legislative Calendars"
-                    subheader="Prototype network flow visualization built with deck.gl and React"
-
+                    subheader="d3.js visualization of state legislative calendars from 2012-2020"
+                    buttontext="Coming Soon"
                 />
                
                 <ExplorationProject 
@@ -361,7 +374,8 @@ const Explorations = ()=>{
                     link={"#"}
                     header="Green Eggs and Ham"
                     subheader="A collapsible radial tree depicting Dr. Seuss' words"
-                /> */}
+                    buttontext="Coming Soon"
+                />
             </HorizontalRow>
             
         </Wrapper>
@@ -385,6 +399,20 @@ const Experience = ()=>{
                 <Column flexgrow="5">
                 <RegBody>
                         Designing and developing data visualizations based on ongoing research 
+                </RegBody>
+                
+                </Column>
+            </HorizontalInfo>
+            <HorizontalInfo >
+                <Column flexgrow="2">
+                    <BoldBody>Data Visualization Designer</BoldBody>
+                    <ThinBody>Ready.Set.Excel. </ThinBody>
+                    <ItalicBody>December 2020-present</ItalicBody>
+                </Column>
+                
+                <Column flexgrow="5">
+                <RegBody>
+                    Information design for reporting results and analysis
                 </RegBody>
                 
                 </Column>

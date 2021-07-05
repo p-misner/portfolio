@@ -20,6 +20,10 @@ const HeroBody = styled.p`
     margin-top:24px;
     font-size: 26px;
     line-height:38px;
+    @media (max-width:800px){
+        font-size:20px;
+        line-height:28px;
+    }
 `;
 const BigImage = styled.img`
     width: 85vw;
