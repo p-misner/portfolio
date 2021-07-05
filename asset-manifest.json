@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.5862d216.chunk.css",
-    "main.js": "/static/js/main.70c7fe3f.chunk.js",
-    "main.js.map": "/static/js/main.70c7fe3f.chunk.js.map",
+    "main.js": "/static/js/main.89b17965.chunk.js",
+    "main.js.map": "/static/js/main.89b17965.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f567a4c6.js",
     "runtime-main.js.map": "/static/js/runtime-main.f567a4c6.js.map",
     "static/js/2.6d6e56af.chunk.js": "/static/js/2.6d6e56af.chunk.js",
@@ -16,6 +16,7 @@
     "static/media/AccIndexGif.7553004b.gif": "/static/media/AccIndexGif.7553004b.gif",
     "static/media/JustAccGif.c3c7ca60.gif": "/static/media/JustAccGif.c3c7ca60.gif",
     "static/media/LineGraphsGif.d771eb23.gif": "/static/media/LineGraphsGif.d771eb23.gif",
+    "static/media/PriyaMisnerResume.4453528e.pdf": "/static/media/PriyaMisnerResume.4453528e.pdf",
     "static/media/PrototypeProcessGreen.3f009717.png": "/static/media/PrototypeProcessGreen.3f009717.png",
     "static/media/airsim_cover.2ee1bcb3.png": "/static/media/airsim_cover.2ee1bcb3.png",
     "static/media/brainstorm.8527471d.JPG": "/static/media/brainstorm.8527471d.JPG",
@@ -47,13 +48,15 @@
     "static/media/rse_version4.3a28b61f.png": "/static/media/rse_version4.3a28b61f.png",
     "static/media/rse_version5.6f35284d.png": "/static/media/rse_version5.6f35284d.png",
     "static/media/rse_version6.8af6103f.png": "/static/media/rse_version6.8af6103f.png",
+    "static/media/stages.d22eaf8f.png": "/static/media/stages.d22eaf8f.png",
     "static/media/supermario.cbea8941.png": "/static/media/supermario.cbea8941.png",
+    "static/media/users.4c9da045.png": "/static/media/users.4c9da045.png",
     "static/media/vr_cover.f3d3bb83.png": "/static/media/vr_cover.f3d3bb83.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f567a4c6.js",
     "static/js/2.6d6e56af.chunk.js",
     "static/css/main.5862d216.chunk.css",
-    "static/js/main.70c7fe3f.chunk.js"
+    "static/js/main.89b17965.chunk.js"
   ]
 }
