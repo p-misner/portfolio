@@ -169,11 +169,11 @@ const BulletListItem = styled.li`
 export const Project_JustAcc = ()=>{
     return (
         <ContentWrapper>
-            <h1>Just Accessibility</h1>
+            <h1>Geographic Visualization for Covid-19's Impact on Essential Services</h1>
             <HeroBody>
                 An interactive data dashboard built under <BoldedLink><a href="https://sites.google.com/view/shan-jiang/publications" target="_blank" rel="noreferrer noopener">Dr. Shan Jiang</a></BoldedLink> at 
                 Tufts University's <BoldedLink><a href="https://as.tufts.edu/uep/people/faculty/shan-jiang" target="_blank" rel="noreferrer noopener">UrbanismX Research Group</a></BoldedLink>.  
-             visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. 
+             This visualization explores how Covid-19 impacted accessibility to food, grocery and health services in the United States's top twenty-five metropolitan areas. 
             </HeroBody>
             <BigImage src={justaccBig}/>
            
