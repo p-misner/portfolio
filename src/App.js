@@ -1,4 +1,6 @@
 import React, {useRef} from 'react';
+import ReactGA from 'react-ga';
+
 import {NavBar} from "./HomePage/Navigation";
 import {Footer} from "./HomePage/Footer";
 import {Home} from "./HomePage/Home";
@@ -10,6 +12,10 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import styled, { createGlobalStyle } from "styled-components"
 import './App.css';
 
+ReactGA.initialize('UA-205070821-1', {
+  debug: true,
+});
+ReactGA.pageview(window.location.pathname + window.location.search);
 const GlobalStyle = createGlobalStyle`
       body{
         color:#082939;
