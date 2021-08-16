@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactGA from 'react-ga';
 import GoToTop from "../Projects/GoToTop";
 
 import build from "../Images/explorations/mario/physicalrobot.JPG";
@@ -114,6 +115,8 @@ const Issues = styled.div`
 
 
 export function PandemicMario(){
+    ReactGA.pageview(window.location.pathname);
+
     return (
         <ContentWrapper>
             <h1> Pandemic Mario</h1>

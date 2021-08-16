@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactGA from 'react-ga';
 import GoToTop from "../Projects/GoToTop";
 
 import flowGif from "../Images/explorations/flow.gif";
@@ -61,6 +62,8 @@ const BulletListItem = styled.li`
 `;
 
 export function NetworkFlow(){
+    ReactGA.pageview(window.location.pathname);
+
     return (
         <ContentWrapper>
             <h1> Network Flow</h1>

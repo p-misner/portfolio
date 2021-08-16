@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import ReactPlayer from 'react-player/lazy'
+import ReactGA from 'react-ga';
 import GoToTop from './GoToTop';
 
 import justaccBig from '../Images/justacc_multiple.png';
@@ -167,6 +167,7 @@ const BulletListItem = styled.li`
 `;
 
 export const Project_JustAcc = ()=>{
+    ReactGA.pageview(window.location.pathname);
     return (
         <ContentWrapper>
             <h1>Geographic Visualization for Covid-19's Impact on Essential Services</h1>
@@ -315,6 +316,8 @@ export const Project_JustAcc = ()=>{
 }
 
 export const Project_RSE = ()=>{
+    ReactGA.pageview(window.location.pathname);
+
     return (
         <ContentWrapper>
             <h1>Redesigning Results for Adaptive Assessments </h1>
@@ -516,6 +519,8 @@ export const Project_RSE = ()=>{
 }
 
 export const Project_VRDriving = ()=>{
+    ReactGA.pageview(window.location.pathname);
+
     return (
         <ContentWrapper>
             <h1>Virtual Reality Driving</h1>

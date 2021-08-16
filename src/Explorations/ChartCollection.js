@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 import GoToTop from "../Projects/GoToTop";
 
@@ -100,6 +101,7 @@ const RowImage = styled.img`
 
 
 export function ChartCollection(){
+    ReactGA.pageview(window.location.pathname);
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactGA from 'react-ga';
 import {Link} from 'react-router-dom';
 
 import justacc from "../Images/justacc_cover.png";
@@ -219,6 +220,7 @@ const HorizontalRow = styled.div`
 
 
 export const Home =()=>{
+    ReactGA.pageview(window.location.pathname);
     return (
         <div>
             <Hero />

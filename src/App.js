@@ -15,7 +15,9 @@ import './App.css';
 ReactGA.initialize('UA-205070821-1', {
   debug: true,
 });
+
 ReactGA.pageview(window.location.pathname + window.location.search);
+
 const GlobalStyle = createGlobalStyle`
       body{
         color:#082939;
@@ -92,7 +94,7 @@ const GlobalStyle = createGlobalStyle`
 
 
 function App() {
-  
+ 
 
 
   return (
