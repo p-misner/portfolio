@@ -1,75 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-
-const NavWrapper = styled.nav`
-  background-color:#ffffff;
-  width: 90vw;
-  max-width: 1200px;
-
-  margin: 0 auto;
-  z-index:10;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  // background-color:green;
-
-`;
-
-const NavListLeft = styled.ul`
-  list-style: none;
-  margin-top: 0px;
-  padding: 16px 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;  
-  // background-color:red;
-`;
-
-const NavListRight = styled.ul`
-  // margin: 0 auto;
-  list-style: none;
-  margin-top: 0px;
-  padding: 16px 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  // background-color:orange;
-  
-`;
-
-const Logo = styled(Link)`
-  margin-left: -16px;
-  text-decoration: none;
-  font-size:17px;
-  font-weight:500;
-  
-  @media (max-width:450px){
-    font-size:13px;
-  }
-`;
-
-const ListItem = styled.li`
-  margin: 0px 24px;
-  cursor:pointer;
-  
-`;
-
-const DropdownMenu = styled.div`
-    display:flex;
-    flex-direction:column;
-    max-width:78px;
-    position:fixed;
-
-  `;
-
-  const Label = styled.div`
-  font-size:17px;
-  
-  @media(max-width:450px){
-    font-size:13px;
-  }
-`;
+import {NavWrapper, NavListLeft, NavListRight,Logo, ListItem, DropdownMenu, Label } from "./NavigationStylesheet.js";
 
 
 export function NavBar(){
