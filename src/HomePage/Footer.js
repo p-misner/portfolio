@@ -21,6 +21,13 @@ const HorizontalInfo = styled.div`
 const Wrapper = styled.div`
     width:auto;
     margin:0px 16px;
+    max-width: 968px;
+    @media (min-width: 768px) {
+        margin: 0px 32px;
+      }
+    @media (min-width: 968px) {
+        margin: 0px auto;
+      }
 `;
 const BorderDiv = styled.div`
     border: 1px ${darkestBlue} solid;

@@ -3,14 +3,21 @@ import {Link} from 'react-router-dom';
 
 export const NavWrapper = styled.nav`
   background-color:#ffffff;
-  width: 100%;
-  max-width: 960px;
+  width:calc(100vw - 32px);
   position: fixed;
-  margin: 0 auto;
   z-index:10;
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between;    
+  left: 50%;
+  transform: translate(-50%, 0);
+  
+  @media (min-width: 768px) {
+    width: calc(100vw - 64px);
+  }
+  @media (min-width: 1024px) {
+    width: 960px;
+  }
 `;
 
 //logo
@@ -37,10 +44,14 @@ export const NavListRight = styled.ul`
 `;
 
 export const Logo = styled(Link)`
-  margin-left: -16px;
+  margin-left: -24px;
   text-decoration: none;
   font-size:18px;
   font-weight:500;
+  @media (min-width: 768px) {
+    margin-left: -24px;
+
+  }
   
   
 `;
@@ -59,6 +70,9 @@ export const DropdownMenu = styled.div`
 
   `;
 
-  export const Label = styled.div`
-  font-size:10px;
+export const Label = styled.div`
+  font-size:0px;
+  @media (min-width: 440px) {
+    font-size:18px; 
+  }
 `;

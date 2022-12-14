@@ -1,18 +1,27 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
+
+
 const heroTextMobile = '32px';
-const subtitleText = '16px';
+const heroText = '48px';
+const subtitleTextMobile = '16px';
+const subtitleText = '18px';
 const headerText = "20px";
 const headerTextWeight = "600"
-const heroMargins = '16px';
+const heroMarginsMobile = '16px';
+const heroMargins= '32px';
 const topSpace = '24px';
 const darkestBlue = "#082939";
 const tealBlue = "#3C8696";
 const borderRadius  = '8px';
+const tabletBreakpoint = '768px';
 
 export const TopSpacer = styled.div`
     height:96px;
+    @media (min-width: ${tabletBreakpoint}) {
+        height:160px;
+      }
 `;
 
 export const BottomSpacer = styled.div`
@@ -21,24 +30,44 @@ export const BottomSpacer = styled.div`
 
 export const Wrapper = styled.div`
     width:auto;
-    margin:0px ${heroMargins};
+    margin:0px ${heroMarginsMobile};
+    max-width: 968px;
+    @media (min-width: ${tabletBreakpoint}) {
+        margin: 0px ${heroMargins};
+      }
+    @media (min-width: 1024px) {
+        margin: 0px auto;
+      }
 `;
 export const HeroText = styled.h1`
     font-size: ${heroTextMobile};
     line-height:38px;
+    @media (min-width: ${tabletBreakpoint}) {
+        font-size: ${heroText};
+    }
    
 `;
 export const HeroBody = styled.p`
     margin-top:${topSpace};
-    font-size: ${subtitleText};
+    font-size: ${subtitleTextMobile};
     line-height:24px;
+    @media (min-width: ${tabletBreakpoint}) {
+        font-size: ${subtitleText};
+        line-height:27px;
+    }
 `;
 
 export const ProjectWrapper = styled.div`
+    display: flex;
+    flex-direction:column;
     background-color:#fff;
     border: 1px ${darkestBlue} solid;
     border-radius:${borderRadius};
-    margin: 0px ${heroMargins} ${heroMargins} ${heroMargins};
+    margin: 0px 0px ${heroMarginsMobile} 0px;
+    @media (min-width: ${tabletBreakpoint}) {
+        margin: 0px 0px ${heroMargins}  0px;
+        flex-direction: row-reverse;
+    }
 
 `;
 
@@ -59,12 +88,15 @@ export const ContentWrapper = styled.div`
     h3 {
         color: ${tealBlue};
         text-transform: uppercase;
-        font-size: ${subtitleText};
+        font-size: ${subtitleTextMobile};
         font-weight: ${headerTextWeight};
         margin-bottom: 8px;
     }
     p {
-        font-size: ${subtitleText}
+        font-size: ${subtitleTextMobile}
+    }
+    @media (min-width: ${tabletBreakpoint}) {
+        justify-content:flex-start;
     }
 `;
     
@@ -85,12 +117,19 @@ export const ContentWrapper = styled.div`
 // `;
 export const Image = styled.div`
     height: 200px;
-    width: 100%;
-    // max-height:555px;
-    // order:${props => props.direction};
-    background-color:${props => props.fillColor};
+    background:url(${props=> props.image});
+    background-size: cover;
+    background-position: center;
     border-top: 1px ${darkestBlue} solid;
     border-radius:${borderRadius};
+    @media (min-width: ${tabletBreakpoint}) {
+        width: 320px;
+        min-height:320px;
+        flex-shrink: 0;
+        height: auto;
+        margin: 0px;
+        border-right: 1px ${darkestBlue} solid;
+    }
 
 `;
 
@@ -107,6 +146,12 @@ export const HorizontalInfo = styled.div`
     margin: 0 auto;
     flex-wrap:wrap;
     margin-top: ${props => props.position=="first" ? "0px" : "24px"};
+    @media (min-width: ${tabletBreakpoint}) {
+        flex-direction:row;
+    }
+    & .descrip{
+        margin-left:24px;
+    }
 
     
 `;
@@ -114,7 +159,6 @@ export const Column = styled.div`
     display: flex;
     flex-flow:column nowrap;
     flex: ${props=>props.flexgrow || 1} 1 0px;
-
 
 `;
 
@@ -135,7 +179,7 @@ export const BoldBody = styled(RegBody)`
 export const JobHeading = styled.p`
     color: ${tealBlue};
     text-transform: uppercase;
-    font-size: ${subtitleText};
+    font-size: ${subtitleTextMobile};
     font-weight: ${headerTextWeight};
     margin-bottom: 8px;
 `;

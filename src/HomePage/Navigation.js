@@ -13,7 +13,8 @@ export function NavBar(){
       <NavListRight>
         {/* <ListItem><StyledLink to="/">experience</StyledLink></ListItem> */}
         <ListItem>
-            <Card 
+        <a href="#work"><Label>work</Label></a>
+            {/* <Card 
               label="work ⤸" 
               items={
                 [
@@ -22,10 +23,11 @@ export function NavBar(){
                   {link:"/vrdriving", title:"VR Driving"}, 
                 ]
               } 
-            />
+            /> */}
         </ListItem>
         <ListItem>
-            <Card 
+        <a href="#explorations"><Label>explorations</Label></a>
+            {/* <Card 
               label="explorations ⤸" 
               items={
                 [
@@ -34,7 +36,7 @@ export function NavBar(){
                   {link:"/chartcollection", title:"Charts"}, 
                 ]
               } 
-            />
+            /> */}
         </ListItem>
         {/* <ListItem><StyledLink to="/#explorations">explorations</StyledLink></ListItem> */}
       </NavListRight>

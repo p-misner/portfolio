@@ -3,9 +3,12 @@ import styled from 'styled-components';
 import ReactGA from 'react-ga';
 import {Link} from 'react-router-dom';
 
-import justacc from "../Images/justacc_cover.png";
-import rse from "../Images/rse_cover.png";
-import vr from "../Images/vr_cover.png";
+// import justacc from "../Images/justacc_cover.png";
+// import rse from "../Images/rse_cover.png";
+// import vr from "../Images/vr_cover.png";
+import justacc from "../Projects/GeoViz.png"
+import rse from "../Projects/Test.png"
+import vr from "../Projects/SelfDrive.png"
 
 import commuterFlow from "../Images/explorations/commuterflow.png";
 import usLegislation from "../Images/explorations/parttime.png";
@@ -24,7 +27,7 @@ import {TopSpacer, BottomSpacer, Wrapper, HeroBody,HeroText, ProjectWrapper, Con
 export const Home =()=>{
     ReactGA.pageview(window.location.pathname);
     return (
-        <div>
+        <Wrapper>
             <Hero />
             <BigProject 
                 fillColor="#C5DBDF" 
@@ -59,7 +62,7 @@ export const Home =()=>{
 
             <Experience />
 
-        </div>
+        </Wrapper>
     )
 }
 
@@ -68,13 +71,11 @@ const Hero = ()=>{
     return (
         <div>
             <TopSpacer/>
-            <Wrapper>
                 <HeroText>Hi There.  I'm Priya. </HeroText>
                 <HeroBody>Creative Coder. Designer. Mechanical Engineer. 
                 I thrive at the intersection of design and technology. From coding geographic data maps to finding insights in datasets visually, I love taking dense data and turning it into something beautiful and meaningful. </HeroBody>
                 <HeroBody>Find me on the Internet:  </HeroBody>
-            </Wrapper>
-            <BottomSpacer/>
+            <BottomSpacer id="work" />
             
         </div>
     );
@@ -82,26 +83,14 @@ const Hero = ()=>{
 
 const BigProject = ({direction, fillColor,image, header, subheader,link, projectdemo })=>{
     return(
-        <ProjectWrapper>
+        <ProjectWrapper >
             <ContentWrapper>  
                 <h3>Case Study </h3>
                 <h2>{header}</h2>
                 <p >{subheader}  </p>
-                {/* <ButtonGroup>
-                    <Link to={link}><ProjectButton inputColor={fillColor}> Read Case Study</ProjectButton></Link>
-                    {
-                        projectdemo.display
-                        ?
-                        <a href={projectdemo.link} target="_blank" rel="noreferrer noopener"> <ProjectButtonOutline inputColor={fillColor}>View Beta Site</ProjectButtonOutline></a>
-                        :
-                        null
-                    }
-                </ButtonGroup> */}
-
             </ContentWrapper>
-            <Image direction={direction} fillColor={fillColor} alt="Just Acc Dashboard Mockup" />
-
-            </ProjectWrapper>
+            <Image  image= {image} fillColor={fillColor}  />
+        </ProjectWrapper>
             
             
     );
@@ -126,9 +115,9 @@ const ExplorationProject = ({fill,link, img, header, subheader, buttontext})=>{
 
 const Explorations = ()=>{
     return(
-        <Wrapper>
+        <div>
             <TopSpacer />
-            <h2> Explorations</h2>
+            <h2 id="explorations"> Explorations</h2>
             <HeroBody> Smaller scale projects and ideas I've been tinkering with </HeroBody>
             <HorizontalRow>
                 <ExplorationProject 
@@ -175,13 +164,13 @@ const Explorations = ()=>{
                 />
             </HorizontalRow>
             
-        </Wrapper>
+        </div>
     );
 }
 
 const Experience = ()=>{
     return(
-        <Wrapper>
+        <div>
             <TopSpacer />
                
             <h2> Experience</h2>
@@ -193,7 +182,7 @@ const Experience = ()=>{
                     <ItalicBody>Oct 2019-present</ItalicBody>
                 </Column>
                 
-                <Column flexgrow="5">
+                <Column flexgrow="5" className="descrip">
                 <RegBody>
  
                            
@@ -209,7 +198,7 @@ const Experience = ()=>{
                     <ItalicBody>December 2020-present</ItalicBody>
                 </Column>
                 
-                <Column flexgrow="5">
+                <Column flexgrow="5" className="descrip">
                 <RegBody>
                 → Information design for reporting results and analysis
                 </RegBody>
@@ -223,7 +212,7 @@ const Experience = ()=>{
                     <ItalicBody>June 2019- Aug 2019</ItalicBody>
                 </Column>
                 
-                <Column flexgrow="5">
+                <Column flexgrow="5" className="descrip">
                     <RegBody>→ Coded human factors driving simulations for ongoing research studies</RegBody>
                     <RegBody>→ Interviewed research participants and guided particpants through experimental procedures </RegBody>
                 </Column>
@@ -235,7 +224,7 @@ const Experience = ()=>{
                     <ItalicBody>February 2018 - May 2018</ItalicBody>
                 </Column>
                 
-                <Column flexgrow="5">
+                <Column flexgrow="5" className="descrip">
                     <RegBody>→ Designed data visualizations to analyze data coming off an autonmous drone’s sensors</RegBody>
                 </Column>
             </HorizontalInfo>
@@ -243,11 +232,11 @@ const Experience = ()=>{
             <JobHeading > awards</JobHeading>
             <HorizontalInfo position="first">
                 <Column flexgrow="2">
-                    <BoldBody> 2020-21 Fulbright Research Fellow</BoldBody>
+                    <BoldBody> 2020-21 Fulbright-Nehru Research Fellow</BoldBody>
                     <ItalicBody>suspended due to Covid-19</ItalicBody>
                 </Column>
                 
-                <Column flexgrow="5">
+                <Column flexgrow="5"className="descrip">
                     <RegBody>→ Fully funded year-long fellowship in New Delhi, India in collaboration with the IIIT-Delhi’s Weave Labs and SaveLIFE Foundation exploring the use of virtual reality to increase road safety</RegBody>
                 </Column>
             </HorizontalInfo>
@@ -255,7 +244,7 @@ const Experience = ()=>{
             <TopSpacer />
 
 
-        </Wrapper>
+        </div>
     );
 }
 
