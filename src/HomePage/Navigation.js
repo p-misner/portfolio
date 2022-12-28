@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {NavWrapper, NavListLeft, NavListRight,Logo, ListItem, DropdownMenu, Label } from "./NavigationStylesheet.js";
-
+import GradientSquare from "../Images/GradientSquareBorder.png";
 
 export function NavBar(){
   return (
     <NavWrapper>
       <NavListLeft>
-        <ListItem><Logo to="/"> priya misner </Logo></ListItem>
+        <ListItem><Logo to="/"> <img src={GradientSquare}/>priya misner </Logo></ListItem>
       </NavListLeft>
       <NavListRight>
         {/* <ListItem><StyledLink to="/">experience</StyledLink></ListItem> */}

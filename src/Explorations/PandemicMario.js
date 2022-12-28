@@ -7,84 +7,21 @@ import build from "../Images/explorations/mario/physicalrobot.JPG";
 import stages from "../Images/explorations/mario/mariomodel.png";
 import hands from "../Images/explorations/mario/hands.png";
 
-const ContentWrapper = styled.div`
-    margin: 160px auto 80px auto;
-    width: 85vw;
-`;
-const Spacer = styled.div`
-    height: 128px;
-`;
-const HalfSpacer = styled.div`
-    height: 64px;
-`;
-const HeroBody = styled.p`
-    margin-top:24px;
-    font-size: 26px;
-    line-height:38px;
-    @media (max-width:800px){
-        font-size:20px;
-        line-height:28px;
-    }
-`;
-const BigImage = styled.img`
-    width: 85vw;
-    margin: 32px auto;
-    height: auto;
-   
-`;
-const MediumImage = styled.img`
-    width: 60vw;
-    margin: 32px 0px 0px 0px;
-    height: auto;
-    @media (max-width:768px){
-        width: 85vw;
-    }
-`;
-const SmallBody = styled.p`
-    margin: 0px;
-    font-size: 17px;
-    line-height:28px;
-    margin-bottom:7px;
-    color: ${props=> props.inputColor || "#082939"}
-`;
-const ShortenedBody = styled(SmallBody)`
-    max-width: 70vw;
-    margin-top: 16px;
-`;
-const ItalicCaption = styled(SmallBody)`
-    font-style:italic;
-    text-align:center;
-`;
-const MonospaceBody = styled(SmallBody)`
-    font-family:'Inconsolata', monospace;
-    font-weight:300;
-    opacity: 0.8;
-`;
-const MonospaceHeader = styled.h3 `
-    font-family:'Inconsolata', monospace;
-    font-weight:500;
-`;
-const BulletList = styled.ul`
-    list-style:square;
-    padding-left:48px;
-    max-width: 68vw;
+import {Wrapper, TopSpacer, HeroText, HeroBody, RegBody, MonospaceBody,MonospaceHeader, 
+    BulletList, BulletListItem, BoldBulletBody, ItalicCaption, HalfSpacer, BigImage, Video} from "./DetailsStylesheet.js";
 
-`;
-const BulletListItem = styled.li`
-    font-weight: 300;
-    line-height:30px;
-`;
 
-const Video = styled.iframe`
-    width:85vw;
-    height:45vw;
-    margin: 32px auto;
 
-`;
-const BoldBulletBody = styled.span`
-    font-weight:500;
-    padding-right:8px;
-`;
+
+
+// const Video = styled.iframe`
+//     width:100%;
+//     height:auto;
+//     margin: 32px auto;
+
+// `;
+
+
 const Column = styled.div`
     display: flex;
     flex-flow:column nowrap;
@@ -110,7 +47,7 @@ const RowImage = styled.img`
 const Issues = styled.div`
     background-color: #F2A267;
     padding:20px;
-    width:75vw;
+    width:auto;
 `;
 
 
@@ -118,23 +55,22 @@ export function PandemicMario(){
     ReactGA.pageview(window.location.pathname);
 
     return (
-        <ContentWrapper>
-            <h1> Pandemic Mario</h1>
+        <Wrapper>
+            <TopSpacer/>
+            <HeroText> Pandemic Mario</HeroText>
             <HeroBody> Control Mario using your hands and a LEGO Mindstorm. Help him as he tries to avoid catching the coronavirus. A final project for a college robotics course. </HeroBody>
-            {/* <HalfSpacer /> */}
             <Video  src="https://www.youtube.com/embed/gRAhf-MZgH0" frameborder="0" allow="accelerometer; autoplay; gyroscope; picture-in-picture" allowfullscreen></Video>
             
-            <HalfSpacer />
             <h2>Project Background</h2>
-            <ShortenedBody>
+            <RegBody>
                 Due to Covid-19, Tufts University sent all its students home right before the start of my robotics final project. Our new challenge for the robotics final was to 
                 move a machine across our screens via zoom as part of a class-wide virtual Rube-Goldberg machine. Armed with an EV3 LEGO Mindstorm kit, my laptop and whatever else 
                 could be found around my house, I got to work. Needing a hero to defeat coronavirus and banish any quarantine boredom, I created Super Mario: At Home, the only unauthorized, 
                 interactive Super Mario game that lets players play both in cyberspace and real life. 
-            </ShortenedBody>
-            <ShortenedBody>
+            </RegBody>
+            <RegBody>
                 The features of this game include:
-            </ShortenedBody>
+            </RegBody>
             <BulletList>
                 <BulletListItem> <BoldBulletBody>Hardware: </BoldBulletBody>A conveyer belt that moves a LEGO Mario and is mounted on an EV3 with wheels </BulletListItem>
                 <BulletListItem> <BoldBulletBody>Communication: </BoldBulletBody>EV3 and laptop talk via serial </BulletListItem>
@@ -143,16 +79,15 @@ export function PandemicMario(){
                 <BulletListItem> <BoldBulletBody>Machine Learning: </BoldBulletBody>Mario's movements in the virtual and physical world are controlled via hand movements interpreted by a neural net created using Teachable Machines  </BulletListItem>
             </BulletList>
 
-            <HalfSpacer />
             <h2>The Build</h2>
-            <ShortenedBody>
+            <RegBody>
                 The physical portion of the mario robot consists of a the EV3 on wheels driven by two large motors. A conveyer belt mounted atop the EV3 and driven by a medium 
                 motor holds a model of Mario built in Lego. When virtual Mario jumps in the game, the conveyer belt also moves the LEGO Mario up and down in the physical world. 
-            </ShortenedBody>
-            <ShortenedBody>
+            </RegBody>
+            <RegBody>
                 Initially, Mario was painted on a piece of paper but was then rebuilt to stay true to the LEGO theme. Rather than holding a 3D ball to carry across the screen, 
                 the LEGO Mario holds a LEGO replica of the coronavirus to represent the ball and the current times. 
-            </ShortenedBody>
+            </RegBody>
             <Row>
                 <Column grow="1.25">
                     <RowImage src={build} />
@@ -164,17 +99,16 @@ export function PandemicMario(){
                 </Column>
             </Row>
 
-            <HalfSpacer />
             <h2>Communication </h2>
-            <ShortenedBody>
+            <RegBody>
                 To talk to the other robots making up the virtual Rube Goldberg machine, my Super Mario robot checks a SystemLink tag in the cloud to begin its journey across 
                 the screen. When the Super Mario robot wins the game, it resets it's own start tag to false and sets the next robot's tag to true.
-            </ShortenedBody>
-            <ShortenedBody>
+            </RegBody>
+            <RegBody>
             Serial communction was used to send data back and forth between the laptop and the EV3. To get data from the USB port of the laptop to the browser, I used 
             the <a href="https://github.com/p5-serial/p5.serialport" target="_blank" rel="noreferrer noopener">p5.serialport library</a> to create a node.js based 
             WebSocket server that served the serial data to the browser. The data sent over serial indicated four states in the game: begin, jump, game over and game won. 
-            </ShortenedBody>
+            </RegBody>
             <Issues>
                 <MonospaceHeader> Serial Communication Issues</MonospaceHeader>
                 <MonospaceBody> 
@@ -197,18 +131,17 @@ export function PandemicMario(){
             </ShortenedBody>
             <div id="mariocontainer"></div> */}
 
-            <HalfSpacer />
             <h2>Machine Learning: Hand Control </h2>
-            <ShortenedBody>
+            <RegBody>
                 I trained a neural net with images of my hands in different positions using Google's Teachable Machines. The neural net was trained to 
                 recognize three different poses using about 50 images per pose: an open hand for start, a finger pointing upward for jump and a blank wall 
                 to recognize no command. The model was hosted by Teachable Machines and could be accessed in the browser using p5.js
-            </ShortenedBody>
+            </RegBody>
             <BigImage src={hands}/>
             <ItalicCaption> Reproductions of what the hand poses would look like to control Mario. From left to right: Start Pose, Jump Pose, No Pose </ItalicCaption>
 
             <GoToTop />
-        </ContentWrapper>
+        </Wrapper>
         
     )
 }

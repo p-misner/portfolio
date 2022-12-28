@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import ReactGA from 'react-ga';
 import {Link} from 'react-router-dom';
 
@@ -9,6 +8,8 @@ import {Link} from 'react-router-dom';
 import justacc from "../Projects/GeoViz.png"
 import rse from "../Projects/Test.png"
 import vr from "../Projects/SelfDrive.png"
+import wave from "../Projects/spiral.png"
+import wavehorizontal from "../Projects/wavehorizontal.png"
 
 import commuterFlow from "../Images/explorations/commuterflow.png";
 import usLegislation from "../Images/explorations/parttime.png";
@@ -16,11 +17,12 @@ import superMario from "../Images/explorations/supermario.png";
 import greenEggs from "../Images/explorations/greeneggs.png";
 import thirtyDay from "../Images/explorations/30day.png";
 
-import resume from "../Images/PriyaMisnerResume.pdf";
+import { LinkedInIcon, ObservableIcon, TwitterIcon } from '../Images/svgs/iconsSvg';
 
 import {TopSpacer, BottomSpacer, Wrapper, HeroBody,HeroText, ProjectWrapper, ContentWrapper, 
-    Image, HorizontalInfo, Column, RegBody, BoldBody, JobHeading, ItalicBody,ExplorationCard,
-     ExplorationImg, ExplorationText,ExplorationBody, HorizontalRow} from "./HomeStylesheet.js";
+    Image, HorizontalInfo, Column, RegBody, BoldBody, SmallCaps, ItalicBody,ExplorationCard,
+     ExplorationImg, ExplorationText,ExplorationBody, HorizontalRow, SectionHeading, IconRow, WaveImg} from "./HomeStylesheet.js";
+import { BoldedLink } from '../Explorations/DetailsStylesheet';
  
 
 
@@ -28,6 +30,7 @@ export const Home =()=>{
     ReactGA.pageview(window.location.pathname);
     return (
         <Wrapper>
+            <TopSpacer/>
             <Hero />
             <BigProject 
                 fillColor="#C5DBDF" 
@@ -43,7 +46,7 @@ export const Home =()=>{
                 fillColor="#E56F56"
                 direction={1}
                 header="Redesigning Results for Adaptive Assessments"
-                subheader="Information design communicating results of adaptive diagnostic math assessments aimed at identifying student skills gaps in math.  Created for Ready.Set.Excel, an educational nonprofit supporting students in the San Francisco Bay Area.  "
+                subheader="Information design communicating results of adaptive math assessments identifying gaps in math understanding.  Created for Ready.Set.Excel, a nonprofit supporting students in the SF Bay Area.  "
                 image={rse}
                 link="/rse"
                 projectdemo={{display:false}}
@@ -70,11 +73,15 @@ export const Home =()=>{
 const Hero = ()=>{
     return (
         <div>
-            <TopSpacer/>
-                <HeroText>Hi There.  I'm Priya. </HeroText>
-                <HeroBody>Creative Coder. Designer. Mechanical Engineer. 
-                I thrive at the intersection of design and technology. From coding geographic data maps to finding insights in datasets visually, I love taking dense data and turning it into something beautiful and meaningful. </HeroBody>
-                <HeroBody>Find me on the Internet:  </HeroBody>
+            <HeroText>Hi There.  I'm Priya. </HeroText>
+            <HeroBody>From coding geographic data maps to finding insights in datasets visually, I love taking dense data 
+            and turning it into something beautiful and meaningful. Currently at <BoldedLink><a href="">Gro Intelligence</a></BoldedLink> doing data visualization. </HeroBody>
+            <IconRow> 
+                <HeroBody>Find me on the Internet: </HeroBody> 
+                <a title="Checkout my Observable profile" src="https://www.linkedin.com/in/priyamisner/"><ObservableIcon /></a>
+                        <a title="Checkout my Twitter profile" src="https://www.linkedin.com/in/priyamisner/"><TwitterIcon /></a>
+                        <a title="Checkout my LinkedIn profile" src="https://www.linkedin.com/in/priyamisner/"><LinkedInIcon /></a>
+            </IconRow>
             <BottomSpacer id="work" />
             
         </div>
@@ -85,11 +92,12 @@ const BigProject = ({direction, fillColor,image, header, subheader,link, project
     return(
         <ProjectWrapper >
             <ContentWrapper>  
-                <h3>Case Study </h3>
+                <SmallCaps>Case Study </SmallCaps>
                 <h2>{header}</h2>
-                <p >{subheader}  </p>
+                <RegBody>{subheader}  </RegBody>
             </ContentWrapper>
-            <Image  image= {image} fillColor={fillColor}  />
+            <WaveImg imageVert={wave} imageHoriz={wavehorizontal} />
+            <Link to={link} ><Image  image= {image} fillColor={fillColor}  /></Link>
         </ProjectWrapper>
             
             
@@ -116,9 +124,8 @@ const ExplorationProject = ({fill,link, img, header, subheader, buttontext})=>{
 const Explorations = ()=>{
     return(
         <div>
-            <TopSpacer />
-            <h2 id="explorations"> Explorations</h2>
-            <HeroBody> Smaller scale projects and ideas I've been tinkering with </HeroBody>
+            <SectionHeading id="explorations"> Explorations</SectionHeading>
+            <ExplorationBody> Smaller scale projects and ideas I've been tinkering with </ExplorationBody>
             <HorizontalRow>
                 <ExplorationProject 
                     fill="#E8C370"
@@ -141,8 +148,8 @@ const Explorations = ()=>{
                     fill="#c6dbdf"
                     img={thirtyDay}
                     link={"./chartcollection"}
-                    header="Chart Collection"
-                    subheader="Graphs and charts created for Twitter's #30DayChartChallenge"
+                    header="2021 Chart Collection"
+                    subheader="Graphs and charts created for the Twitter 2021 #30DayChartChallenge"
                     buttontext="View Project"
                 />
                 <ExplorationProject 
@@ -170,11 +177,9 @@ const Explorations = ()=>{
 
 const Experience = ()=>{
     return(
-        <div>
-            <TopSpacer />
-               
-            <h2> Experience</h2>
-            <JobHeading position="first"> work and research</JobHeading>
+        <div>               
+            <SectionHeading> Experience</SectionHeading>
+            <SmallCaps position="first"> work and research</SmallCaps>
             <HorizontalInfo position="first">
                 <Column flexgrow="2">
                     <BoldBody>Data Visualization Developer</BoldBody>
@@ -229,7 +234,7 @@ const Experience = ()=>{
                 </Column>
             </HorizontalInfo>
             
-            <JobHeading > awards</JobHeading>
+            <SmallCaps > awards</SmallCaps>
             <HorizontalInfo position="first">
                 <Column flexgrow="2">
                     <BoldBody> 2020-21 Fulbright-Nehru Research Fellow</BoldBody>
@@ -241,7 +246,6 @@ const Experience = ()=>{
                 </Column>
             </HorizontalInfo>
 
-            <TopSpacer />
 
 
         </div>

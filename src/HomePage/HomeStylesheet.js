@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
+const heroTextMobile = '48px';
+const heroText = '72px';
+const subtitleTextMobile = '20px';
+const subtitleText = '24px';
 
-
-const heroTextMobile = '32px';
-const heroText = '48px';
-const subtitleTextMobile = '16px';
-const subtitleText = '18px';
-const headerText = "20px";
+const headerText = "24px";
 const headerTextWeight = "600"
 const heroMarginsMobile = '16px';
 const heroMargins= '32px';
@@ -15,7 +14,7 @@ const topSpace = '24px';
 const darkestBlue = "#082939";
 const tealBlue = "#3C8696";
 const borderRadius  = '8px';
-const tabletBreakpoint = '768px';
+const tabletBreakpoint = '760px';
 
 export const TopSpacer = styled.div`
     height:96px;
@@ -39,22 +38,34 @@ export const Wrapper = styled.div`
         margin: 0px auto;
       }
 `;
+
 export const HeroText = styled.h1`
     font-size: ${heroTextMobile};
-    line-height:38px;
+    line-height:48px;
+    margin-bottom:32px;
     @media (min-width: ${tabletBreakpoint}) {
         font-size: ${heroText};
+        margin-bottom:48px;
     }
    
 `;
+
 export const HeroBody = styled.p`
     margin-top:${topSpace};
+	margin-bottom: 24px;
     font-size: ${subtitleTextMobile};
-    line-height:24px;
+    line-height:28px;
     @media (min-width: ${tabletBreakpoint}) {
         font-size: ${subtitleText};
-        line-height:27px;
+        line-height:38px;
     }
+`;
+
+export const SectionHeading = styled.h2`
+    margin: 0px;
+    margin-top: 64px;
+    margin-bottom:8px;
+
 `;
 
 export const ProjectWrapper = styled.div`
@@ -63,60 +74,42 @@ export const ProjectWrapper = styled.div`
     background-color:#fff;
     border: 1px ${darkestBlue} solid;
     border-radius:${borderRadius};
-    margin: 0px 0px ${heroMarginsMobile} 0px;
+    margin: 0px auto ${heroMarginsMobile} auto;
+    // max-width: 600px;
     @media (min-width: ${tabletBreakpoint}) {
         margin: 0px 0px ${heroMargins}  0px;
         flex-direction: row-reverse;
+        max-width: none;
     }
 
 `;
 
 export const ContentWrapper = styled.div`
-    width: auto;
+    width:auto;
     display:flex;
     flex-direction:column;
     flex-flow:column;
     align-item:flex-start;
     justify-content:flex-end;
-    margin: 24px 16px;
-    
+    margin: 0px 16px;
+    z-index:8;
     h2{
-        font-size: ${headerText};
+        font-size:20px;
         font-weight: ${headerTextWeight};
         line-height: 30px;
-    }
-    h3 {
-        color: ${tealBlue};
-        text-transform: uppercase;
-        font-size: ${subtitleTextMobile};
-        font-weight: ${headerTextWeight};
-        margin-bottom: 8px;
-    }
-    p {
-        font-size: ${subtitleTextMobile}
+        margin-bottom:8px;
     }
     @media (min-width: ${tabletBreakpoint}) {
         justify-content:flex-start;
+        h2 {
+            font-size: ${headerText}; 
+        }
+
     }
 `;
     
-
-    
-
-// export const Image = styled.img`
-//     width: 35vw;
-//     height: auto;
-//     max-height:555px;
-//     order:${props => props.direction};
-//     @media (max-width: 767px){
-//         height:200px;
-//         margin-bottom: 24px;
-//         width:auto;
-//         order:-1;
-//     }
-// `;
 export const Image = styled.div`
-    height: 200px;
+    height:70vw;
     background:url(${props=> props.image});
     background-size: cover;
     background-position: center;
@@ -128,9 +121,25 @@ export const Image = styled.div`
         flex-shrink: 0;
         height: auto;
         margin: 0px;
-        border-right: 1px ${darkestBlue} solid;
+        // border-right: 1px ${darkestBlue} solid;
     }
+`;
 
+export const WaveImg = styled.div`
+    z-index:10;
+    background:url(${props=> props.imageHoriz});
+    background-size: contain;
+    background-position: center;
+    width:102px;
+    position: relative;
+    @media (min-width: ${tabletBreakpoint}) {
+        width:32px;
+        background:url(${props=> props.imageVert});
+        left: -7px;
+        background-repeat-x: no-repeat;
+
+    }
+    
 `;
 
 
@@ -164,11 +173,16 @@ export const Column = styled.div`
 
 export const RegBody = styled.p`
     font-weight:300;
-    margin-bottom: 0px;
+    margin-bottom: 8px;
     margin-top: 0px;
-    line-height:24px;
+    line-height:28px;
     font-size:16px;
+	@media (min-width: ${tabletBreakpoint}) {
+        font-size: 18px;
+        line-height:28px;
+    }
 `;
+
 export const ThinBody  = styled(RegBody)`
     font-weight:200;
 `;
@@ -176,10 +190,10 @@ export const BoldBody = styled(RegBody)`
     font-weight:400;
 `;
 
-export const JobHeading = styled.p`
+export const SmallCaps = styled.p`
     color: ${tealBlue};
     text-transform: uppercase;
-    font-size: ${subtitleTextMobile};
+    font-size: 16px;
     font-weight: ${headerTextWeight};
     margin-bottom: 8px;
 `;
@@ -221,8 +235,36 @@ export const HorizontalRow = styled.div`
     display: flex;
     flex-direction:row;
     justify-content:flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: nowrap;
     margin-top: ${props => props.position=="first" ? "0px" : "24px"};
     overflow-x: scroll;
+`;
+
+export const IconRow = styled.div`
+    display: flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items: baseline;
+    cursor: pointer;
+    svg:hover path {
+        fill:url(#grad1);
+    }
+    a:hover{
+        opacity:1;
+    }
+    svg {
+        height:24px;
+        width:24px;
+        margin-left:16px;
+
+    }
+
+    @media (min-width: ${tabletBreakpoint}) {
+        svg {
+            height:32px;
+            width:32px;
+            margin-left:24px;
+        }
+    }
 `;

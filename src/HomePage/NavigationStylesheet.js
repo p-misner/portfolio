@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
 export const NavWrapper = styled.nav`
-  background-color:#ffffff;
+  background-color:#fff;
   width:calc(100vw - 32px);
   position: fixed;
   z-index:10;
@@ -16,7 +16,7 @@ export const NavWrapper = styled.nav`
     width: calc(100vw - 64px);
   }
   @media (min-width: 1024px) {
-    width: 960px;
+    width: 968px;
   }
 `;
 
@@ -48,17 +48,30 @@ export const Logo = styled(Link)`
   text-decoration: none;
   font-size:18px;
   font-weight:500;
+  img {
+    height:16px;
+    width:16px;
+    margin-right:4px;
+  }
   @media (min-width: 768px) {
     margin-left: -24px;
-
   }
-  
+  text-decoration-style: wavy;
   
 `;
 
 export const ListItem = styled.li`
   margin: 0px 24px;
   cursor:pointer;
+  a{
+    text-decoration:none;
+  }
+  a:hover{
+    text-decoration:underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 2px;
+    opacity:1;
+  }
   
 `;
 
