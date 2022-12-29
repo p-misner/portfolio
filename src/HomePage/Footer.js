@@ -3,7 +3,7 @@ import { LinkedInIcon, ObservableIcon, TwitterIcon } from '../Images/svgs/iconsS
 import  BackgroundBlur from "../Images/BackgroundBlur.png";
 
 const darkestBlue = "#082939";
-const tabletBreakpoint = '700px';
+const tabletBreakpoint = '760px';
 
 const Row = styled.div`
     display: flex;
@@ -24,9 +24,9 @@ const HorizontalInfo = styled.div`
 
 const Wrapper = styled.div`
     width:auto;
-    margin:0px 16px;
+    margin:0px 32px;
     max-width: 968px;
-    @media (min-width: 768px) {
+    @media (min-width: ${tabletBreakpoint}) {
         margin: 0px 32px;
       }
     @media (min-width: 968px) {

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import squiggle from "../Images/squiggle.png";
 
 const heroTextMobile = '48px';
 const heroText = '72px';
@@ -75,8 +76,22 @@ export const ProjectWrapper = styled.div`
     border: 1px ${darkestBlue} solid;
     border-radius:${borderRadius};
     margin: 0px auto ${heroMarginsMobile} auto;
+
+    :hover {
+        box-shadow: 8px 8px ${darkestBlue};
+        margin-left:-4px;
+        margin-top:-4px;
+    }
+    
+        
+    
     // max-width: 600px;
     @media (min-width: ${tabletBreakpoint}) {
+        :hover {
+            box-shadow: 16px 16px ${darkestBlue};
+            margin-left:-8px;
+            margin-top:-8px;
+        }
         margin: 0px 0px ${heroMargins}  0px;
         flex-direction: row-reverse;
         max-width: none;
@@ -113,7 +128,7 @@ export const Image = styled.div`
     background:url(${props=> props.image});
     background-size: cover;
     background-position: center;
-    border-top: 1px ${darkestBlue} solid;
+    // border-top: 1px ${darkestBlue} solid;
     border-radius:${borderRadius};
     @media (min-width: ${tabletBreakpoint}) {
         width: 320px;
@@ -126,14 +141,17 @@ export const Image = styled.div`
 `;
 
 export const WaveImg = styled.div`
-    z-index:10;
+    position: relative;
     background:url(${props=> props.imageHoriz});
     background-size: contain;
     background-position: center;
-    width:102px;
-    position: relative;
+    width:100%;
+    height:7px;
+    top:3.5px;
     @media (min-width: ${tabletBreakpoint}) {
+
         width:32px;
+        height:auto;
         background:url(${props=> props.imageVert});
         left: -7px;
         background-repeat-x: no-repeat;
@@ -204,12 +222,25 @@ export const ItalicBody = styled(RegBody)`
 
 `;
 export const ExplorationCard = styled.div`
+    position:relative;
     height: 334px;
     border: 1px ${darkestBlue} solid;
     border-radius: 8px;
     width: 280px;
     margin-right:24px;
     flex-shrink:0;
+    :hover {
+        box-shadow: 8px 8px ${darkestBlue};
+        margin-left:-4px;
+        margin-top:-4px;
+    }
+    @media (min-width: ${tabletBreakpoint}) {
+        :hover {
+            box-shadow: 16px 16px ${darkestBlue};
+            margin-left:-8px;
+            margin-top:-8px;
+        }
+    }
 `;
 
 export const ExplorationImg =styled.img`
@@ -236,9 +267,12 @@ export const HorizontalRow = styled.div`
     flex-direction:row;
     justify-content:flex-start;
     align-items: center;
-    flex-wrap: nowrap;
-    margin-top: ${props => props.position=="first" ? "0px" : "24px"};
+    margin-top: ${props => props.position==="first" ? "0px" : "24px"};
+    padding-left:8px;
+    padding-bottom:16px;
+    padding-top:4px;
     overflow-x: scroll;
+    // background:red;
 `;
 
 export const IconRow = styled.div`
@@ -267,4 +301,14 @@ export const IconRow = styled.div`
             margin-left:24px;
         }
     }
+`;
+
+export const Squiggle = styled.div`
+    position: absolute;
+    top:100px;
+    left:8px;
+    width:95%;
+    height:235px;
+    background-size:cover;
+    background-image: url(${squiggle})
 `;

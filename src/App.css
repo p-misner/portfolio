@@ -1,3 +1,11 @@
 .App {
   text-align: center;
+  
+}
+
+::selection {
+  /* Change highlight background color */
+  background: #082939;
+  /* Change highlight text color  */
+  color: #fff;
 }

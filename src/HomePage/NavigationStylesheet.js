@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
+const darkestBlue = "#082939";
+
 export const NavWrapper = styled.nav`
   background-color:#fff;
   width:calc(100vw - 32px);
@@ -52,6 +54,8 @@ export const Logo = styled(Link)`
     height:16px;
     width:16px;
     margin-right:4px;
+    border: 1px solid ${darkestBlue};
+    border-radius:2px;
   }
   @media (min-width: 768px) {
     margin-left: -24px;

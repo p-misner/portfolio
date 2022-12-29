@@ -25,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
         margin:0px;
         
       }
-      a:hover{
-        opacity:0.5
+      a{
+        text-decoration:none;
       }
       a:visited, a {
         color:#082939;
@@ -50,7 +50,6 @@ const GlobalStyle = createGlobalStyle`
           font-size: 32px;
           line-height:40px;
         }
-        
         
       }
       h3 {

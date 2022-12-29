@@ -12,16 +12,20 @@ import wave from "../Projects/spiral.png"
 import wavehorizontal from "../Projects/wavehorizontal.png"
 
 import commuterFlow from "../Images/explorations/commuterflow.png";
-import usLegislation from "../Images/explorations/parttime.png";
+import statesoils from "../Images/explorations/statesoils.png";
 import superMario from "../Images/explorations/supermario.png";
 import greenEggs from "../Images/explorations/greeneggs.png";
 import thirtyDay from "../Images/explorations/30day.png";
+import charts2022 from "../Images/explorations/2022charts.png";
+import senators from "../Images/explorations/senators.png";
+import goldenyears from "../Images/explorations/goldenyears.jpg";
+import sage from "../Images/explorations/sageacademy.png";
 
 import { LinkedInIcon, ObservableIcon, TwitterIcon } from '../Images/svgs/iconsSvg';
 
 import {TopSpacer, BottomSpacer, Wrapper, HeroBody,HeroText, ProjectWrapper, ContentWrapper, 
     Image, HorizontalInfo, Column, RegBody, BoldBody, SmallCaps, ItalicBody,ExplorationCard,
-     ExplorationImg, ExplorationText,ExplorationBody, HorizontalRow, SectionHeading, IconRow, WaveImg} from "./HomeStylesheet.js";
+     ExplorationImg, ExplorationText,ExplorationBody, HorizontalRow, SectionHeading, IconRow, WaveImg, Squiggle} from "./HomeStylesheet.js";
 import { BoldedLink } from '../Explorations/DetailsStylesheet';
  
 
@@ -78,9 +82,9 @@ const Hero = ()=>{
             and turning it into something beautiful and meaningful. Currently at <BoldedLink><a href="">Gro Intelligence</a></BoldedLink> doing data visualization. </HeroBody>
             <IconRow> 
                 <HeroBody>Find me on the Internet: </HeroBody> 
-                <a title="Checkout my Observable profile" src="https://www.linkedin.com/in/priyamisner/"><ObservableIcon /></a>
-                        <a title="Checkout my Twitter profile" src="https://www.linkedin.com/in/priyamisner/"><TwitterIcon /></a>
-                        <a title="Checkout my LinkedIn profile" src="https://www.linkedin.com/in/priyamisner/"><LinkedInIcon /></a>
+                    <a title="View my Observable profile" src="https://www.linkedin.com/in/priyamisner/"><ObservableIcon /></a>
+                    <a title="View my Twitter profile" src="https://www.linkedin.com/in/priyamisner/"><TwitterIcon /></a>
+                    <a title="View my LinkedIn profile" src="https://www.linkedin.com/in/priyamisner/"><LinkedInIcon /></a>
             </IconRow>
             <BottomSpacer id="work" />
             
@@ -90,33 +94,51 @@ const Hero = ()=>{
 
 const BigProject = ({direction, fillColor,image, header, subheader,link, projectdemo })=>{
     return(
-        <ProjectWrapper >
-            <ContentWrapper>  
-                <SmallCaps>Case Study </SmallCaps>
-                <h2>{header}</h2>
-                <RegBody>{subheader}  </RegBody>
-            </ContentWrapper>
-            <WaveImg imageVert={wave} imageHoriz={wavehorizontal} />
-            <Link to={link} ><Image  image= {image} fillColor={fillColor}  /></Link>
-        </ProjectWrapper>
-            
+        <Link to={link} >
+            <ProjectWrapper >
+                <ContentWrapper>  
+                    <SmallCaps>Case Study </SmallCaps>
+                    <h2>{header}</h2>
+                    <RegBody>{subheader}  </RegBody>
+                </ContentWrapper>
+                <WaveImg imageVert={wave} imageHoriz={wavehorizontal} />
+                <Image  image= {image} fillColor={fillColor}  />
+            </ProjectWrapper>
+            </Link>
             
     );
 }
 
-const ExplorationProject = ({fill,link, img, header, subheader, buttontext})=>{
+const ExplorationProject = ({fill,link, img, header, subheader, design})=>{
+    if (link.includes("http") ){
+
+
     return(
-        
+        <a href={link} target="_blank" rel="noopener noreferrer" >
             <ExplorationCard fill={fill}>
+            {design === "one" ? <Squiggle /> :null}
+
                 <ExplorationText>
                     <h3> {header}</h3>
                     <ExplorationBody> {subheader}</ExplorationBody>
-                    {/* <ExplorationLink to={link}>{buttontext}</ExplorationLink> */}
                 </ExplorationText>
-                <Link to={link} ><ExplorationImg src={img}/></Link>
+                <ExplorationImg src={img}/>
             </ExplorationCard>
-        
+            </a>
+        )
+    }
 
+    return(
+    <Link to={link} >
+        <ExplorationCard fill={fill}>
+        {design === "one" ? <Squiggle /> : null}
+            <ExplorationText>
+                <h3> {header}</h3>
+                <ExplorationBody> {subheader}</ExplorationBody>
+            </ExplorationText>
+            <ExplorationImg src={img}/>
+        </ExplorationCard>
+        </Link>
     )
 }
 
@@ -127,6 +149,57 @@ const Explorations = ()=>{
             <SectionHeading id="explorations"> Explorations</SectionHeading>
             <ExplorationBody> Smaller scale projects and ideas I've been tinkering with </ExplorationBody>
             <HorizontalRow>
+                <ExplorationProject 
+                    fill="#c6dbdf"
+                    img={goldenyears}
+                    link={"https://observablehq.com/d/48357752cbe8c36b"}
+                    header="Golden Years"
+                    subheader="An interactive calendar + scrapbook of the dogs my family has fostered"
+                    buttontext="View Project"
+                />
+                <ExplorationProject 
+                    fill="#c6dbdf"
+                    img={senators}
+                    link={"https://observablehq.com/d/48357752cbe8c36b"}
+                    header="How Many Senators Are Older Than..."
+                    subheader="Exploring d3.js' force and the wikipedia api  "
+                    buttontext="View Project"
+                />
+                <ExplorationProject 
+                    fill="#c6dbdf"
+                    img={charts2022}
+                    link={"https://observablehq.com/@pmisner/reflections-on-2022s-30-day-chart-challenge?collection=@pmisner/2022-thirty-day-chart-challenge"}
+                    header="2022 Chart Collection"
+                    subheader="Graphs and charts created for the Twitter 2022 #30DayChartChallenge"
+                    buttontext="View Project"
+                />
+                <ExplorationProject 
+                    fill="#c6dbdf"
+                    img={statesoils}
+                    link={"https://observablehq.com/@pmisner/state-soils?collection=@pmisner/soil"}
+                    header="Soil Colors"
+                    subheader="A dive into the Munsell color system and the 50 state's official soils"
+                    buttontext="View Project"
+                    design="one"
+
+                />
+                <ExplorationProject 
+                    fill="#c6dbdf"
+                    img={thirtyDay}
+                    link={"./chartcollection"}
+                    header="2021 Chart Collection"
+                    subheader="Graphs and charts created for the Twitter 2021 #30DayChartChallenge"
+                    buttontext="View Project"
+                />
+                <ExplorationProject 
+                    fill="#E8C370"
+                    img={sage}
+                    link={"https://p-misner.github.io/SageAcademy/index.html"}
+                    header="Sage Academy"
+                    subheader="Designed a course in 3D Printing and electronics for middle schoolers"
+                    buttontext="View Project"
+
+                />
                 <ExplorationProject 
                     fill="#E8C370"
                     img={commuterFlow}
@@ -144,27 +217,10 @@ const Explorations = ()=>{
                     subheader="Using machine learning and LEGO Mindstorms to play Super Mario irl"
                     buttontext="View Project"
                 />
-                 <ExplorationProject 
-                    fill="#c6dbdf"
-                    img={thirtyDay}
-                    link={"./chartcollection"}
-                    header="2021 Chart Collection"
-                    subheader="Graphs and charts created for the Twitter 2021 #30DayChartChallenge"
-                    buttontext="View Project"
-                />
-                <ExplorationProject 
-                    fill="#E8C370"
-                    img={usLegislation}
-                    link={"#"}
-                    header="State Legislative Calendars"
-                    subheader="d3.js visualization of legislative schedules "
-                    buttontext="Coming Soon"
-                />
-               
                 <ExplorationProject 
                     fill="#F2A267" 
                     img={greenEggs}
-                    link={"#"}
+                    link={"https://observablehq.com/@pmisner/green-eggs-and-ham"}
                     header="Green Eggs and Ham"
                     subheader="A collapsible tree of the fifty words Dr. Seuss' used to write the book"
                     buttontext="Coming Soon"
