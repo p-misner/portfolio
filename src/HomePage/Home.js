@@ -162,7 +162,7 @@ const Explorations = ()=>{
                     img={senators}
                     link={"https://observablehq.com/d/48357752cbe8c36b"}
                     header="How Many Senators Are Older Than..."
-                    subheader="Exploring d3.js' force and the wikipedia api  "
+                    subheader="Exploring d3.js' force and the wikipedia api"
                     buttontext="View Project"
                 />
                 <ExplorationProject 
