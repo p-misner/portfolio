@@ -149,14 +149,14 @@ const Explorations = ()=>{
             <SectionHeading id="explorations"> Explorations</SectionHeading>
             <ExplorationBody> Smaller scale projects and ideas I've been tinkering with </ExplorationBody>
             <HorizontalRow>
-                <ExplorationProject 
+                {/* <ExplorationProject 
                     fill="#c6dbdf"
                     img={goldenyears}
                     link={"https://observablehq.com/d/48357752cbe8c36b"}
                     header="Golden Years"
                     subheader="An interactive calendar + scrapbook of the dogs my family has fostered"
                     buttontext="View Project"
-                />
+                /> */}
                 <ExplorationProject 
                     fill="#c6dbdf"
                     img={senators}
