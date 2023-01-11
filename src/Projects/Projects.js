@@ -3,26 +3,26 @@ import styled from 'styled-components';
 import ReactGA from 'react-ga';
 import GoToTop from './GoToTop';
 
-import justaccBig from '../Images/justacc_multiple.png';
-import justaccDataDort from '../Images/GeoViz_datadetails.png';
-import justaccWireframe from '../Images/PrototypeProcessBlue.jpeg';
-import raceMapGif from '../Images/JustAccGif.gif';
-import accIndexGif from '../Images/AccIndexGif.gif';
-import lineGraphGif from '../Images/LineGraphsGif.gif';
+import justaccBig from '../Images/projects/geoviz/justacc_multiple.png';
+import justaccDataDort from '../Images/projects/geoviz/GeoViz_datadetails.png';
+import justaccWireframe from '../Images/projects/geoviz/PrototypeProcessBlue.jpeg';
+import raceMapGif from '../Images/projects/geoviz/JustAccGif.gif';
+import accIndexGif from '../Images/projects/geoviz/AccIndexGif.gif';
+import lineGraphGif from '../Images/projects/geoviz/LineGraphsGif.gif';
 
-import rseBig from '../Images/rse_multiplescreens.png';
-import rseSiteAnalysis from '../Images/rse_siteflow.png';
-import rseOrigGraphs from '../Images/rse_originalgraphs.png';
-import rseHierarchy from '../Images/rse_hierarchy.png';
-import rseOriginal from '../Images/rse_original.png';
-import rseVersion2 from '../Images/rse_version2.png';
-import rseVersion3 from '../Images/rse_version3.png';
-import rseVersion4 from '../Images/rse_version4.png';
-import rseVersion5 from '../Images/rse_version5.png';
-import rseVersion6 from '../Images/rse_version6.png';
-import rseTableFinalMore from '../Images/rse_moretables.png';
-import rseTableColor from '../Images/rse_tablecolors.png';
-import rseTableStyle from '../Images/rse_tablestyleguide.png';
+import rseBig from '../Images/projects/rse/rse_multiplescreens.png';
+import rseSiteAnalysis from '../Images/projects/rse/rse_siteflow.png';
+import rseOrigGraphs from '../Images/projects/rse/rse_originalgraphs.png';
+import rseHierarchy from '../Images/projects/rse/rse_hierarchy.png';
+import rseOriginal from '../Images/projects/rse/rse_original.png';
+import rseVersion2 from '../Images/projects/rse/rse_version2.png';
+import rseVersion3 from '../Images/projects/rse/rse_version3.png';
+import rseVersion4 from '../Images/projects/rse/rse_version4.png';
+import rseVersion5 from '../Images/projects/rse/rse_version5.png';
+import rseVersion6 from '../Images/projects/rse/rse_version6.png';
+import rseTableFinalMore from '../Images/projects/rse/rse_moretables.png';
+import rseTableColor from '../Images/projects/rse/rse_tablecolors.png';
+import rseTableStyle from '../Images/projects/rse/rse_tablestyleguide.png';
 
 import xaxisGif from '../Images/gro/xaxis_resize.gif';
 import chartDS from '../Images/gro/ChartDS_Gro.png';
@@ -37,13 +37,11 @@ import {
   RegBody,
   BoldedLink,
   UnboldedLink,
-  Video,
   RoleColumn,
   BulletList,
   BulletListItem,
   ItalicCaption,
   ItalicBody,
-  tabletBreakpoint,
 } from '../Explorations/DetailsStylesheet.js';
 
 const Column = styled.div`
@@ -87,26 +85,16 @@ export const Project_JustAcc = () => {
         An interactive data dashboard built under{' '}
         <BoldedLink>
           <a
-            href="https://sites.google.com/view/shan-jiang/publications"
+            href="https://as.tufts.edu/uep/people/faculty/shan-jiang"
             target="_blank"
             rel="noreferrer noopener"
           >
             Dr. Shan Jiang
           </a>
         </BoldedLink>{' '}
-        at Tufts University's{' '}
-        <BoldedLink>
-          <a
-            href="https://as.tufts.edu/uep/people/faculty/shan-jiang"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            UrbanismX Research Group
-          </a>
-        </BoldedLink>
-        . This visualization explores how Covid-19 impacted accessibility to
-        food, grocery and health services in the United States's top twenty-five
-        metropolitan areas.
+        at Tufts University's UrbanismX Research Group . This visualization
+        explores how Covid-19 impacted accessibility to food, grocery and health
+        services in the United States's top twenty-five metropolitan areas.
       </HeroBody>
       <BigImage src={justaccBig} />
 

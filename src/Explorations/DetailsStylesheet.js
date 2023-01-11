@@ -140,7 +140,7 @@ export const HalfSpacer = styled.div`
 export const BoldedLink = styled.span`
   font-weight: 500;
   cursor: pointer;
-  color: #30a1ba;
+  // color: #30a1ba;
   a {
     text-decoration: none;
     color: #30a1ba;
@@ -154,8 +154,6 @@ export const BoldedLink = styled.span`
       #ffa534 67.19%,
       #f48667 96.87%
     );
-    background-clip: text;
-    color: transparent;
 
     background: -webkit-linear-gradient(
       0deg,
@@ -165,9 +163,10 @@ export const BoldedLink = styled.span`
       #ffa534 67.19%,
       #f48667 96.87%
     );
+    background-clip: text;
+    color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     text-decoration: underline;
     text-decoration-color: ${darkestBlue};
     opacity: 1;

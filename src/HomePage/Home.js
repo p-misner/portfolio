@@ -276,6 +276,7 @@ const Explorations = () => {
           header="Sage Academy"
           subheader="Designed a course in 3D Printing and electronics for middle schoolers"
           buttontext="View Project"
+          design="one"
         />
         <ExplorationProject
           fill="#E8C370"
@@ -392,8 +393,8 @@ const Experience = () => {
       </HorizontalInfo>
       <HorizontalInfo>
         <Column flexgrow="2">
-          <BoldBody> Intern</BoldBody>
-          <RegBody>Autonomous Marine Systems </RegBody>
+          <BoldBody> Autonomous Marine Systems</BoldBody>
+          <RegBody> Intern</RegBody>
           <ItalicBody>February 2018 - May 2018</ItalicBody>
         </Column>
 
