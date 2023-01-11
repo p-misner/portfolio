@@ -1,15 +1,21 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import ReactGA from 'react-ga';
 
-import {NavBar} from "./HomePage/Navigation";
-import {Footer} from "./HomePage/Footer";
-import {Home} from "./HomePage/Home";
-import {NetworkFlow} from "./Explorations/networkFlow";
-import {PandemicMario} from "./Explorations/PandemicMario";
-import {ChartCollection} from "./Explorations/ChartCollection";
-import {Project_VRDriving, Project_RSE, Project_JustAcc} from './Projects/Project_JustAcc.js';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import styled, { createGlobalStyle } from "styled-components"
+import { NavBar } from './HomePage/Navigation';
+import { Footer } from './HomePage/Footer';
+import { Home } from './HomePage/Home';
+import { NetworkFlow } from './Explorations/networkFlow';
+import { PandemicMario } from './Explorations/PandemicMario';
+import { ChartCollection } from './Explorations/ChartCollection';
+import { LowCostSim } from './Explorations/LowCostSim';
+import { PedCrossingSim } from './Explorations/PedCrossingSim';
+import {
+  Project_VRDriving,
+  Project_RSE,
+  Project_JustAcc,
+} from './Projects/Projects.js';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import styled, { createGlobalStyle } from 'styled-components';
 import './App.css';
 
 ReactGA.initialize('UA-205070821-1', {
@@ -72,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
         margin-top:24px;
         background-color: #082939;
         border:  2px solid #082939;
-        color: ${props=> props.inputColor || "white"};
+        color: ${(props) => props.inputColor || 'white'};
         padding: 12px 24px;
         cursor: pointer;
       }
@@ -86,36 +92,31 @@ const GlobalStyle = createGlobalStyle`
       }
   `;
 
-  const Content = styled.div`
-    overflow-x:hidden;
-  `;
-
-
+const Content = styled.div`
+  overflow-x: hidden;
+`;
 
 function App() {
- 
-
-
   return (
     <Content>
       <Router>
         <NavBar />
-         
+
         <Route path="/" exact component={Home} />
-        <Route path="/justaccessibility"  component={Project_JustAcc} />
-        <Route path="/rse"  component={Project_RSE} />
-        <Route path="/vrdriving"  component={Project_VRDriving} />
-        <Route path="/networkflow"  component={NetworkFlow} />
-        <Route path="/pandemicmario"  component={PandemicMario} />
-        <Route path="/chartcollection"  component={ChartCollection} />
+        <Route path="/justaccessibility" component={Project_JustAcc} />
+        <Route path="/rse" component={Project_RSE} />
+        <Route path="/grointelligence" component={Project_VRDriving} />
+        <Route path="/networkflow" component={NetworkFlow} />
+        <Route path="/pandemicmario" component={PandemicMario} />
+        <Route path="/chartcollection" component={ChartCollection} />
+        <Route path="/lowcostsim" component={LowCostSim} />
+        <Route path="/pedcrossingsim" component={PedCrossingSim} />
 
         <Footer />
       </Router>
       <GlobalStyle />
-
     </Content>
   );
 }
-
 
 export default App;
