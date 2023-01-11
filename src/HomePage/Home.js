@@ -361,7 +361,7 @@ const Experience = () => {
         <Column flexgrow="2">
           <BoldBody>Ready.Set.Excel.</BoldBody>
           <RegBody> Data Visualization Designer</RegBody>
-          <ItalicBody>Dec 2020-Jul 2022</ItalicBody>
+          <ItalicBody>Dec 2020-Jul 2021</ItalicBody>
         </Column>
 
         <Column flexgrow="5" className="descrip">
