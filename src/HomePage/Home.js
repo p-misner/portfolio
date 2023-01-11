@@ -332,7 +332,7 @@ const Experience = () => {
         <Column flexgrow="2">
           <BoldBody>Gro Intelligence</BoldBody>
           <RegBody> Data Visualization Specialist</RegBody>
-          <ItalicBody>Aug 2020-present</ItalicBody>
+          <ItalicBody>Aug 2021-present</ItalicBody>
         </Column>
 
         <Column flexgrow="5" className="descrip">
@@ -347,7 +347,7 @@ const Experience = () => {
         <Column flexgrow="2">
           <BoldBody>UrbanismX Research Group</BoldBody>
           <RegBody>Data Visualization Developer </RegBody>
-          <ItalicBody>Oct 2019-Aug 2020</ItalicBody>
+          <ItalicBody>Oct 2019-Aug 2021</ItalicBody>
         </Column>
 
         <Column flexgrow="5" className="descrip">
@@ -361,7 +361,7 @@ const Experience = () => {
         <Column flexgrow="2">
           <BoldBody>Ready.Set.Excel.</BoldBody>
           <RegBody> Data Visualization Designer</RegBody>
-          <ItalicBody>Dec 2020-Jul 2020</ItalicBody>
+          <ItalicBody>Dec 2020-Jul 2022</ItalicBody>
         </Column>
 
         <Column flexgrow="5" className="descrip">
