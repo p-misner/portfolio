@@ -20,6 +20,7 @@ import thirtyDay from '../Images/explorations/30day.png';
 import charts2022 from '../Images/explorations/2022charts.png';
 import senators from '../Images/explorations/senators.png';
 import goldenyears from '../Images/explorations/goldenyears.jpg';
+import worldofdata from '../Images/explorations/worldofdata.png';
 import sage from '../Images/explorations/sageacademy.png';
 import pedcrossing from '../Images/vr/users.png';
 
@@ -70,10 +71,10 @@ export const Home = () => {
         image={grointel}
         link="/grointelligence"
         projectdemo={{
-          display: true,
-          link: 'https://justaccessibility.herokuapp.com',
+          display: false,
         }}
       />
+
       <BigProject
         fillColor="#C5DBDF"
         direction={-1}
@@ -220,18 +221,26 @@ const Explorations = () => {
       <SectionHeading id="explorations"> Explorations</SectionHeading>
       <ExplorationBody>
         {' '}
-        Smaller scale projects and ideas I've been tinkering with{' '}
+        Personal work, smaller scale projects and fun ideas I've been tinkering
+        with{' '}
       </ExplorationBody>
       <HorizontalRow>
-        {/* <ExplorationProject 
-                    fill="#c6dbdf"
-                    img={goldenyears}
-                    link={"https://observablehq.com/d/48357752cbe8c36b"}
-                    header="Golden Years"
-                    subheader="An interactive calendar + scrapbook of the dogs my family has fostered"
-                    buttontext="View Project"
-                /> */}
-
+        <ExplorationProject
+          fill="#c6dbdf"
+          img={worldofdata}
+          link={'https://p-misner.github.io/wdvp/'}
+          header="A World of Data"
+          subheader="Data storytelling and web dashboard for understanding world health"
+          buttontext="View Project"
+        />
+        <ExplorationProject
+          fill="#c6dbdf"
+          img={goldenyears}
+          link={'https://goldenyearsapp.herokuapp.com/'}
+          header="Golden Years"
+          subheader="An interactive calendar in React + d3js of the dogs my family has fostered"
+          buttontext="View Project"
+        />
         <ExplorationProject
           fill="#c6dbdf"
           img={senators}
@@ -269,7 +278,7 @@ const Explorations = () => {
           subheader="Graphs and charts created for the Twitter 2021 #30DayChartChallenge"
           buttontext="View Project"
         />
-        <ExplorationProject
+        {/* <ExplorationProject
           fill="#E8C370"
           img={sage}
           link={'https://p-misner.github.io/SageAcademy/index.html'}
@@ -277,7 +286,7 @@ const Explorations = () => {
           subheader="Designed a course in 3D Printing and electronics for middle schoolers"
           buttontext="View Project"
           design="one"
-        />
+        /> */}
         <ExplorationProject
           fill="#E8C370"
           img={commuterFlow}
@@ -310,7 +319,6 @@ const Explorations = () => {
           subheader="Simulating the experience of crossing the road "
           buttontext="View Project"
         />
-
         <ExplorationProject
           fill="#F2A267"
           img={greenEggs}

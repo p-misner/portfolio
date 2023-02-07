@@ -27,6 +27,7 @@ import rseTableStyle from '../Images/projects/rse/rse_tablestyleguide.png';
 import xaxisGif from '../Images/gro/xaxis_resize.gif';
 import chartDS from '../Images/gro/ChartDS_Gro.png';
 import bespoke from '../Images/gro/BespokeCharts.png';
+import dashboard from '../Images/gro/narrow_dashboard.png';
 
 import {
   Wrapper,
@@ -672,11 +673,38 @@ export const Project_VRDriving = () => {
       {/* <BigImage src={airsimcover} /> */}
       <ItalicCaption>
         {' '}
-        Note: As much of my work at Gro deal with proprietary data, the images
-        and content presented may have been adjusted to protect confidentiality.
-        To learn more, feel free to reach out- happy to chat.
+        Note: As much of my work at Gro deals with proprietary data, the images
+        and content presented have been adjusted or changed to protect
+        confidentiality.
       </ItalicCaption>
-      <h2>Beyond Graphs: Dashboards with Insight</h2>
+      <h2>Beyond Dashboards: Effective Information Design</h2>
+      <TwoRow>
+        <LeftHandSide>
+          <BigImage src={dashboard} />
+        </LeftHandSide>
+        <RightHandSide>
+          <RegBody>
+            When handling a large volume of data, simply visualizing the
+            information in chart form is no longer enough. Helping users
+            understand what to look at (and when!) becomes just as important as
+            having access to the raw data. In this spirit, I led an effort to
+            redesign how Gro presents it's data. Rather than seeing all the data
+            at once, the new layout begins with a summarized overview at the top
+            level and let user dig into the details as necessary.
+          </RegBody>
+          <RegBody>
+            Further, when communicating technical information to an audience
+            with a wide range of understanding, helping users understand and
+            evaluate the data they are seeing is key to demonstrating value. To
+            that end, I worked a lot on designing visualizations specific type
+            of data: aka pricing, weather data, climate projections, etc. By
+            moving away from a one template fits all approach, I was able to
+            limit the amount of explanatory text on a chart while increasing
+            user understanding of the data they were seeing.
+          </RegBody>
+        </RightHandSide>
+      </TwoRow>
+
       <h2>Chart Design System</h2>
       <TwoRow>
         <LeftHandSide>
