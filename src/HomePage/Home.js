@@ -270,14 +270,14 @@ const Explorations = () => {
           buttontext="View Project"
           design="one"
         />
-        <ExplorationProject
+        {/* <ExplorationProject
           fill="#c6dbdf"
           img={thirtyDay}
           link={'./chartcollection'}
           header="2021 Chart Collection"
           subheader="Graphs and charts created for the Twitter 2021 #30DayChartChallenge"
           buttontext="View Project"
-        />
+        /> */}
         {/* <ExplorationProject
           fill="#E8C370"
           img={sage}

@@ -14,7 +14,7 @@ import {
   Project_RSE,
   Project_JustAcc,
 } from './Projects/Projects.js';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import './App.css';
 
@@ -101,14 +101,12 @@ function App() {
     <Content>
       <Router>
         <NavBar />
-
         <Route path="/" exact component={Home} />
         <Route path="/justaccessibility" component={Project_JustAcc} />
         <Route path="/rse" component={Project_RSE} />
         <Route path="/grointelligence" component={Project_VRDriving} />
         <Route path="/networkflow" component={NetworkFlow} />
         <Route path="/pandemicmario" component={PandemicMario} />
-        <Route path="/chartcollection" component={ChartCollection} />
         <Route path="/lowcostsim" component={LowCostSim} />
         <Route path="/pedcrossingsim" component={PedCrossingSim} />
 
