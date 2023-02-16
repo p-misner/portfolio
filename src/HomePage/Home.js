@@ -177,7 +177,7 @@ const BigProject = ({
           <h2>{header}</h2>
           <RegBody>{subheader} </RegBody>
         </ContentWrapper>
-        <WaveImg imageVert={wave} imageHoriz={wavehorizontal} />
+        {/* <WaveImg imageVert={wave} imageHoriz={wavehorizontal} /> */}
         <Image image={image} fillColor={fillColor} />
       </ProjectWrapper>
     </Link>
