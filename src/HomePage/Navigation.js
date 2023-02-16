@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import styled from 'styled-components';
 import {
   NavWrapper,
@@ -27,9 +27,9 @@ export function NavBar() {
       <NavListRight>
         {/* <ListItem><StyledLink to="/">experience</StyledLink></ListItem> */}
         <ListItem>
-          <a href="/#work">
+        <Link to="/#work">
             <Label>work</Label>
-          </a>
+          </Link>
           {/* <Card 
               label="work ⤸" 
               items={
@@ -42,9 +42,9 @@ export function NavBar() {
             /> */}
         </ListItem>
         <ListItem>
-          <a href="/#explorations">
+        <Link to="/#explorations">
             <Label>explorations</Label>
-          </a>
+          </Link>
           {/* <Card 
               label="explorations ⤸" 
               items={

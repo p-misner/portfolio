@@ -14,7 +14,7 @@ import {
   Project_RSE,
   Project_JustAcc,
 } from './Projects/Projects.js';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import './App.css';
 
