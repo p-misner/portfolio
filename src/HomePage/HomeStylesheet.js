@@ -1,21 +1,21 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import squiggle from '../Images/squiggle.png';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import squiggle from "../Images/squiggle.png";
 
-const heroTextMobile = '48px';
-const heroText = '72px';
-const subtitleTextMobile = '20px';
-const subtitleText = '24px';
+const heroTextMobile = "48px";
+const heroText = "72px";
+const subtitleTextMobile = "20px";
+const subtitleText = "24px";
 
-const headerText = '24px';
-const headerTextWeight = '600';
-const heroMarginsMobile = '16px';
-const heroMargins = '32px';
-const topSpace = '24px';
-const darkestBlue = '#082939';
-const tealBlue = '#3C8696';
-const borderRadius = '8px';
-const tabletBreakpoint = '760px';
+const headerText = "24px";
+const headerTextWeight = "600";
+const heroMarginsMobile = "16px";
+const heroMargins = "32px";
+const topSpace = "24px";
+const darkestBlue = "#082939";
+const tealBlue = "#3C8696";
+const borderRadius = "8px";
+const tabletBreakpoint = "760px";
 
 export const TopSpacer = styled.div`
   height: 96px;
@@ -158,7 +158,7 @@ export const HorizontalInfo = styled.div`
   align-items: flex-start;
   margin: 0 auto;
   flex-wrap: wrap;
-  margin-top: ${(props) => (props.position == 'first' ? '0px' : '24px')};
+  margin-top: ${(props) => (props.position == "first" ? "0px" : "24px")};
   @media (min-width: ${tabletBreakpoint}) {
     flex-direction: row;
   }
@@ -181,6 +181,10 @@ export const RegBody = styled.p`
   @media (min-width: ${tabletBreakpoint}) {
     font-size: 18px;
     line-height: 28px;
+  }
+
+  a {
+    text-decoration: underline;
   }
 `;
 
@@ -249,7 +253,7 @@ export const HorizontalRow = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-top: ${(props) => (props.position === 'first' ? '0px' : '24px')};
+  margin-top: ${(props) => (props.position === "first" ? "0px" : "24px")};
   padding-left: 8px;
   padding-bottom: 16px;
   padding-top: 4px;
