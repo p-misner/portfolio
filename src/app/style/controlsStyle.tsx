@@ -1,6 +1,10 @@
 "use client";
 import styled from "styled-components";
-import { CoreColorInput, DarkOverlay_80 } from "./styleConstants";
+import {
+  CoreColorInput,
+  DarkOverlay_80,
+  LightOverlay_97,
+} from "./styleConstants";
 import { ColorMixer } from "../utils/utils";
 
 export const SettingsButton = styled.button<CoreColorInput>`
@@ -13,6 +17,12 @@ export const SettingsButton = styled.button<CoreColorInput>`
       })};
   width: 24px;
   height: 24px;
+  background-color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: LightOverlay_97,
+      returnFormat: "rgba",
+    })};
 `;
 
 export const ControlPanelWrapper = styled.div`
@@ -46,11 +56,11 @@ export const Hue = styled.div<CoreColorInput>`
       })};
   background: linear-gradient(
     to bottom,
-    hsl(60, 100%, 50%),
-    hsl(120, 100%, 50%),
-    hsl(180, 100%, 50%),
-    hsl(240, 100%, 50%),
-    hsl(300, 100%, 50%)
+    hsl(60, 80%, 50%),
+    hsl(120, 80%, 50%),
+    hsl(180, 80%, 50%),
+    hsl(240, 80%, 50%),
+    hsl(300, 80%, 50%)
   );
   display: flex;
   align-items: center;

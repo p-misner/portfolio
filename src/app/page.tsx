@@ -20,6 +20,7 @@ export default function Home() {
     <div>
       <ControlPanelWrapper>
         <Settings color={colorPicked} />
+        <Settings color={colorPicked} />
         <ColorPickerComponent
           setColorPicked={setColorPicked}
           colorPicked={colorPicked}

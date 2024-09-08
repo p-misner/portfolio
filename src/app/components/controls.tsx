@@ -27,7 +27,7 @@ export default function ColorPickerComponent({
   const hueSelectorRef = useRef<any>();
   const isDown = useRef<boolean>(false);
   const mousePosition = useRef<any>();
-  const setSaturation = 100;
+  const setSaturation = 80;
   const setLightness = 50;
   const MAX_HUE = 240; // hue range
   const MIN_HUE = 60;
