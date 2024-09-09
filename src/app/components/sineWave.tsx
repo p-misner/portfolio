@@ -40,6 +40,7 @@ export function CanvasWave({ color }: CoreColorInput) {
     x: 0,
     y: svgDim.h / 2,
   };
+  let hi = "ho";
   let a1 = 0.25;
   let a2 = 0.5;
   let nw1 = 4;
