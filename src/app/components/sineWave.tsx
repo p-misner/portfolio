@@ -1,13 +1,18 @@
-import { useEffect, useRef } from "react";
+"use client";
+import { useEffect, useRef, useState } from "react";
 import { FullWidthWrapper } from "../style/gridLayout";
 import {
+  Axis,
   HeroSubtitle,
   HeroText,
-  SineCanvas,
+  Line,
+  MoveLineGroup,
+  MovePath,
+  SineSVG,
   SineWaveGridWrapper,
 } from "../style/sineWaveStyle";
 import { CoreColorInput } from "../style/styleConstants";
-import { ColorMixer } from "../utils/utils";
+import { ArrayRGBA } from "../utils/utils";
 
 export default function SineWave({ color }: CoreColorInput) {
   return (
@@ -25,152 +30,150 @@ export default function SineWave({ color }: CoreColorInput) {
   );
 }
 
-type WaveInputs = {
-  ctx: any;
-  Tmax: number;
-  Vmax: number;
-  Vp: number;
-  phase: number;
-  fo: number;
-  N: number;
-  width: number;
-  height: number;
-  color: string;
-  thick: any;
-};
-type GraphInputs = {
-  ctx: {
-    beginPath: () => void;
-    lineWidth: any;
-    strokeStyle: any;
-    moveTo: (arg0: any, arg1: number) => void;
-    lineTo: (arg0: any, arg1: number) => void;
-    stroke: () => void;
+export function CanvasWave({ color }: CoreColorInput) {
+  const pathRef = useRef(null);
+  const svgRef = useRef(null);
+  const [svgDim, setSvgDim] = useState({ h: 0, w: 0 });
+  let progress = 0;
+
+  var origin = {
+    x: 0,
+    y: svgDim.h / 2,
   };
-  x0: any;
-  y0: any;
-  xscale: any;
-  yscale: any;
-  N: number;
-  x: number[];
-  y: number[];
-  color: string;
-  thick: any;
-};
+  let a1 = 0.25;
+  let a2 = 0.5;
+  let nw1 = 4;
+  let nw2 = 1.2;
+  let amp1 = (svgDim.h * a1) / 4;
+  let angfreq1 = (2 * Math.PI) / (svgDim.w / nw1); //w = 2PI/T
+  let phase1 = 0;
 
-function CanvasWave({ color }: { color: string }) {
-  const canvasRef = useRef(null);
+  let amp2 = (svgDim.h * a2) / 4;
+  let angfreq2 = (2 * Math.PI) / (svgDim.w / nw2); //w = 2PI/T
+  let phase2 = 0;
+
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    let width = ctx.canvas.width;
-    let height = ctx.canvas.height;
-    // ctx.fillStyle = "#000000";
+    setPath(progress);
+    if (svgRef.current) {
+      setSvgDim({
+        h: svgRef.current.getBoundingClientRect().height,
+        w: svgRef.current.getBoundingClientRect().width,
+      });
+    }
+    let svg = svgRef.current;
+  }, []);
 
-    // ctx.fillRect(0, 0, width, height);
+  const setPath = ({ numWaves, amp }: { numWaves: number; amp: number }) => {
+    //https://phys.libretexts.org/Bookshelves/University_Physics/Book%3A_Introductory_Physics_-_Building_Models_to_Describe_Our_World_(Martin_Neary_Rinaldo_and_Woodman)/14%3A_Waves/14.06%3A_Superposition_of_waves_and_interference
 
-    drawWave({
-      ctx,
-      width: width,
-      height: height,
-      Tmax: 0.001,
-      Vmax: 2,
-      Vp: 1,
-      phase: 0,
-      fo: 1000,
-      N: 10000,
-      color: `rgba(${color})`,
-      thick: 1,
-    });
-    drawWave({
-      ctx,
-      width: width,
-      height: height,
-      Tmax: 0.001,
-      Vmax: 12,
-      Vp: 1,
-      phase: 0,
-      fo: 1000,
-      N: 1000,
-      color: `rgba(${color})`,
-      thick: 4,
-    });
-  }, [color]);
-  return <SineCanvas ref={canvasRef}></SineCanvas>;
-}
+    // Step 1: Create Animated Normal Sine Waves
 
-function drawWave({
-  ctx,
-  width,
-  height,
-  Tmax,
-  Vmax,
-  Vp,
-  phase,
-  fo,
-  N,
-  color,
-  thick,
-}: WaveInputs) {
-  // define origin at plot center
-  let x0 = 0.5 + 0.5 * width; // x0, y0 place plot origin in middle of canvas
-  let y0 = 0.5 + 0.5 * height;
+    // let wavelength = 10; wavelenght is reverse of numWaves
+    // let numWaves = 2; // whole and  numbers only;
+    // let amp = 0.3;
 
-  var x = new Array(),
-    y = new Array(); // x,y plotting variables
-  var dt, tstart, tstop; // time variables
+    let centerHeight = svgDim.h / 2;
+    let bottomFraction = numWaves * 4;
 
-  // define plot paramaters
-  tstart = -Tmax;
-  tstop = Tmax;
-  dt = (tstop - tstart) / (N - 1); // time increment over N points
-  let xscale = width / (2 * Tmax); // x pix per s
-  let yscale = height / (2 * Vmax); // y pix per V
+    let startPath = `M 0 ${centerHeight}`;
+    let singleWave = `q ${svgDim.w / bottomFraction} ${
+      (amp * svgDim.h) / 2
+    },   ${(2 * svgDim.w) / bottomFraction} 0 q ${svgDim.w / bottomFraction} ${
+      (-1 * amp * svgDim.h) / 2
+    },   ${(2 * svgDim.w) / bottomFraction} 0`;
 
-  // create function
-  for (let i = 0; i < N; i++) {
-    x[i] = tstart + i * dt;
-    y[i] = Vp * Math.sin(2 * 3.1415 * fo * x[i] + (phase * 3.1415) / 180);
-  }
+    // const multipleWaves = singleWave.repeat(numWaves * 4);
+    const multipleWaves = singleWave.repeat(numWaves * 4);
+    const path = startPath + multipleWaves;
+    return path;
+  };
 
-  GraphArray({
-    ctx,
-    x0,
-    y0,
-    xscale,
-    yscale,
-    N,
-    x,
-    y,
+  const combineTwoSinesCircles_Append = ({
+    origin,
+    svg,
+    amp1,
+    amp2,
+    angfreq1,
+    angfreq2,
+    phase1,
+    phase2,
     color,
-    thick,
-  });
-}
-function GraphArray({
-  ctx,
-  x0,
-  y0,
-  xscale,
-  yscale,
-  N,
-  x,
-  y,
-  color,
-  thick,
-}: GraphInputs) {
-  ctx.beginPath();
-  ctx.lineWidth = thick;
-  ctx.strokeStyle = color;
+    thickness,
+    dasharray,
+  }: {
+    origin: {
+      x: number;
+      y: number;
+    };
+    svg: any;
+    amp1: number;
+    amp2: number;
+    angfreq1: number;
+    angfreq2: number;
+    phase1: number;
+    phase2: number;
+    color: ArrayRGBA;
+    thickness: number;
+    dasharray: string;
+  }) => {
+    var rarity = 1; // point spacing
 
-  for (let i = 0; i < N; i++) {
-    // translate actual x,y to plot xp,yp
-    let xp = x0 + x[i] * xscale;
-    let yp = y0 - y[i] * yscale;
+    let lineArray: any = Array.from(Array(3000).keys());
 
-    // draw ine to next point
-    if (i == 0) ctx.moveTo(xp, yp);
-    else ctx.lineTo(xp, yp);
-  }
+    return (
+      <MoveLineGroup>
+        {lineArray.map((x: number) => (
+          <Line
+            color={color}
+            // strokeDasharray={dasharray}
+            // strokeWidth={`${thickness}px`}
+            // r={4}
+            key={x}
+            x1={(x - 2) * rarity + origin.x}
+            y1={(
+              amp1 * Math.sin(angfreq1 * (x - 1) + phase1) +
+              amp2 * Math.sin(angfreq2 * (x - 1) + phase2) +
+              origin.y
+            ).toFixed(5)}
+            x2={x * rarity + origin.x}
+            y2={(
+              amp1 * Math.sin(angfreq1 * x + phase1) +
+              amp2 * Math.sin(angfreq2 * x + phase2) +
+              origin.y
+            ).toFixed(5)}
+          />
+        ))}
+      </MoveLineGroup>
+    );
+  };
 
-  ctx.stroke();
+  return (
+    <SineSVG ref={svgRef}>
+      <MovePath
+        ref={pathRef}
+        color={color}
+        d={setPath({ numWaves: nw1, amp: a1 })}
+      />
+      <MovePath
+        ref={pathRef}
+        color={color}
+        dasharray="4 4"
+        d={setPath({ numWaves: nw2, amp: a2 })}
+      />
+      {combineTwoSinesCircles_Append({
+        origin,
+        svg: svgRef.current,
+        amp1,
+        amp2,
+        angfreq1,
+        angfreq2,
+        phase1,
+        phase2,
+        color: color,
+        thickness: 2,
+        dasharray: "2 2",
+      })}
+      {/* <Axis d={`M 0 ${svgDim.h / 2} L ${svgDim.w} ${svgDim.h / 2}`} /> */}
+    </SineSVG>
+  );
 }
