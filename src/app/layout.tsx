@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, League_Spartan } from "next/font/google";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import "./globals.css";
 import StyledComponentsRegistry from "./lib/registry";
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={leaguespartan.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

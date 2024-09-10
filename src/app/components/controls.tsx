@@ -1,12 +1,90 @@
-"use client";
 import { useEffect, useRef, useState } from "react";
-import { Hue, HueWrapper, SettingsButton } from "../style/controlsStyle";
+
+import {
+  ColoredInput,
+  Hue,
+  HueWrapper,
+  SettingModal,
+  SettingsButton,
+  SettingWrapper,
+} from "../style/controlsStyle";
 import { ArrayRGBA, colorConverterService } from "../utils/utils";
-import styled from "styled-components";
 import { CoreColorInput } from "../style/styleConstants";
 
-export function Settings({ color }: CoreColorInput) {
-  return <SettingsButton color={color} />;
+export function Settings({
+  color,
+  waveOptions,
+  setWaveOptions,
+}: {
+  color: ArrayRGBA;
+  waveOptions: { a1: number; a2: number; nw1: number; nw2: number };
+  setWaveOptions: any;
+}) {
+  const [modalOpen, setModeOpen] = useState(false);
+
+  return (
+    <SettingWrapper>
+      <SettingsButton onClick={() => setModeOpen(!modalOpen)} color={color} />
+      {modalOpen && (
+        <SettingModal color={color}>
+          <label htmlFor="nw1">numWaves1: {waveOptions.nw1}</label>
+          <ColoredInput
+            color={color}
+            name="nw1"
+            type="range"
+            step="0.1"
+            min="0.2"
+            max="20"
+            defaultValue={waveOptions.nw1}
+            onChange={(e) => {
+              setWaveOptions({ ...waveOptions, nw1: e.target.value });
+            }}
+          />
+          <label htmlFor="nw2">numWaves2: {waveOptions.nw2}</label>
+          <ColoredInput
+            color={color}
+            name="nw2"
+            type="range"
+            step=".2"
+            min="0.2"
+            max="20"
+            defaultValue={waveOptions.nw2}
+            onChange={(e) => {
+              setWaveOptions({ ...waveOptions, nw2: e.target.value });
+            }}
+          />
+
+          <label htmlFor="a1">amp1: {waveOptions.a1}</label>
+          <ColoredInput
+            color={color}
+            name="a1"
+            type="range"
+            step=".05"
+            min="0.05"
+            max="1"
+            defaultValue={waveOptions.a1}
+            onChange={(e) => {
+              setWaveOptions({ ...waveOptions, a1: e.target.value });
+            }}
+          />
+
+          <label htmlFor="a2">amp1: {waveOptions.a2}</label>
+          <ColoredInput
+            color={color}
+            name="a2"
+            type="range"
+            step=".05"
+            min="0.05"
+            max="1"
+            defaultValue={waveOptions.a2}
+            onChange={(e) => {
+              setWaveOptions({ ...waveOptions, a2: e.target.value });
+            }}
+          />
+        </SettingModal>
+      )}
+    </SettingWrapper>
+  );
 }
 export function DayNight() {
   return <div> daynight</div>;
@@ -64,7 +142,6 @@ export default function ColorPickerComponent({
 
   const handleMouseMove = (e: MouseEvent): void => {
     e.preventDefault();
-    console.log(isDown.current);
     if (isDown.current) {
       handleHueCursorPosition(e);
     }

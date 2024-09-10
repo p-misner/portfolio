@@ -14,7 +14,13 @@ import {
 import { CoreColorInput } from "../style/styleConstants";
 import { ArrayRGBA } from "../utils/utils";
 
-export default function SineWave({ color }: CoreColorInput) {
+export default function SineWave({
+  color,
+  waveOptions,
+}: {
+  color: ArrayRGBA;
+  waveOptions: { a1: number; a2: number; nw1: number; nw2: number };
+}) {
   return (
     <FullWidthWrapper>
       <SineWaveGridWrapper>
@@ -24,13 +30,19 @@ export default function SineWave({ color }: CoreColorInput) {
           working with complex data and turning it into something beautiful into
           data driven designer
         </HeroSubtitle>
-        <CanvasWave color={color} />
+        <CanvasWave color={color} waveOptions={waveOptions} />
       </SineWaveGridWrapper>
     </FullWidthWrapper>
   );
 }
 
-export function CanvasWave({ color }: CoreColorInput) {
+export function CanvasWave({
+  color,
+  waveOptions,
+}: {
+  color: ArrayRGBA;
+  waveOptions: { a1: number; a2: number; nw1: number; nw2: number };
+}) {
   const pathRef = useRef(null);
   const svgRef = useRef(null);
   const [svgDim, setSvgDim] = useState({ h: 0, w: 0 });
@@ -38,23 +50,17 @@ export function CanvasWave({ color }: CoreColorInput) {
 
   var origin = {
     x: 0,
-    y: svgDim.h / 2,
+    y: 300,
   };
-  let hi = "ho";
-  let a1 = 0.25;
-  let a2 = 0.5;
-  let nw1 = 4;
-  let nw2 = 1.2;
-  let amp1 = (svgDim.h * a1) / 4;
-  let angfreq1 = (2 * Math.PI) / (svgDim.w / nw1); //w = 2PI/T
+  let amp1 = (svgDim.h * waveOptions.a1) / 4;
+  let angfreq1 = (2 * Math.PI) / (svgDim.w / waveOptions.nw1); //w = 2PI/T
   let phase1 = 0;
 
-  let amp2 = (svgDim.h * a2) / 4;
-  let angfreq2 = (2 * Math.PI) / (svgDim.w / nw2); //w = 2PI/T
+  let amp2 = (svgDim.h * waveOptions.a2) / 4;
+  let angfreq2 = (2 * Math.PI) / (svgDim.w / waveOptions.nw2); //w = 2PI/T
   let phase2 = 0;
 
   useEffect(() => {
-    setPath(progress);
     if (svgRef.current) {
       setSvgDim({
         h: svgRef.current.getBoundingClientRect().height,
@@ -65,15 +71,7 @@ export function CanvasWave({ color }: CoreColorInput) {
   }, []);
 
   const setPath = ({ numWaves, amp }: { numWaves: number; amp: number }) => {
-    //https://phys.libretexts.org/Bookshelves/University_Physics/Book%3A_Introductory_Physics_-_Building_Models_to_Describe_Our_World_(Martin_Neary_Rinaldo_and_Woodman)/14%3A_Waves/14.06%3A_Superposition_of_waves_and_interference
-
-    // Step 1: Create Animated Normal Sine Waves
-
-    // let wavelength = 10; wavelenght is reverse of numWaves
-    // let numWaves = 2; // whole and  numbers only;
-    // let amp = 0.3;
-
-    let centerHeight = svgDim.h / 2;
+    let centerHeight = origin.y;
     let bottomFraction = numWaves * 4;
 
     let startPath = `M 0 ${centerHeight}`;
@@ -153,13 +151,13 @@ export function CanvasWave({ color }: CoreColorInput) {
       <MovePath
         ref={pathRef}
         color={color}
-        d={setPath({ numWaves: nw1, amp: a1 })}
+        d={setPath({ numWaves: waveOptions.nw1, amp: waveOptions.a1 })}
       />
       <MovePath
         ref={pathRef}
         color={color}
         dasharray="4 4"
-        d={setPath({ numWaves: nw2, amp: a2 })}
+        d={setPath({ numWaves: waveOptions.nw2, amp: waveOptions.a2 })}
       />
       {combineTwoSinesCircles_Append({
         origin,
