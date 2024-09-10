@@ -47,11 +47,14 @@ export const SineWaveGridWrapper = styled(GridWrapper)`
 `;
 
 export const SineSVG = styled.svg`
-  grid-column: 1 / span 12;
+  position: fixed;
+  bottom: 0px;
+  // background-color: red;
   width: 100%;
-  height: 100%;
-  position: absolute;
+  height: 100vh;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: -2;
 `;
 

@@ -3,12 +3,14 @@ type ColorMixerInputs = {
   bottomLayer: ArrayRGBA;
   topLayer: ArrayRGBA;
   returnFormat?: "rgba" | "array";
+  opacity?: number;
 };
 
 export function ColorMixer({
   bottomLayer,
   topLayer,
   returnFormat,
+  opacity,
 }: ColorMixerInputs) {
   var mix = [];
   mix[3] = 1 - (1 - topLayer[3]) * (1 - bottomLayer[3]); // alpha
@@ -26,6 +28,9 @@ export function ColorMixer({
   ); // blue
 
   if (returnFormat == "rgba") {
+    if (opacity) {
+      return `rgba(${mix[0]},${mix[1]},${mix[2]},${opacity})`;
+    }
     return `rgba(${mix[0]},${mix[1]},${mix[2]},${mix[3]})`;
   }
   return mix;

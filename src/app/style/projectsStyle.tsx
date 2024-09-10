@@ -5,6 +5,7 @@ import {
   borderWidth,
   CoreColorInput,
   DarkOverlay_80,
+  LightOverlay_80,
   LightOverlay_95,
 } from "./styleConstants";
 import { ArrayRGBA, ColorMixer } from "../utils/utils";
@@ -12,50 +13,50 @@ import { ArrayRGBA, ColorMixer } from "../utils/utils";
 type ProjectStyleInput = {
   filled?: "true" | "false";
   color: ArrayRGBA;
+  gridColumn?: string;
 };
 
-export const FullWidthProject = styled.div<ProjectStyleInput>`
-  border: ${borderWidth} solid
-    ${(props) =>
-      ColorMixer({
-        bottomLayer: props.color,
-        topLayer: props.color,
-        returnFormat: "rgba",
-      })};
-  color: ${(props) =>
-    props.filled == "true"
-      ? ColorMixer({
-          bottomLayer: props.color,
-          topLayer: LightOverlay_95,
-          returnFormat: "rgba",
-        })
-      : ColorMixer({
-          bottomLayer: props.color,
-          topLayer: DarkOverlay_80,
-          returnFormat: "rgba",
-        })};
-  border-radius: 16px;
-  background-color: ${(props) =>
-    props.filled == "true"
-      ? ColorMixer({
-          bottomLayer: props.color,
-          topLayer: props.color,
-          returnFormat: "rgba",
-        })
-      : ColorMixer({
-          bottomLayer: props.color,
-          topLayer: LightOverlay_95,
-          returnFormat: "rgba",
-        })};
-  min-height: 350px;
-  grid-column: 2 / span 10;
+export const ImageWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: relative !important;
+    object-fit: cover; // Optional
+  }
 `;
-export const TwoThirdProject = styled.div<ProjectStyleInput>`
+export const CRImageWrapper = styled.div`
+  width: 80%;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+
+  img {
+    border-radius: 16px 16px 0px 0px;
+
+    width: 100%;
+    height: 100%;
+    position: relative !important;
+    object-fit: cover; // Optional
+  }
+`;
+
+export const ProjectWrapper = styled.div<ProjectStyleInput>`
+  background-color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: LightOverlay_80,
+      returnFormat: "rgba",
+      opacity: 0.71,
+    })};
   border: ${borderWidth} solid
     ${(props) =>
       ColorMixer({
         bottomLayer: props.color,
-        topLayer: props.color,
+        topLayer: LightOverlay_80,
         returnFormat: "rgba",
       })};
   color: ${(props) =>
@@ -71,18 +72,48 @@ export const TwoThirdProject = styled.div<ProjectStyleInput>`
           returnFormat: "rgba",
         })};
   border-radius: 16px;
-  background-color: ${(props) =>
-    props.filled == "true"
-      ? ColorMixer({
-          bottomLayer: props.color,
-          topLayer: props.color,
-          returnFormat: "rgba",
-        })
-      : ColorMixer({
-          bottomLayer: props.color,
-          topLayer: LightOverlay_95,
-          returnFormat: "rgba",
-        })};
-  min-height: 350px;
-  grid-column: 2 / span 6;
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+  // min-height: 400px;
+  grid-column: ${(props) =>
+    props.gridColumn ? props.gridColumn : "2 / span 8"};
+  padding: 24px 24px 0px 24px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+`;
+
+export const ProjectInfo = styled.div`
+  grid-column: 2 / span 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 32px;
+  justify-content: flex-start;
+  text-align: left;
+  margin-bottom: 48px;
+`;
+export const SectionTitle = styled.h3<CoreColorInput>`
+  font-size: 20px;
+  grid-column: 2 / span 10;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: DarkOverlay_80,
+      returnFormat: "rgba",
+    })};
+`;
+export const ProjectSubtitle = styled.h3`
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 8px;
+`;
+export const ProjectTitle = styled.h2`
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  min-width: fit-content;
+  // background-color: red;
 `;

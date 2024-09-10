@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import SettingIcon from "../../../public/settingicon.svg";
 
 import {
   ColoredInput,
@@ -24,7 +26,13 @@ export function Settings({
 
   return (
     <SettingWrapper>
-      <SettingsButton onClick={() => setModeOpen(!modalOpen)} color={color} />
+      <SettingsButton onClick={() => setModeOpen(!modalOpen)} color={color}>
+        {modalOpen ? (
+          <p>X</p>
+        ) : (
+          <Image src={SettingIcon} alt="settings icon" width="20" height="20" />
+        )}
+      </SettingsButton>
       {modalOpen && (
         <SettingModal color={color}>
           <label htmlFor="nw1">numWaves1: {waveOptions.nw1}</label>

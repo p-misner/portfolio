@@ -1,15 +1,22 @@
 "use client";
 import styled from "styled-components";
-import { CoreColorInput, LightOverlay_95 } from "./styleConstants";
-import { ColorMixer } from "../utils/utils";
+import { ArrayRGBA, ColorMixer } from "../utils/utils";
+import {
+  CoreColorInput,
+  DarkOverlay_80,
+  LightOverlay_95,
+  LightOverlay_97,
+} from "./styleConstants";
+import { Space_Mono } from "next/font/google";
 
-export const BackgroundPageWrapper = styled.div<CoreColorInput>`
-  background-color: ${(props) =>
-    ColorMixer({
-      bottomLayer: props.color,
-      topLayer: props.color,
-      returnFormat: "rgba",
-    })};
+const spacemono = Space_Mono({
+  weight: ["400", "700"],
+  style: "normal",
+  subsets: ["latin"],
+});
+export const PlaygroundWrapper = styled.div<CoreColorInput>`
+  grid-column: 1 / span 12;
+  height: 900px;
   background: ${(props) =>
     ColorMixer({
       bottomLayer: props.color,
@@ -19,80 +26,70 @@ export const BackgroundPageWrapper = styled.div<CoreColorInput>`
     })};
 
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='rgba(255,255,255,1)' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 4;
+  overflow: hidden;
 `;
 
-export const BottomBit = styled.div<CoreColorInput>`
+export const PlaygroundTitle = styled.h1<CoreColorInput>`
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: LightOverlay_95,
+      returnFormat: "rgba",
+      opacity: 1,
+    })};
+  font-family: ${spacemono.style.fontFamily};
+  font-size: 13vw;
+  grid-column: 2 / span 10;
+  z-index: 4;
+`;
+export const ScrollInstructions = styled.h3<CoreColorInput>`
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: LightOverlay_95,
+      returnFormat: "rgba",
+      opacity: 1,
+    })};
+  font-family: ${spacemono.style.fontFamily};
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  grid-column: 2 / span 2;
+`;
+
+type FunProjInput = {
+  color: ArrayRGBA;
+  rotate?: string;
+};
+export const FunProjectWrapper = styled.div<FunProjInput>`
+  width: 400px;
+  min-width: 400px;
+  height: 400px;
+  border: 2px solid
+    ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: LightOverlay_95,
+        returnFormat: "rgba",
+      })};
   background-color: ${(props) =>
     ColorMixer({
       bottomLayer: props.color,
-      topLayer: LightOverlay_95,
+      topLayer: props.color,
       returnFormat: "rgba",
     })};
-  height: 300px;
-  border-top-left-radius: 64px 48px;
-  border-top-right-radius: 64px 48px;
-`;
-export const PageWrapper = styled.div<CoreColorInput>`
-  background-color: ${(props) =>
-    ColorMixer({
-      bottomLayer: props.color,
-      topLayer: LightOverlay_95,
-      returnFormat: "rgba",
-    })};
-  z-index: 1;
-  position: relative;
-  border-bottom-left-radius: 64px 48px;
-  border-bottom-right-radius: 64px 48px;
-  padding-bottom: 100px;
-`;
-export const GridWrapper = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  margin: 0px auto;
-  position: relative;
-  z-index: 5;
-  display: grid;
-  grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
-  column-gap: 10px;
-  row-gap: 64px;
-  @media screen and (max-width: 768px) {
-  }
-  @media screen and (max-width: 480px) {
-  }
+  transform-origin: center;
+  transform: rotate(${(props) => (props.rotate ? props.rotate : "3deg")});
+  margin-left: -150px;
 `;
 
-export const HeaderWrapper = styled.div<CoreColorInput>`
-  position: fixed;
-  width: 100%;
-  margin: 0px auto;
-
-  background: ${(props) =>
-    ColorMixer({
-      bottomLayer: props.color,
-      topLayer: LightOverlay_95,
-      returnFormat: "rgba",
-      opacity: 0.85,
-    })};
-  backdrop-filter: blur(12.8px);
-  -webkit-backdrop-filter: blur(2.8px);
-  z-index: 20;
+export const ProjectScroll = styled.div<CoreColorInput>`
+  grid-column: 4 / span 9;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 64px 48px;
+  overflow-x: scroll;
 `;
-export const FullWidthWrapper = styled.div`
-  grid-column: 1 / span 12;
-`;
-
-// export const SingleColumn = styled.div`
-//   opacity: 0.1;
-//   height: 100vh;
-//   border: 1px dashed ${baseColor};
-//   border-top: 0px;
-//   grid-column: 1 span 2;
-//   border-bottom: 0px;
-//   color: grey;
-//   @media screen and (max-width: 768px) {
-//     border-color: blue;
-//   }
-//   @media screen and (max-width: 480px) {
-//     border-color: red;
-//   }
-// `;

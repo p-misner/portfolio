@@ -5,7 +5,9 @@ import { GridWrapper } from "./gridLayout";
 import { ColorMixer } from "../utils/utils";
 
 export const Header = styled(GridWrapper)`
-  padding-top: 24px;
+  padding: 24px 0px;
+
+  z-index: 100;
 `;
 export const NameHeader = styled.h3<CoreColorInput>`
   font-weight: 600;

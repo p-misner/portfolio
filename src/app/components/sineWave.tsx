@@ -30,7 +30,7 @@ export default function SineWave({
           working with complex data and turning it into something beautiful into
           data driven designer
         </HeroSubtitle>
-        <CanvasWave color={color} waveOptions={waveOptions} />
+        {/* <CanvasWave color={color} waveOptions={waveOptions} /> */}
       </SineWaveGridWrapper>
     </FullWidthWrapper>
   );

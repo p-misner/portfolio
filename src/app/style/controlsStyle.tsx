@@ -13,7 +13,7 @@ export const ControlPanelWrapper = styled.div`
   z-index: 20;
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: 0px;
   top: 50%;
   left: 20px;
   transform: translate(0, -112px);
@@ -194,7 +194,12 @@ export const SettingModal = styled.div<CoreColorInput>`
       bottomLayer: props.color,
       topLayer: LightOverlay_97,
       returnFormat: "rgba",
+      opacity: 0.5,
     })};
+
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -215,6 +220,7 @@ export const SettingModal = styled.div<CoreColorInput>`
 `;
 
 export const SettingsButton = styled.button<CoreColorInput>`
+  border-radius: 4px;
   border: 1px solid
     ${(props) =>
       ColorMixer({
@@ -222,12 +228,28 @@ export const SettingsButton = styled.button<CoreColorInput>`
         topLayer: DarkOverlay_80,
         returnFormat: "rgba",
       })};
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   background-color: ${(props) =>
     ColorMixer({
       bottomLayer: props.color,
       topLayer: LightOverlay_97,
       returnFormat: "rgba",
+      opacity: 0.5,
     })};
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+  cursor: pointer;
+  img {
+    margin-left: -4px;
+    margin-top: 1px;
+  }
+  &:hover {
+    background-color: ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: props.color,
+        returnFormat: "rgba",
+      })};
+  }
 `;
