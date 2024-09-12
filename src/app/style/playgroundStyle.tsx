@@ -7,16 +7,17 @@ import {
   LightOverlay_95,
   LightOverlay_97,
 } from "./styleConstants";
-import { Space_Mono } from "next/font/google";
+import { League_Spartan, Space_Mono } from "next/font/google";
 
 const spacemono = Space_Mono({
   weight: ["400", "700"],
   style: "normal",
   subsets: ["latin"],
 });
+const leaguespartan = League_Spartan({ subsets: ["latin"] });
 export const PlaygroundWrapper = styled.div<CoreColorInput>`
+  position: relative;
   grid-column: 1 / span 12;
-  height: 900px;
   background: ${(props) =>
     ColorMixer({
       bottomLayer: props.color,
@@ -41,7 +42,6 @@ export const PlaygroundTitle = styled.h1<CoreColorInput>`
   font-family: ${spacemono.style.fontFamily};
   font-size: 13vw;
   grid-column: 2 / span 10;
-  z-index: 4;
 `;
 export const ScrollInstructions = styled.h3<CoreColorInput>`
   color: ${(props) =>
@@ -63,9 +63,9 @@ type FunProjInput = {
   rotate?: string;
 };
 export const FunProjectWrapper = styled.div<FunProjInput>`
-  width: 400px;
-  min-width: 400px;
-  height: 400px;
+  width: 352px;
+  min-width: 352px;
+  height: 352px;
   border: 2px solid
     ${(props) =>
       ColorMixer({
@@ -81,15 +81,90 @@ export const FunProjectWrapper = styled.div<FunProjInput>`
     })};
   transform-origin: center;
   transform: rotate(${(props) => (props.rotate ? props.rotate : "3deg")});
-  margin-left: -150px;
+  margin-left: -100px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  &:hover {
+    z-index: 100;
+  }
+
+  &:first-child {
+    z-index: 100;
+    margin-left: 20vw;
+  }
+  &:last-child {
+    margin-right: 20vw;
+  }
+`;
+
+export const SquareImageWrapper = styled.div`
+  position: relative;
+  flex-grow: 1;
+  img {
+    width: 100%;
+    height: 100%;
+    max-height: 296px;
+    position: relative !important;
+    object-fit: cover; // Optional
+  }
+`;
+
+export const FunProjectTitle = styled.a<CoreColorInput>`
+  font-family: ${leaguespartan.style.fontFamily};
+  font-weight: 300;
+  cursor: pointer !important;
+  margin-bottom: 8px;
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: LightOverlay_95,
+      returnFormat: "rgba",
+      opacity: 1,
+    })};
+  font-size: 48px;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+  text-decoration: none;
+  &:hover {
+    font-weight: 500;
+  }
+`;
+type ScrollInput = {
+  top?: string;
+  left?: string;
+  color: ArrayRGBA;
+};
+export const ScrollAbsolute = styled.p<ScrollInput>`
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: LightOverlay_95,
+      returnFormat: "rgba",
+      opacity: 1,
+    })};
+  font-weight: 700;
+  font-size: 20px;
+  position: absolute;
+  top: ${(props) => (props.top ? props.top : "20px")};
+  left: ${(props) => (props.left ? props.left : "20px")};
 `;
 
 export const ProjectScroll = styled.div<CoreColorInput>`
-  grid-column: 4 / span 9;
+  cursor: grab;
+  width: 100vw;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   flex-wrap: nowrap;
+  display: relative;
   justify-content: flex-start;
-  padding: 64px 48px;
+  padding: 128px 0px 128px 0px;
+  // margin-top: -128px;
   overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;

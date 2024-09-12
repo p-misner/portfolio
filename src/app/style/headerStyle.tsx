@@ -1,12 +1,29 @@
 "use client";
 import styled from "styled-components";
-import { CoreColorInput, DarkOverlay_80 } from "./styleConstants";
+import {
+  CoreColorInput,
+  DarkOverlay_80,
+  LightOverlay_95,
+} from "./styleConstants";
 import { GridWrapper } from "./gridLayout";
 import { ColorMixer } from "../utils/utils";
 
+export const HeaderWrapper = styled.div<CoreColorInput>`
+  position: fixed;
+  width: 100%;
+  background: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: LightOverlay_95,
+      returnFormat: "rgba",
+      opacity: 0.85,
+    })};
+  backdrop-filter: blur(12.8px);
+  -webkit-backdrop-filter: blur(2.8px);
+  z-index: 20;
+`;
 export const Header = styled(GridWrapper)`
   padding: 24px 0px;
-
   z-index: 100;
 `;
 export const NameHeader = styled.h3<CoreColorInput>`
@@ -14,12 +31,16 @@ export const NameHeader = styled.h3<CoreColorInput>`
   grid-column: 2 / span 5;
   font-size: 20px;
   font-weight: 400;
-  color: ${(props) =>
-    ColorMixer({
-      bottomLayer: props.color,
-      topLayer: DarkOverlay_80,
-      returnFormat: "rgba",
-    })};
+
+  a {
+    text-decoration: none;
+    color: ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: DarkOverlay_80,
+        returnFormat: "rgba",
+      })};
+  }
 `;
 
 export const MenuHeader = styled.div<CoreColorInput>`
@@ -29,7 +50,6 @@ export const MenuHeader = styled.div<CoreColorInput>`
       topLayer: DarkOverlay_80,
       returnFormat: "rgba",
     })};
-  text-alight: right;
   display: flex;
   grid-column-start: span 3;
   grid-column-end: 12;

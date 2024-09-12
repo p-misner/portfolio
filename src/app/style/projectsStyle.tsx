@@ -9,6 +9,7 @@ import {
   LightOverlay_95,
 } from "./styleConstants";
 import { ArrayRGBA, ColorMixer } from "../utils/utils";
+import Link from "next/link";
 
 type ProjectStyleInput = {
   filled?: "true" | "false";
@@ -81,9 +82,18 @@ export const ProjectWrapper = styled.div<ProjectStyleInput>`
   display: flex;
   flex-direction: column;
   column-gap: 20px;
+  &:hover {
+    background-color: ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: [255, 255, 255, 0.7],
+        returnFormat: "rgba",
+        opacity: 0.7,
+      })};
+  }
 `;
 
-export const ProjectInfo = styled.div`
+export const ProjectInfo = styled.div<CoreColorInput>`
   grid-column: 2 / span 3;
   display: flex;
   flex-direction: row;
@@ -110,10 +120,17 @@ export const ProjectSubtitle = styled.h3`
   font-weight: 300;
   margin-bottom: 8px;
 `;
-export const ProjectTitle = styled.h2`
+export const ProjectLink = styled(Link)<CoreColorInput>`
+  cursor: pointer;
   font-size: 40px;
   font-weight: 500;
   letter-spacing: 2px;
   min-width: fit-content;
-  // background-color: red;
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: DarkOverlay_80,
+      returnFormat: "rgba",
+    })};
+  text-decoration: none;
 `;

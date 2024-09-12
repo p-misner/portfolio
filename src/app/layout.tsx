@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, League_Spartan, Space_Mono } from "next/font/google";
+import { League_Spartan } from "next/font/google";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import "./globals.css";
 import StyledComponentsRegistry from "./lib/registry";

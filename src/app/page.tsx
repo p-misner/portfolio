@@ -7,20 +7,13 @@ import {
 } from "./style/gridLayout";
 import PageHeader from "./components/header";
 import SineWave, { CanvasWave } from "./components/sineWave";
-import {
-  ProjectSubtitle,
-  ProjectWrapper,
-  SectionTitle,
-} from "./style/projectsStyle";
 import { ControlPanelWrapper } from "./style/controlsStyle";
 import ColorPickerComponent, { Settings } from "./components/controls";
 import { useState } from "react";
 import { ArrayRGBA } from "./utils/utils";
 import {
   CharlesRiver,
-  FirstProject,
   GroIntelligenceProject,
-  ReadySetExcel,
   UrbanismX,
 } from "./components/projects";
 import Playground from "./components/playground";
@@ -28,8 +21,6 @@ import Playground from "./components/playground";
 //https://stackoverflow.com/questions/13932704/how-to-draw-sine-waves-with-svg-js
 
 export default function Home() {
-  const aa_coreColor: ArrayRGBA = [6, 147, 227, 1];
-
   const [colorPicked, setColorPicked] = useState<ArrayRGBA>([25, 230, 220, 1]);
   const [waveOptions, setWaveOptions] = useState({
     a1: 0.25,
@@ -58,6 +49,7 @@ export default function Home() {
           <CanvasWave color={colorPicked} waveOptions={waveOptions} />
 
           <SineWave color={colorPicked} waveOptions={waveOptions} />
+          <div id="work" style={{ paddingTop: "80px" }}></div>
           <GridWrapper>
             <GroIntelligenceProject color={colorPicked} />
             <CharlesRiver color={colorPicked} />

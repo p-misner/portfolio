@@ -1,6 +1,11 @@
 "use client";
 import styled from "styled-components";
-import { CoreColorInput, LightOverlay_95 } from "./styleConstants";
+import {
+  breakpoints,
+  CoreColorInput,
+  LightOverlay_95,
+  LightOverlay_97,
+} from "./styleConstants";
 import { ColorMixer } from "../utils/utils";
 
 export const BackgroundPageWrapper = styled.div<CoreColorInput>`
@@ -28,7 +33,7 @@ export const BottomBit = styled.div<CoreColorInput>`
       topLayer: LightOverlay_95,
       returnFormat: "rgba",
     })};
-  height: 300px;
+  height: 900px;
   border-top-left-radius: 64px 48px;
   border-top-right-radius: 64px 48px;
 `;
@@ -47,36 +52,16 @@ export const PageWrapper = styled.div<CoreColorInput>`
 `;
 export const GridWrapper = styled.div`
   width: 100%;
-  max-width: 1200px;
   margin: 0px auto;
+  max-width: ${breakpoints.lg}px;
   position: relative;
   z-index: 5;
   display: grid;
   grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
   column-gap: 10px;
   row-gap: 64px;
-  @media screen and (max-width: 768px) {
-  }
-  @media screen and (max-width: 480px) {
-  }
 `;
 
-export const HeaderWrapper = styled.div<CoreColorInput>`
-  position: fixed;
-  width: 100%;
-  margin: 0px auto;
-
-  background: ${(props) =>
-    ColorMixer({
-      bottomLayer: props.color,
-      topLayer: LightOverlay_95,
-      returnFormat: "rgba",
-      opacity: 0.85,
-    })};
-  backdrop-filter: blur(12.8px);
-  -webkit-backdrop-filter: blur(2.8px);
-  z-index: 20;
-`;
 export const FullWidthWrapper = styled.div`
   grid-column: 1 / span 12;
 `;
