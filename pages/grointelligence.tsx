@@ -59,11 +59,11 @@ export default function GroIntelligence() {
               Further, when communicating technical information to an audience
               with a wide range of understanding, helping users understand and
               evaluate the data they are seeing is key to demonstrating value.
-              To that end, I worked a lot on designing visualizations specific
-              type of data: aka pricing, weather data, climate projections, etc.
-              By moving away from a one template fits all approach, I was able
-              to limit the amount of explanatory text on a chart while
-              increasing user understanding of the data they were seeing.
+              To that end, I worked on designing visualizations specific type of
+              data: aka pricing, weather data, climate projections, etc. By
+              moving away from a one template fits all approach, I was able to
+              limit the amount of explanatory text on a chart while increasing
+              user understanding of the data they were seeing.
             </p>
             <h3> Chart Design System</h3>
             <FullWidthImageWrapper>
