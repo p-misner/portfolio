@@ -224,7 +224,7 @@ export function CanvasWave({
       <MovePath
         ref={pathRef}
         color={color}
-        dasharray="4 4"
+        // dasharray="4 4"
         d={setPath({ numWaves: waveOptions.nw2, amp: waveOptions.a2 })}
       />
       {combineTwoSinesCircles_Append({

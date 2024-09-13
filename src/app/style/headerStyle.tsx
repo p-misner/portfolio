@@ -1,6 +1,7 @@
 "use client";
 import styled from "styled-components";
 import {
+  breakpoints,
   CoreColorInput,
   DarkOverlay_80,
   LightOverlay_95,
@@ -31,7 +32,17 @@ export const HeaderWrapper = styled.div<CoreColorInput>`
       })};
   }
 `;
-export const Header = styled(GridWrapper)`
+export const Header = styled.div`
+  width: 100%;
+  margin: 0px auto;
+  max-width: ${breakpoints.lg};
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
+  column-gap: 10px;
+  row-gap: 64px;
+
   padding: 24px 0px;
   z-index: 100;
 `;

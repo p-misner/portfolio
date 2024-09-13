@@ -14,7 +14,6 @@ import Link from "next/link";
 type ProjectStyleInput = {
   filled?: "true" | "false";
   color: ArrayRGBA;
-  gridColumn?: string;
 };
 
 export const ImageWrapper = styled.div`
@@ -76,8 +75,7 @@ export const ProjectWrapper = styled.div<ProjectStyleInput>`
   backdrop-filter: blur(6.8px);
   -webkit-backdrop-filter: blur(6.8px);
   // min-height: 400px;
-  grid-column: ${(props) =>
-    props.gridColumn ? props.gridColumn : "2 / span 8"};
+  grid-column: 2 / span 10;
   padding: 24px 24px 0px 24px;
   display: flex;
   flex-direction: column;

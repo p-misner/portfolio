@@ -1,9 +1,20 @@
+"use client";
+
 import styled from "styled-components";
-import { CoreColorInput, DarkOverlay_80 } from "./styleConstants";
+import { breakpoints, CoreColorInput, DarkOverlay_80 } from "./styleConstants";
 import { ColorMixer } from "../utils/utils";
 import { GridWrapper } from "./gridLayout";
 
-export const AboutGrid = styled(GridWrapper)<CoreColorInput>`
+export const AboutGrid = styled.div<CoreColorInput>`
+  width: 100%;
+  margin: 0px auto;
+  max-width: ${breakpoints.lg};
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
+  column-gap: 10px;
+
   padding-top: 24px;
   row-gap: 16px;
   padding-bottom: 24px;

@@ -91,7 +91,16 @@ export const HeroSubtitle = styled.p<CoreColorInput>`
   }
 `;
 
-export const SineWaveGridWrapper = styled(GridWrapper)`
+export const SineWaveGridWrapper = styled.div`
+  width: 100%;
+  margin: 0px auto;
+  max-width: ${breakpoints.lg};
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
+  column-gap: 10px;
+  row-gap: 64px;
   min-height: 400px;
   // height: 100vh;
 `;
@@ -112,7 +121,6 @@ type MovePathInput = {
   color?: ArrayRGBA;
   speed?: number;
   transform?: number;
-  dasharray?: string;
   thickness?: number;
 };
 export const MovePath = styled.path<MovePathInput>`

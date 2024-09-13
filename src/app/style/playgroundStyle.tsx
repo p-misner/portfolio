@@ -155,7 +155,7 @@ export const FunProjectTitle = styled.a<CoreColorInput>`
   }
 `;
 type ScrollInput = {
-  top?: string;
+  t: string;
   left?: string;
   color: ArrayRGBA;
 };
@@ -170,7 +170,7 @@ export const ScrollAbsolute = styled.p<ScrollInput>`
   font-weight: 700;
   font-size: 20px;
   position: absolute;
-  top: ${(props) => (props.top ? props.top : "20px")};
+  top: ${(props) => (props.t ? props.t : "20px")};
   left: ${(props) => (props.left ? props.left : "20px")};
 `;
 

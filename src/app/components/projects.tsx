@@ -14,7 +14,7 @@ import { CoreColorInput } from "../style/styleConstants";
 
 export function GroIntelligenceProject({ color }: CoreColorInput) {
   return (
-    <ProjectWrapper gridColumn="2 / span 10" color={color}>
+    <ProjectWrapper color={color}>
       <ProjectInfo color={color}>
         <ProjectLink color={color} href="/grointelligence">
           {" "}
@@ -36,7 +36,7 @@ export function GroIntelligenceProject({ color }: CoreColorInput) {
 }
 export function CharlesRiver({ color }: CoreColorInput) {
   return (
-    <ProjectWrapper gridColumn="2 / span 10" color={color}>
+    <ProjectWrapper color={color}>
       <ProjectInfo color={color}>
         <ProjectLink color={color} href="charlesriver">
           {" "}
@@ -55,7 +55,7 @@ export function CharlesRiver({ color }: CoreColorInput) {
 
 export function UrbanismX({ color }: CoreColorInput) {
   return (
-    <ProjectWrapper gridColumn="2 / span 10" color={color}>
+    <ProjectWrapper color={color}>
       <ProjectInfo color={color}>
         <ProjectLink color={color} href="urbanismx">
           {" "}

@@ -73,18 +73,18 @@ export default function Playground({ color }: CoreColorInput) {
             {" "}
             all the bits and bobs I’ve been playing around with
           </ScrollInstructions>{" "}
-          <ScrollAbsolute color={color} top="400px" left="100px">
+          {/* <ScrollAbsolute color={color} t="400px" left="100px">
             scroll →
           </ScrollAbsolute>
-          <ScrollAbsolute color={color} top="350px" left="1300px">
+          <ScrollAbsolute color={color} t="350px" left="1300px">
             scroll →
           </ScrollAbsolute>
-          <ScrollAbsolute color={color} top="700px" left="0px">
+          <ScrollAbsolute color={color} t="700px" left="0px">
             scroll →
           </ScrollAbsolute>
-          <ScrollAbsolute color={color} top="900px" left="900px">
+          <ScrollAbsolute color={color} t="900px" left="900px">
             scroll →
-          </ScrollAbsolute>
+          </ScrollAbsolute> */}
         </GridWrapper>
       </div>
       <ProjectScroll
