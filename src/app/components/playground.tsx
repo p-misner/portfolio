@@ -19,6 +19,7 @@ import GoldenYears from "../../../public/Playground/GoldenYears_Cover.png";
 import StateSoil from "../../../public/Playground/StateSoil.png";
 import TransitNetworks from "../../../public/Playground/TransitNetworks.gif";
 import Senator from "../../../public/Playground/Senator.png";
+import MatterofTime from "../../../public/Playground/MatterofTime.png";
 
 export default function Playground({ color }: CoreColorInput) {
   const scrollRef = useRef(null);
@@ -92,18 +93,28 @@ export default function Playground({ color }: CoreColorInput) {
       >
         <FunProjectWrapper color={color} rotate={"-19deg"}>
           {" "}
-          <FunProjectTitle href="https://www.w3schools.com" color={color}>
+          <FunProjectTitle
+            target="_blank"
+            rel="noopener noreferrer"
+            href="/#play"
+            color={color}
+          >
             {" "}
             A Matter of Time
           </FunProjectTitle>
           <SquareImageWrapper>
-            <Image src={GoldenYears} alt="image of map" draggable="false" />
+            <Image src={MatterofTime} alt="image of map" draggable="false" />
           </SquareImageWrapper>
         </FunProjectWrapper>
 
         <FunProjectWrapper color={color} rotate={"23deg"}>
           {" "}
-          <FunProjectTitle href="https://www.w3schools.com" color={color}>
+          <FunProjectTitle
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://goldenyearsapp.herokuapp.com/"
+            color={color}
+          >
             {" "}
             Golden Years →
           </FunProjectTitle>
@@ -113,7 +124,12 @@ export default function Playground({ color }: CoreColorInput) {
         </FunProjectWrapper>
 
         <FunProjectWrapper color={color} rotate={"-15deg"}>
-          <FunProjectTitle href="https://www.w3schools.com" color={color}>
+          <FunProjectTitle
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://p-misner.github.io/wdvp/"
+            color={color}
+          >
             {" "}
             World of Data →
           </FunProjectTitle>
@@ -123,7 +139,12 @@ export default function Playground({ color }: CoreColorInput) {
         </FunProjectWrapper>
 
         <FunProjectWrapper color={color} rotate={"-15deg"}>
-          <FunProjectTitle href="https://www.w3schools.com" color={color}>
+          <FunProjectTitle
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://observablehq.com/@pmisner/state-soils?collection=@pmisner/soil"
+            color={color}
+          >
             {" "}
             State Soil →
           </FunProjectTitle>
@@ -133,7 +154,12 @@ export default function Playground({ color }: CoreColorInput) {
         </FunProjectWrapper>
 
         <FunProjectWrapper color={color} rotate={"17deg"}>
-          <FunProjectTitle href="https://www.w3schools.com" color={color}>
+          <FunProjectTitle
+            target="_blank"
+            rel="noopener noreferrer"
+            href="/transitnetworks"
+            color={color}
+          >
             {" "}
             Transit Networks →
           </FunProjectTitle>
@@ -143,7 +169,12 @@ export default function Playground({ color }: CoreColorInput) {
         </FunProjectWrapper>
 
         <FunProjectWrapper color={color} rotate={"-12deg"}>
-          <FunProjectTitle href="https://www.w3schools.com" color={color}>
+          <FunProjectTitle
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://observablehq.com/d/48357752cbe8c36b"
+            color={color}
+          >
             {" "}
             Is My Senator Older Than... →
           </FunProjectTitle>

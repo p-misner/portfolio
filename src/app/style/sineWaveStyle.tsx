@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
 import { GridWrapper } from "./gridLayout";
-import { CoreColorInput, DarkOverlay_80 } from "./styleConstants";
+import { breakpoints, CoreColorInput, DarkOverlay_80 } from "./styleConstants";
 import { ArrayRGBA, ColorMixer } from "../utils/utils";
 
 export const HeroText = styled.h1<CoreColorInput>`
@@ -12,12 +12,58 @@ export const HeroText = styled.h1<CoreColorInput>`
       returnFormat: "rgba",
     })};
   margin-top: 208px;
-  grid-column: 2 / span 11;
+  grid-column: 2 / span 10;
   font-size: 96px;
   font-weight: 400;
   letter-spacing: 4px;
   text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
     2px 2px 0 #fff;
+  @media screen and (max-width: ${breakpoints.md}) {
+    font-size: 72px;
+  }
+  @media screen and (max-width: ${breakpoints.sm}) {
+    font-size: 48px;
+  }
+`;
+
+export const HeroSubtitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  grid-column: 6 / span 5;
+  row-gap: 24px;
+  margin-top: 64px;
+  margin-bottom: 240px;
+`;
+
+export const FindMeWrapper = styled.div`
+  grid-column: 2 / span 10;
+
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+  align-items: center;
+`;
+export const LogoSVG = styled.svg<CoreColorInput>`
+  cursor: pointer;
+  width: 32px;
+  path {
+    fill: ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: DarkOverlay_80,
+        returnFormat: "rgba",
+      })};
+  }
+  &:hover {
+    path {
+      fill: ${(props) =>
+        ColorMixer({
+          bottomLayer: props.color,
+          topLayer: props.color,
+          returnFormat: "rgba",
+        })};
+    }
+  }
 `;
 
 export const HeroSubtitle = styled.p<CoreColorInput>`
@@ -27,18 +73,22 @@ export const HeroSubtitle = styled.p<CoreColorInput>`
       topLayer: DarkOverlay_80,
       returnFormat: "rgba",
     })};
-  grid-column: 6 / span 5;
   font-size: 24px;
   line-height: 1.6;
   font-weight: 400;
-  margin-top: 64px;
-  margin-bottom: 240px;
+
   @media screen and (max-width: 768px) {
     grid-column: 2 / span 8;
   }
   // text-shadow: 0px 0px 10px black;
   text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
     2px 2px 0 #fff;
+
+  @media screen and (max-width: ${breakpoints.md}) {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 140px;
+  }
 `;
 
 export const SineWaveGridWrapper = styled(GridWrapper)`

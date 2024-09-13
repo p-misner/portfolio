@@ -102,12 +102,16 @@ export const ProjectInfo = styled.div<CoreColorInput>`
   justify-content: flex-start;
   text-align: left;
   margin-bottom: 48px;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    row-gap: 16px;
+  }
 `;
 export const SectionTitle = styled.h3<CoreColorInput>`
   font-size: 20px;
   grid-column: 2 / span 10;
   font-weight: 400;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   color: ${(props) =>
     ColorMixer({
       bottomLayer: props.color,
@@ -116,6 +120,7 @@ export const SectionTitle = styled.h3<CoreColorInput>`
     })};
 `;
 export const ProjectSubtitle = styled.h3`
+  line-height: 1.2;
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 8px;

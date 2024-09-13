@@ -26,7 +26,6 @@ export const Content = styled(GridWrapper)<CoreColorInput>`
   }
   h3 {
     margin-top: 32px;
-
     font-size: 32px;
     font-weight: 500;
     grid-column: 2 / span 10;

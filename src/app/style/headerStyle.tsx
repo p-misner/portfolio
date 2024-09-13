@@ -21,6 +21,15 @@ export const HeaderWrapper = styled.div<CoreColorInput>`
   backdrop-filter: blur(12.8px);
   -webkit-backdrop-filter: blur(2.8px);
   z-index: 20;
+  ::selection {
+    background: ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: props.color,
+        opacity: 0.6,
+        returnFormat: "rgba",
+      })};
+  }
 `;
 export const Header = styled(GridWrapper)`
   padding: 24px 0px;

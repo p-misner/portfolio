@@ -17,7 +17,7 @@ export default function PageHeader({ color }: CoreColorInput) {
         <MenuHeader color={color}>
           <a href="/#work">work</a>
           <a href="/#play">play</a>
-          <a href="#">about</a>
+          {/* <a href="#">about</a> */}
         </MenuHeader>
       </Header>
     </HeaderWrapper>

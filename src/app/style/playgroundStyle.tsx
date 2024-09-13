@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import { ArrayRGBA, ColorMixer } from "../utils/utils";
 import {
+  breakpoints,
   CoreColorInput,
   DarkOverlay_80,
   LightOverlay_95,
@@ -29,6 +30,15 @@ export const PlaygroundWrapper = styled.div<CoreColorInput>`
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='rgba(255,255,255,1)' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   z-index: 4;
   overflow: hidden;
+  ::selection {
+    background: ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: DarkOverlay_80,
+        opacity: 0.3,
+        returnFormat: "rgba",
+      })};
+  }
 `;
 
 export const PlaygroundTitle = styled.h1<CoreColorInput>`
@@ -56,6 +66,9 @@ export const ScrollInstructions = styled.h3<CoreColorInput>`
   line-height: 24px;
   font-weight: 400;
   grid-column: 2 / span 2;
+  @media screen and (max-width: ${breakpoints.md}) {
+    grid-column: 2 / span 5;
+  }
 `;
 
 type FunProjInput = {
@@ -89,13 +102,17 @@ export const FunProjectWrapper = styled.div<FunProjInput>`
   &:hover {
     z-index: 100;
   }
-
   &:first-child {
     z-index: 100;
     margin-left: 20vw;
   }
   &:last-child {
     margin-right: 20vw;
+  }
+  @media screen and (max-width: ${breakpoints.md}) {
+    width: 282px;
+    min-width: 282px;
+    height: 282px;
   }
 `;
 
@@ -108,6 +125,9 @@ export const SquareImageWrapper = styled.div`
     max-height: 296px;
     position: relative !important;
     object-fit: cover; // Optional
+    @media screen and (max-width: ${breakpoints.md}) {
+      max-height: 296px;
+    }
   }
 `;
 
@@ -128,7 +148,10 @@ export const FunProjectTitle = styled.a<CoreColorInput>`
   word-spacing: 4px;
   text-decoration: none;
   &:hover {
-    font-weight: 500;
+    text-decoration: underline;
+  }
+  @media screen and (max-width: ${breakpoints.md}) {
+    font-size: 32px;
   }
 `;
 type ScrollInput = {

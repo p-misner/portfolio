@@ -17,11 +17,13 @@ import {
   UrbanismX,
 } from "./components/projects";
 import Playground from "./components/playground";
+import About from "./components/about";
 
 //https://stackoverflow.com/questions/13932704/how-to-draw-sine-waves-with-svg-js
 
 export default function Home() {
-  const [colorPicked, setColorPicked] = useState<ArrayRGBA>([25, 230, 220, 1]);
+  const defaultColor: ArrayRGBA = [25, 149, 230, 1];
+  const [colorPicked, setColorPicked] = useState<ArrayRGBA>(defaultColor);
   const [waveOptions, setWaveOptions] = useState({
     a1: 0.25,
     a2: 0.5,
@@ -47,7 +49,6 @@ export default function Home() {
       <BackgroundPageWrapper color={colorPicked}>
         <PageWrapper color={colorPicked}>
           <CanvasWave color={colorPicked} waveOptions={waveOptions} />
-
           <SineWave color={colorPicked} waveOptions={waveOptions} />
           <div id="work" style={{ paddingTop: "80px" }}></div>
           <GridWrapper>
@@ -60,7 +61,9 @@ export default function Home() {
       </BackgroundPageWrapper>
       <Playground color={colorPicked} />
       <BackgroundPageWrapper color={colorPicked}>
-        <BottomBit color={colorPicked} />
+        <BottomBit color={colorPicked}>
+          <About color={colorPicked} />
+        </BottomBit>
       </BackgroundPageWrapper>
     </div>
   );

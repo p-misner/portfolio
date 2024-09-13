@@ -2,7 +2,7 @@ import ColorPickerComponent from "@/app/components/controls";
 import PageHeader from "@/app/components/header";
 import { Content, FullWidthImageWrapper } from "@/app/style/contentPageStyle";
 import { ControlPanelWrapper } from "@/app/style/controlsStyle";
-import { PageWrapper } from "@/app/style/gridLayout";
+import { BottomBit, PageWrapper } from "@/app/style/gridLayout";
 import { ArrayRGBA } from "@/app/utils/utils";
 import { League_Spartan } from "next/font/google";
 import Image from "next/image";
@@ -10,11 +10,13 @@ import { useState } from "react";
 import BeyondDashboardsImg from "../public/Gro/VectorDashboard.png";
 import BespokeCharts from "../public/Gro/BespokeCharts.png";
 import ChartDS from "../public/Gro/ChartDS_Gro.png";
+import About from "@/app/components/about";
 
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
 
 export default function GroIntelligence() {
-  const [colorPicked, setColorPicked] = useState<ArrayRGBA>([25, 230, 220, 1]);
+  const defaultColor: ArrayRGBA = [25, 149, 230, 1];
+  const [colorPicked, setColorPicked] = useState<ArrayRGBA>(defaultColor);
 
   return (
     <div className={leaguespartan.className}>
@@ -101,6 +103,9 @@ export default function GroIntelligence() {
           </Content>
         </div>
       </PageWrapper>{" "}
+      <BottomBit color={colorPicked}>
+        <About color={colorPicked} />
+      </BottomBit>
     </div>
   );
 }

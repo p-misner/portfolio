@@ -14,8 +14,8 @@ export const ControlPanelWrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0px;
-  top: 50%;
-  left: 20px;
+  top: 40%;
+  right: 20px;
   transform: translate(0, -112px);
 `;
 
@@ -51,6 +51,7 @@ export const Hue = styled.div<CoreColorInput>`
   & span {
     position: absolute;
     left: 4px;
+    top: 108px;
     width: 12px;
     height: 12px;
     border-radius: 16px;
@@ -204,7 +205,7 @@ export const SettingModal = styled.div<CoreColorInput>`
   flex-direction: column;
   position: absolute;
   top: 0px;
-  left: 40px;
+  right: 40px;
   border: 1px solid
     ${(props) =>
       props.color

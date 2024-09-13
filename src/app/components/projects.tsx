@@ -21,10 +21,9 @@ export function GroIntelligenceProject({ color }: CoreColorInput) {
           Gro Intelligence →
         </ProjectLink>
         <ProjectSubtitle>
-          Design for agriculture and dommodity Trading Models. Here are some
-          more words describing what I did and some other things as well. Design
-          for agriculture and dommodity Trading Models. Here are some more words
-          describing what I did and some other things as wel.
+          Working across agriculture, climate and economic data, I designed
+          experiences from the tiniest of micro-visualizations to overhauling
+          the way we communicate the climate's impact on crop health.
         </ProjectSubtitle>
       </ProjectInfo>
       <ProjectLink color={color} href="/grointelligence">
@@ -43,12 +42,7 @@ export function CharlesRiver({ color }: CoreColorInput) {
           {" "}
           Charles River Labs →
         </ProjectLink>
-        <ProjectSubtitle>
-          Design for agriculture and dommodity Trading Models. Here are some
-          more words describing what I did and some other things as well. Design
-          for agriculture and dommodity Trading Models. Here are some more words
-          describing what I did and some other things as wel.
-        </ProjectSubtitle>
+        <ProjectSubtitle>Coming soon</ProjectSubtitle>
       </ProjectInfo>
       <ProjectLink color={color} href="charlesriver">
         <CRImageWrapper>
@@ -65,13 +59,12 @@ export function UrbanismX({ color }: CoreColorInput) {
       <ProjectInfo color={color}>
         <ProjectLink color={color} href="urbanismx">
           {" "}
-          UrbanismX at Tufts
+          UrbanismX at Tufts →
         </ProjectLink>
         <ProjectSubtitle>
-          Design for agriculture and dommodity Trading Models. Here are some
-          more words describing what I did and some other things as well. Design
-          for agriculture and dommodity Trading Models. Here are some more words
-          describing what I did and some other things as wel.
+          Built a map-based dashboard exploring how Covid-19 impacted
+          accessibility to food, grocery and health services in the United
+          States's top twenty-five metropolitan areas.
         </ProjectSubtitle>
       </ProjectInfo>
       <ProjectLink color={color} href="urbanismx">

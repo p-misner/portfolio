@@ -13,9 +13,9 @@ export type CoreColorInput = {
 export const borderWidth = "1px";
 
 export const breakpoints = {
-  xs: 0,
-  sm: 600,
-  md: 900,
-  lg: 1200,
-  xl: 1536,
+  xs: "0px",
+  sm: "600px",
+  md: "800px",
+  lg: "1200px",
+  xl: "1536px",
 };

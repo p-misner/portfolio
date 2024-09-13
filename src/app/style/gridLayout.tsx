@@ -33,9 +33,9 @@ export const BottomBit = styled.div<CoreColorInput>`
       topLayer: LightOverlay_95,
       returnFormat: "rgba",
     })};
-  height: 900px;
   border-top-left-radius: 64px 48px;
   border-top-right-radius: 64px 48px;
+  padding-bottom: 24px;
 `;
 export const PageWrapper = styled.div<CoreColorInput>`
   background-color: ${(props) =>
@@ -49,11 +49,20 @@ export const PageWrapper = styled.div<CoreColorInput>`
   border-bottom-left-radius: 64px 48px;
   border-bottom-right-radius: 64px 48px;
   padding-bottom: 100px;
+  ::selection {
+    background: ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: props.color,
+        opacity: 0.6,
+        returnFormat: "rgba",
+      })};
+  }
 `;
 export const GridWrapper = styled.div`
   width: 100%;
   margin: 0px auto;
-  max-width: ${breakpoints.lg}px;
+  max-width: ${breakpoints.lg};
   position: relative;
   z-index: 5;
   display: grid;
