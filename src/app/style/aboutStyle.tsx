@@ -3,7 +3,7 @@ import { CoreColorInput, DarkOverlay_80 } from "./styleConstants";
 import { ColorMixer } from "../utils/utils";
 import { GridWrapper } from "./gridLayout";
 
-export const AboutGrid = styled(GridWrapper)`
+export const AboutGrid = styled(GridWrapper)<CoreColorInput>`
   padding-top: 24px;
   row-gap: 16px;
   padding-bottom: 24px;

@@ -112,7 +112,7 @@ export function CanvasWave({
   waveOptions: { a1: number; a2: number; nw1: number; nw2: number };
 }) {
   const pathRef = useRef(null);
-  const svgRef = useRef(null);
+  const svgRef = useRef<SVGSVGElement>(null);
   const [svgDim, setSvgDim] = useState({ h: 0, w: 0 });
   let progress = 0;
 

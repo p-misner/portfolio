@@ -22,13 +22,13 @@ import Senator from "../../../public/Playground/Senator.png";
 import MatterofTime from "../../../public/Playground/MatterofTime.png";
 
 export default function Playground({ color }: CoreColorInput) {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   let pos = { top: 0, left: 0, x: 0, y: 0 };
 
   const mouseDownHandler = function (e: any) {
     if (!scrollRef.current) return;
     scrollRef.current.style.cursor = "grabbing";
-    scrollRef.current.style.userSelect = "none";
+    // scrollRef.current.userSelect = "none";
     pos = {
       // The current scroll
       left: scrollRef.current.scrollLeft,
@@ -37,6 +37,7 @@ export default function Playground({ color }: CoreColorInput) {
       x: e.clientX,
       y: e.clientY,
     };
+
     document.addEventListener("mousemove", mouseMoveHandler);
     document.addEventListener("mouseup", mouseUpHandler);
   };
