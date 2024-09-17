@@ -31,9 +31,9 @@ export default function SineWave({
         <HeroText color={color}> designing with data </HeroText>
         <HeroSubtitleWrapper>
           <HeroSubtitle color={color}>
-            a data visualization designer with a background in engineering, I
-            love working with complex data to transform it into something
-            beautiful and usable
+            a data visualization designer with a background in mechanical
+            engineering, I love working with complex data to transform it into
+            something beautiful and usable
           </HeroSubtitle>
           <FindMeWrapper>
             {" "}
@@ -41,8 +41,8 @@ export default function SineWave({
               find me on the internet at:
             </HeroSubtitle>
             <Link
-              target="_blank"
-              rel="noopener noreferrer"
+              // target="_blank"
+              // rel="noopener noreferrer"
               href="https://observablehq.com/@pmisner?tab=recents"
             >
               <LogoSVG
@@ -79,8 +79,8 @@ export default function SineWave({
             </LogoSVG>
             </Link> */}
             <Link
-              target="_blank"
-              rel="noopener noreferrer"
+              // target="_blank"
+              // rel="noopener noreferrer"
               href="https://www.linkedin.com/in/priyamisner/"
             >
               <LogoSVG

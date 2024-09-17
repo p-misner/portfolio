@@ -17,6 +17,7 @@ import TestImg from "../../../public/ApolloSplash.png";
 import WorldofData from "../../../public/Playground/WorldofData.png";
 import GoldenYears from "../../../public/Playground/GoldenYears_Cover.png";
 import StateSoil from "../../../public/Playground/StateSoil.png";
+import Munsell from "../../../public/Playground/Munsell.png";
 import TransitNetworks from "../../../public/Playground/TransitNetworks.gif";
 import Senator from "../../../public/Playground/Senator.png";
 import MatterofTime from "../../../public/Playground/MatterofTime.png";
@@ -95,9 +96,9 @@ export default function Playground({ color }: CoreColorInput) {
         <FunProjectWrapper color={color} rotate={"-19deg"}>
           {" "}
           <FunProjectTitle
-            target="_blank"
-            rel="noopener noreferrer"
-            href="/#play"
+            // target="_blank"
+            // rel="noopener noreferrer"
+            href="https://matteroftime.priyamisner.com/"
             color={color}
           >
             {" "}
@@ -111,8 +112,8 @@ export default function Playground({ color }: CoreColorInput) {
         <FunProjectWrapper color={color} rotate={"23deg"}>
           {" "}
           <FunProjectTitle
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
             href="https://goldenyearsapp.herokuapp.com/"
             color={color}
           >
@@ -126,8 +127,8 @@ export default function Playground({ color }: CoreColorInput) {
 
         <FunProjectWrapper color={color} rotate={"-15deg"}>
           <FunProjectTitle
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
             href="https://p-misner.github.io/wdvp/"
             color={color}
           >
@@ -141,8 +142,8 @@ export default function Playground({ color }: CoreColorInput) {
 
         <FunProjectWrapper color={color} rotate={"-15deg"}>
           <FunProjectTitle
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
             href="https://observablehq.com/@pmisner/state-soils?collection=@pmisner/soil"
             color={color}
           >
@@ -156,8 +157,8 @@ export default function Playground({ color }: CoreColorInput) {
 
         <FunProjectWrapper color={color} rotate={"17deg"}>
           <FunProjectTitle
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
             href="/transitnetworks"
             color={color}
           >
@@ -168,11 +169,29 @@ export default function Playground({ color }: CoreColorInput) {
             <Image src={TransitNetworks} alt="image of map" draggable="false" />
           </SquareImageWrapper>
         </FunProjectWrapper>
+        <FunProjectWrapper color={color} rotate={"-15deg"}>
+          <FunProjectTitle
+            // target="_blank"
+            // rel="noopener noreferrer"
+            href="https://observablehq.com/@pmisner/soil-colors"
+            color={color}
+          >
+            {" "}
+            Munsell Color System →
+          </FunProjectTitle>
+          <SquareImageWrapper>
+            <Image
+              src={Munsell}
+              alt="image of chromatic arrangement of colors"
+              draggable="false"
+            />
+          </SquareImageWrapper>
+        </FunProjectWrapper>
 
         <FunProjectWrapper color={color} rotate={"-12deg"}>
           <FunProjectTitle
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
             href="https://observablehq.com/d/48357752cbe8c36b"
             color={color}
           >

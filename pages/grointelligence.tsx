@@ -10,6 +10,7 @@ import { useState } from "react";
 import BeyondDashboardsImg from "../public/Gro/VectorDashboard.png";
 import BespokeCharts from "../public/Gro/BespokeCharts.png";
 import ChartDS from "../public/Gro/ChartDS_Gro.png";
+import Widget from "../public/Gro/Widgets.png";
 import About from "@/app/components/about";
 
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
@@ -55,6 +56,9 @@ export default function GroIntelligence() {
               data at once, the new layout begins with a summarized overview at
               the top level and let user dig into the details as necessary.
             </p>
+            <FullWidthImageWrapper>
+              <Image src={Widget} alt="collection of charts" />
+            </FullWidthImageWrapper>
             <p>
               Further, when communicating technical information to an audience
               with a wide range of understanding, helping users understand and

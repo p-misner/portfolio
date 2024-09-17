@@ -5,6 +5,7 @@ import {
   CoreColorInput,
   LightOverlay_95,
   LightOverlay_97,
+  LightOverlay_99,
 } from "./styleConstants";
 import { ColorMixer } from "../utils/utils";
 
