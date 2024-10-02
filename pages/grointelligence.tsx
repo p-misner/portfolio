@@ -39,7 +39,7 @@ export default function GroIntelligence() {
               communicate the climate's impact on crop health.
             </h2>
             <h4>
-              Note: As much of my work at Gro deals with proprietary data, the
+              Note: As much of my work at Gro dealt with proprietary data, the
               images and content presented have been adjusted or changed to
               protect confidentiality.
             </h4>

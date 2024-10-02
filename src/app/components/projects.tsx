@@ -42,7 +42,11 @@ export function CharlesRiver({ color }: CoreColorInput) {
           {" "}
           Charles River Labs →
         </ProjectLink>
-        <ProjectSubtitle>Coming soon</ProjectSubtitle>
+        <ProjectSubtitle>
+          {" "}
+          Data visualization design for Apollo, a real-time toxicology study
+          data portal
+        </ProjectSubtitle>
       </ProjectInfo>
       <ProjectLink color={color} href="charlesriver">
         <CRImageWrapper>

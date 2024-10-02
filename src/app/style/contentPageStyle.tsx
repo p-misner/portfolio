@@ -31,6 +31,7 @@ export const Content = styled.div<CoreColorInput>`
   }
   h2 {
     margin-top: 16px;
+    line-height: 1.2;
     font-size: 28px;
     font-weight: 300;
     grid-column: 2 / span 10;
@@ -42,7 +43,7 @@ export const Content = styled.div<CoreColorInput>`
     grid-column: 2 / span 10;
   }
   h4 {
-    margin-top: 16px;
+    margin-top: 20px;
     opacity: 0.8;
     font-size: 20px;
     font-weight: 300;
@@ -89,9 +90,24 @@ export const FullWidthImageWrapper = styled.div`
   margin: 32px auto;
   grid-column: 2 / span 10;
   img {
+    border-radius: 32px;
     width: 100%;
     height: 100%;
     position: relative !important;
     object-fit: cover; // Optional
+  }
+`;
+export const FullWidthImageWrapperContain = styled.div`
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 32px auto;
+  grid-column: 2 / span 10;
+  img {
+    border-radius: 32px;
+    width: 100%;
+    height: 100%;
+    position: relative !important;
+    object-fit: contain; // Optional
   }
 `;
