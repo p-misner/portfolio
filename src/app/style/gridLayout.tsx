@@ -3,6 +3,8 @@ import styled from "styled-components";
 import {
   breakpoints,
   CoreColorInput,
+  DarkOverlay_50,
+  DarkOverlay_80,
   LightOverlay_95,
   LightOverlay_97,
   LightOverlay_99,
@@ -74,6 +76,79 @@ export const GridWrapper = styled.div`
 
 export const FullWidthWrapper = styled.div`
   grid-column: 1 / span 12;
+`;
+
+export const NotFoundWrapper = styled.div`
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+`;
+export const NotFoundMessage = styled.h1<CoreColorInput>`
+  text-align: center;
+  padding-top: 196px;
+  margin-bottom: 24px;
+  font-size: 48px;
+  font-weight: 500;
+  padding-left: 100px;
+  padding-right: 100px;
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: DarkOverlay_50,
+      returnFormat: "rgba",
+    })};
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+    2px 2px 0 #fff;
+`;
+export const NotFoundSubtitle = styled.h2<CoreColorInput>`
+  text-align: center;
+  font-size: 32px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+    2px 2px 0 #fff;
+  a {
+    text-decoration: none;
+    color: ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: DarkOverlay_50,
+        returnFormat: "rgba",
+      })};
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const NotFoundButton = styled.button<CoreColorInput>`
+  padding: 8px 16px;
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  font-size: 20px;
+  border-radius: 8px;
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: DarkOverlay_50,
+      returnFormat: "rgba",
+    })};
+  background: none;
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+    2px 2px 0 #fff;
+
+  &: hover {
+    cursor: pointer;
+    background: ${(props) =>
+      ColorMixer({
+        bottomLayer: props.color,
+        topLayer: props.color,
+        opacity: 0.5,
+        returnFormat: "rgba",
+      })};
+  }
 `;
 
 // export const SingleColumn = styled.div`
