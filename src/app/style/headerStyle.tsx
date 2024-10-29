@@ -20,7 +20,7 @@ export const HeaderWrapper = styled.div<CoreColorInput>`
       opacity: 0.85,
     })};
   backdrop-filter: blur(12.8px);
-  -webkit-backdrop-filter: blur(2.8px);
+  -webkit-backdrop-filter: blur(12.8px);
   z-index: 20;
   ::selection {
     background: ${(props) =>

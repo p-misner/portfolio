@@ -19,7 +19,7 @@ export default function GroIntelligence() {
 
   return (
     <div className={leaguespartan.className}>
-      <PageWrapper color={theme?.colorPicked}>
+      <PageWrapper projectpage={true} color={theme?.colorPicked}>
         <div>
           <Content color={theme?.colorPicked}>
             <h1> Transit Networks</h1>
@@ -84,7 +84,7 @@ export default function GroIntelligence() {
           </Content>
         </div>
       </PageWrapper>{" "}
-      <BottomBit color={theme?.colorPicked}>
+      <BottomBit projectpage={true} color={theme?.colorPicked}>
         <About />
       </BottomBit>
     </div>

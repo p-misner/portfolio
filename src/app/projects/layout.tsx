@@ -28,7 +28,6 @@ export default function RootLayout({
             {" "}
             <PageHeader />
             <ControlPanelWrapper>
-              {/* <Settings /> */}
               <ColorPickerComponent />
             </ControlPanelWrapper>
             {children}

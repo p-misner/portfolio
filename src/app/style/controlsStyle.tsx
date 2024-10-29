@@ -3,8 +3,10 @@ import styled from "styled-components";
 import {
   CoreColorInput,
   DarkOverlay_80,
+  LightOverlay_80,
   LightOverlay_95,
   LightOverlay_97,
+  LightOverlay_99,
 } from "./styleConstants";
 import { ColorMixer } from "../utils/utils";
 
@@ -234,9 +236,9 @@ export const SettingsButton = styled.button<CoreColorInput>`
   background-color: ${(props) =>
     ColorMixer({
       bottomLayer: props.color,
-      topLayer: LightOverlay_97,
+      topLayer: LightOverlay_95,
       returnFormat: "rgba",
-      opacity: 0.5,
+      opacity: 1,
     })};
   backdrop-filter: blur(6.8px);
   -webkit-backdrop-filter: blur(6.8px);
