@@ -1,3 +1,4 @@
+"use client";
 import ColorPickerComponent from "@/app/components/controls";
 import PageHeader from "@/app/components/header";
 import {
@@ -9,34 +10,29 @@ import { ControlPanelWrapper } from "@/app/style/controlsStyle";
 import { BottomBit, PageWrapper } from "@/app/style/gridLayout";
 import { ArrayRGBA } from "@/app/utils/utils";
 import { League_Spartan } from "next/font/google";
-import { useState } from "react";
-import HeroImg from "../public/UrbanismX/justacc_multiple.png";
-import DatatoDesignImg from "../public/UrbanismX/GeoViz_datadetails.png";
-import Process from "../public/UrbanismX/PrototypeProcessBlue.jpg";
-import BlackWhiteMap from "../public/UrbanismX/JustAccGif.gif";
-import AccIndex from "../public/UrbanismX/AccIndexGif.gif";
-import DistanceCityCenter from "../public/UrbanismX/LineGraphsGif.gif";
+import { useContext, useState } from "react";
+import HeroImg from "../../../../public/UrbanismX/justacc_multiple.png";
+import DatatoDesignImg from "../../../..//public/UrbanismX/GeoViz_datadetails.png";
+import Process from "../../../../public/UrbanismX/PrototypeProcessBlue.jpg";
+import BlackWhiteMap from "../../../../public/UrbanismX/JustAccGif.gif";
+import AccIndex from "../../../../public/UrbanismX/AccIndexGif.gif";
+import DistanceCityCenter from "../../../../public/UrbanismX/LineGraphsGif.gif";
 import Image from "next/image";
 import About from "@/app/components/about";
+import { ThemeContext } from "@/app/components/providers";
 
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
 
 export default function UrbanismX() {
   const defaultColor: ArrayRGBA = [25, 149, 230, 1];
   const [colorPicked, setColorPicked] = useState<ArrayRGBA>(defaultColor);
+  const theme = useContext(ThemeContext);
 
   return (
     <div className={leaguespartan.className}>
-      <ControlPanelWrapper>
-        <ColorPickerComponent
-          setColorPicked={setColorPicked}
-          colorPicked={colorPicked}
-        />
-      </ControlPanelWrapper>
-      <PageHeader color={colorPicked} />
-      <PageWrapper color={colorPicked}>
+      <PageWrapper color={theme?.colorPicked}>
         <div>
-          <Content color={colorPicked}>
+          <Content color={theme?.colorPicked}>
             <h1> UrbanismX at Tufts</h1>
             <h2>
               Building an interactive data dashboard built under Dr. Shan Jiang
@@ -197,8 +193,8 @@ export default function UrbanismX() {
           </Content>
         </div>
       </PageWrapper>{" "}
-      <BottomBit color={colorPicked}>
-        <About color={colorPicked} />
+      <BottomBit color={theme?.colorPicked}>
+        <About />
       </BottomBit>
     </div>
   );

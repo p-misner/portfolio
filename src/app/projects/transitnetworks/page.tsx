@@ -1,34 +1,27 @@
-import ColorPickerComponent from "@/app/components/controls";
-import PageHeader from "@/app/components/header";
+"use client";
 import { Content, FullWidthImageWrapper } from "@/app/style/contentPageStyle";
-import { ControlPanelWrapper } from "@/app/style/controlsStyle";
 import { BottomBit, PageWrapper } from "@/app/style/gridLayout";
 import { ArrayRGBA } from "@/app/utils/utils";
 import { League_Spartan } from "next/font/google";
 import Image from "next/image";
-import { useState } from "react";
-import TransitNetworks from "../public/Playground/TransitNetworks.gif";
-import Comparison from "../public/Playground/comparisonMap.gif";
+import { useContext, useState } from "react";
+import TransitNetworks from "../../../../public/Playground/TransitNetworks.gif";
+import Comparison from "../../../../public/Playground/comparisonMap.gif";
 import About from "@/app/components/about";
+import { ThemeContext } from "@/app/components/providers";
 
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
 
 export default function GroIntelligence() {
   const defaultColor: ArrayRGBA = [25, 149, 230, 1];
   const [colorPicked, setColorPicked] = useState<ArrayRGBA>(defaultColor);
+  const theme = useContext(ThemeContext);
 
   return (
     <div className={leaguespartan.className}>
-      <ControlPanelWrapper>
-        <ColorPickerComponent
-          setColorPicked={setColorPicked}
-          colorPicked={colorPicked}
-        />
-      </ControlPanelWrapper>
-      <PageHeader color={colorPicked} />
-      <PageWrapper color={colorPicked}>
+      <PageWrapper color={theme?.colorPicked}>
         <div>
-          <Content color={colorPicked}>
+          <Content color={theme?.colorPicked}>
             <h1> Transit Networks</h1>
             <h2>
               Prototype network flow visualization built with deck.gl and React
@@ -91,8 +84,8 @@ export default function GroIntelligence() {
           </Content>
         </div>
       </PageWrapper>{" "}
-      <BottomBit color={colorPicked}>
-        <About color={colorPicked} />
+      <BottomBit color={theme?.colorPicked}>
+        <About />
       </BottomBit>
     </div>
   );

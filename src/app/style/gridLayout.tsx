@@ -36,6 +36,12 @@ export const BottomBit = styled.div<CoreColorInput>`
       topLayer: LightOverlay_95,
       returnFormat: "rgba",
     })};
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: DarkOverlay_50,
+      returnFormat: "rgba",
+    })};
   border-top-left-radius: 64px 48px;
   border-top-right-radius: 64px 48px;
   padding-bottom: 24px;

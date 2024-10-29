@@ -118,7 +118,7 @@ export const SineSVG = styled.svg`
 `;
 
 type MovePathInput = {
-  color?: ArrayRGBA;
+  color?: any;
   speed?: number;
   transform?: number;
   thickness?: number;

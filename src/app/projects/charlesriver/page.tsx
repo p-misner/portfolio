@@ -1,3 +1,4 @@
+"use client";
 import About from "@/app/components/about";
 import ColorPickerComponent from "@/app/components/controls";
 import PageHeader from "@/app/components/header";
@@ -11,27 +12,19 @@ import { BottomBit, PageWrapper } from "@/app/style/gridLayout";
 import { ArrayRGBA } from "@/app/utils/utils";
 import { League_Spartan } from "next/font/google";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
-import CharlesRiverCover from "../public/CharlesRiver/CR-Apollo-Showcase.png";
+import CharlesRiverCover from "../../../../public/CharlesRiver/CR-Apollo-Showcase.png";
+import { ThemeContext } from "@/app/components/providers";
 
 export default function CharlesRiver() {
-  const defaultColor: ArrayRGBA = [25, 149, 230, 1];
-
-  const [colorPicked, setColorPicked] = useState<ArrayRGBA>(defaultColor);
+  const theme = useContext(ThemeContext);
 
   return (
     <div className={leaguespartan.className}>
-      <ControlPanelWrapper>
-        <ColorPickerComponent
-          setColorPicked={setColorPicked}
-          colorPicked={colorPicked}
-        />
-      </ControlPanelWrapper>
-      <PageHeader color={colorPicked} />
-      <PageWrapper color={colorPicked}>
+      <PageWrapper color={theme?.colorPicked}>
         <div>
-          <Content color={colorPicked}>
+          <Content color={theme?.colorPicked}>
             <h1> Charles River Labs</h1>
             <h2>
               Data visualization design for Apollo, a real-time toxicology study
@@ -52,8 +45,8 @@ export default function CharlesRiver() {
           </Content>
         </div>
       </PageWrapper>{" "}
-      <BottomBit color={colorPicked}>
-        <About color={colorPicked} />
+      <BottomBit color={theme?.colorPicked}>
+        <About />
       </BottomBit>
     </div>
   );

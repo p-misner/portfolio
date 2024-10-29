@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { GridWrapper } from "../style/gridLayout";
 import {
   FunProjectTitle,
@@ -21,8 +21,11 @@ import Munsell from "../../../public/Playground/Munsell.png";
 import TransitNetworks from "../../../public/Playground/TransitNetworks.gif";
 import Senator from "../../../public/Playground/Senator.png";
 import MatterofTime from "../../../public/Playground/MatterofTime.png";
+import { ThemeContext } from "./providers";
 
-export default function Playground({ color }: CoreColorInput) {
+export default function Playground() {
+  const theme = useContext(ThemeContext);
+
   const scrollRef = useRef<HTMLDivElement>(null);
   let pos = { top: 0, left: 0, x: 0, y: 0 };
 
@@ -66,40 +69,42 @@ export default function Playground({ color }: CoreColorInput) {
   };
 
   return (
-    <PlaygroundWrapper color={color}>
+    <PlaygroundWrapper color={theme?.colorPicked}>
       <div id="play" style={{ paddingTop: "40px" }}>
         <GridWrapper>
-          <PlaygroundTitle color={color}>Playground</PlaygroundTitle>
-          <ScrollInstructions color={color}>
+          <PlaygroundTitle color={theme?.colorPicked}>
+            Playground
+          </PlaygroundTitle>
+          <ScrollInstructions color={theme?.colorPicked}>
             {" "}
             all the bits and bobs I’ve been playing around with
           </ScrollInstructions>{" "}
-          <ScrollAbsolute color={color} t="400px" left="100px">
+          <ScrollAbsolute color={theme?.colorPicked} t="400px" left="100px">
             scroll →
           </ScrollAbsolute>
-          <ScrollAbsolute color={color} t="350px" left="1300px">
+          <ScrollAbsolute color={theme?.colorPicked} t="350px" left="1300px">
             scroll →
           </ScrollAbsolute>
-          <ScrollAbsolute color={color} t="700px" left="0px">
+          <ScrollAbsolute color={theme?.colorPicked} t="700px" left="0px">
             scroll →
           </ScrollAbsolute>
-          <ScrollAbsolute color={color} t="900px" left="900px">
+          <ScrollAbsolute color={theme?.colorPicked} t="900px" left="900px">
             scroll →
           </ScrollAbsolute>
         </GridWrapper>
       </div>
       <ProjectScroll
-        color={color}
+        color={theme?.colorPicked}
         ref={scrollRef}
         onMouseDown={mouseDownHandler}
       >
-        <FunProjectWrapper color={color} rotate={"-19deg"}>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"-19deg"}>
           {" "}
           <FunProjectTitle
             // target="_blank"
             // rel="noopener noreferrer"
             href="https://matteroftime.priyamisner.com/"
-            color={color}
+            color={theme?.colorPicked}
           >
             {" "}
             A Matter of Time
@@ -109,13 +114,13 @@ export default function Playground({ color }: CoreColorInput) {
           </SquareImageWrapper>
         </FunProjectWrapper>
 
-        <FunProjectWrapper color={color} rotate={"23deg"}>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"23deg"}>
           {" "}
           <FunProjectTitle
             // target="_blank"
             // rel="noopener noreferrer"
             href="https://goldenyearsapp.herokuapp.com/"
-            color={color}
+            color={theme?.colorPicked}
           >
             {" "}
             Golden Years →
@@ -125,12 +130,12 @@ export default function Playground({ color }: CoreColorInput) {
           </SquareImageWrapper>
         </FunProjectWrapper>
 
-        <FunProjectWrapper color={color} rotate={"-15deg"}>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"-15deg"}>
           <FunProjectTitle
             // target="_blank"
             // rel="noopener noreferrer"
             href="https://p-misner.github.io/wdvp/"
-            color={color}
+            color={theme?.colorPicked}
           >
             {" "}
             World of Data →
@@ -140,12 +145,12 @@ export default function Playground({ color }: CoreColorInput) {
           </SquareImageWrapper>
         </FunProjectWrapper>
 
-        <FunProjectWrapper color={color} rotate={"-15deg"}>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"-15deg"}>
           <FunProjectTitle
             // target="_blank"
             // rel="noopener noreferrer"
             href="https://observablehq.com/@pmisner/state-soils?collection=@pmisner/soil"
-            color={color}
+            color={theme?.colorPicked}
           >
             {" "}
             State Soil →
@@ -155,12 +160,12 @@ export default function Playground({ color }: CoreColorInput) {
           </SquareImageWrapper>
         </FunProjectWrapper>
 
-        <FunProjectWrapper color={color} rotate={"17deg"}>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"17deg"}>
           <FunProjectTitle
             // target="_blank"
             // rel="noopener noreferrer"
             href="/transitnetworks"
-            color={color}
+            color={theme?.colorPicked}
           >
             {" "}
             Transit Networks →
@@ -169,12 +174,12 @@ export default function Playground({ color }: CoreColorInput) {
             <Image src={TransitNetworks} alt="image of map" draggable="false" />
           </SquareImageWrapper>
         </FunProjectWrapper>
-        <FunProjectWrapper color={color} rotate={"-15deg"}>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"-15deg"}>
           <FunProjectTitle
             // target="_blank"
             // rel="noopener noreferrer"
             href="https://observablehq.com/@pmisner/soil-colors"
-            color={color}
+            color={theme?.colorPicked}
           >
             {" "}
             Munsell Color System →
@@ -188,12 +193,12 @@ export default function Playground({ color }: CoreColorInput) {
           </SquareImageWrapper>
         </FunProjectWrapper>
 
-        <FunProjectWrapper color={color} rotate={"-12deg"}>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"-12deg"}>
           <FunProjectTitle
             // target="_blank"
             // rel="noopener noreferrer"
             href="https://observablehq.com/d/48357752cbe8c36b"
-            color={color}
+            color={theme?.colorPicked}
           >
             {" "}
             Is My Senator Older Than... →

@@ -11,12 +11,19 @@ import {
   ProjectWrapper,
 } from "../style/projectsStyle";
 import { CoreColorInput } from "../style/styleConstants";
+import { useContext } from "react";
+import { ThemeContext } from "./providers";
 
-export function GroIntelligenceProject({ color }: CoreColorInput) {
+export function GroIntelligenceProject() {
+  const theme = useContext(ThemeContext);
+
   return (
-    <ProjectWrapper color={color}>
-      <ProjectInfo color={color}>
-        <ProjectLink color={color} href="/grointelligence">
+    <ProjectWrapper color={theme?.colorPicked}>
+      <ProjectInfo color={theme?.colorPicked}>
+        <ProjectLink
+          color={theme?.colorPicked}
+          href="/projects/grointelligence"
+        >
           {" "}
           Gro Intelligence →
         </ProjectLink>
@@ -26,7 +33,7 @@ export function GroIntelligenceProject({ color }: CoreColorInput) {
           the way we communicate the climate's impact on crop health.
         </ProjectSubtitle>
       </ProjectInfo>
-      <ProjectLink color={color} href="/grointelligence">
+      <ProjectLink color={theme?.colorPicked} href="/projects/grointelligence">
         <ImageWrapper>
           <Image src={GroImage} alt="image of map" />
         </ImageWrapper>
@@ -34,11 +41,13 @@ export function GroIntelligenceProject({ color }: CoreColorInput) {
     </ProjectWrapper>
   );
 }
-export function CharlesRiver({ color }: CoreColorInput) {
+export function CharlesRiver() {
+  const theme = useContext(ThemeContext);
+
   return (
-    <ProjectWrapper color={color}>
-      <ProjectInfo color={color}>
-        <ProjectLink color={color} href="charlesriver">
+    <ProjectWrapper color={theme?.colorPicked}>
+      <ProjectInfo color={theme?.colorPicked}>
+        <ProjectLink color={theme?.colorPicked} href="/projects/charlesriver">
           {" "}
           Charles River Labs →
         </ProjectLink>
@@ -48,7 +57,7 @@ export function CharlesRiver({ color }: CoreColorInput) {
           data portal
         </ProjectSubtitle>
       </ProjectInfo>
-      <ProjectLink color={color} href="charlesriver">
+      <ProjectLink color={theme?.colorPicked} href="/projects/charlesriver">
         <CRImageWrapper>
           <Image src={ApolloImg} alt="image of map" />
         </CRImageWrapper>
@@ -57,11 +66,13 @@ export function CharlesRiver({ color }: CoreColorInput) {
   );
 }
 
-export function UrbanismX({ color }: CoreColorInput) {
+export function UrbanismX() {
+  const theme = useContext(ThemeContext);
+
   return (
-    <ProjectWrapper color={color}>
-      <ProjectInfo color={color}>
-        <ProjectLink color={color} href="urbanismx">
+    <ProjectWrapper color={theme?.colorPicked}>
+      <ProjectInfo color={theme?.colorPicked}>
+        <ProjectLink color={theme?.colorPicked} href="/projects/urbanismx">
           {" "}
           UrbanismX at Tufts →
         </ProjectLink>
@@ -71,7 +82,7 @@ export function UrbanismX({ color }: CoreColorInput) {
           States's top twenty-five metropolitan areas.
         </ProjectSubtitle>
       </ProjectInfo>
-      <ProjectLink color={color} href="urbanismx">
+      <ProjectLink color={theme?.colorPicked} href="/projects/urbanismx">
         <CRImageWrapper>
           <Image src={UrbanismXImg} alt="image of map" />
         </CRImageWrapper>

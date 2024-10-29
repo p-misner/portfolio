@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+"use client";
+import { useContext, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import SettingIcon from "../../../public/settingicon.svg";
 
@@ -12,21 +13,18 @@ import {
 } from "../style/controlsStyle";
 import { ArrayRGBA, colorConverterService } from "../utils/utils";
 import { CoreColorInput } from "../style/styleConstants";
+import { ThemeContext } from "./providers";
 
-export function Settings({
-  color,
-  waveOptions,
-  setWaveOptions,
-}: {
-  color: ArrayRGBA;
-  waveOptions: { a1: number; a2: number; nw1: number; nw2: number };
-  setWaveOptions: any;
-}) {
+export function Settings() {
   const [modalOpen, setModeOpen] = useState(false);
+  const theme = useContext(ThemeContext);
 
   return (
     <SettingWrapper>
-      <SettingsButton onClick={() => setModeOpen(!modalOpen)} color={color}>
+      <SettingsButton
+        onClick={() => setModeOpen(!modalOpen)}
+        color={theme.colorPicked}
+      >
         {modalOpen ? (
           <p>X</p>
         ) : (
@@ -34,68 +32,77 @@ export function Settings({
         )}
       </SettingsButton>
       {modalOpen && (
-        <SettingModal color={color}>
-          <label htmlFor="nw1">numWaves1: {waveOptions.nw1}</label>
+        <SettingModal color={theme.colorPicked}>
+          <label htmlFor="nw1">numWaves1: {theme.waveOptions.nw1}</label>
           <ColoredInput
-            color={color}
+            color={theme.colorPicked}
             name="nw1"
             type="range"
             step="0.1"
             min="0.2"
             max="20"
-            defaultValue={waveOptions.nw1}
+            defaultValue={theme.waveOptions.nw1}
             onChange={(e) => {
-              setWaveOptions({ ...waveOptions, nw1: e.target.value });
+              theme.setWaveOptions({
+                ...theme.waveOptions,
+                nw1: e.target.value,
+              });
             }}
           />
-          <label htmlFor="nw2">numWaves2: {waveOptions.nw2}</label>
+          <label htmlFor="nw2">numWaves2: {theme.waveOptions.nw2}</label>
           <ColoredInput
-            color={color}
+            color={theme.colorPicked}
             name="nw2"
             type="range"
             step=".2"
             min="0.2"
             max="20"
-            defaultValue={waveOptions.nw2}
+            defaultValue={theme.waveOptions.nw2}
             onChange={(e) => {
-              setWaveOptions({ ...waveOptions, nw2: e.target.value });
+              theme.setWaveOptions({
+                ...theme.waveOptions,
+                nw2: e.target.value,
+              });
             }}
           />
 
-          <label htmlFor="a1">amp1: {waveOptions.a1}</label>
+          <label htmlFor="a1">amp1: {theme.waveOptions.a1}</label>
           <ColoredInput
-            color={color}
+            color={theme.colorPicked}
             name="a1"
             type="range"
             step=".05"
             min="0.05"
             max="1"
-            defaultValue={waveOptions.a1}
+            defaultValue={theme.waveOptions.a1}
             onChange={(e) => {
-              setWaveOptions({ ...waveOptions, a1: e.target.value });
+              theme.setWaveOptions({
+                ...theme.waveOptions,
+                a1: e.target.value,
+              });
             }}
           />
 
-          <label htmlFor="a2">amp1: {waveOptions.a2}</label>
+          <label htmlFor="a2">amp2: {theme.waveOptions.a2}</label>
           <ColoredInput
-            color={color}
+            color={theme.colorPicked}
             name="a2"
             type="range"
             step=".05"
             min="0.05"
             max="1"
-            defaultValue={waveOptions.a2}
+            defaultValue={theme.waveOptions.a2}
             onChange={(e) => {
-              setWaveOptions({ ...waveOptions, a2: e.target.value });
+              theme.setWaveOptions({
+                ...theme.waveOptions,
+                a2: e.target.value,
+              });
             }}
           />
         </SettingModal>
       )}
     </SettingWrapper>
   );
-}
-export function DayNight() {
-  return <div> daynight</div>;
 }
 
 interface ColorPickerComponentProps {
@@ -105,10 +112,7 @@ interface ColorPickerComponentProps {
   //   handleColorSelected(color: string): void;
 }
 
-export default function ColorPickerComponent({
-  setColorPicked,
-  colorPicked,
-}: ColorPickerComponentProps) {
+export default function ColorPickerComponent() {
   const hueRef = useRef<any>();
   const hueSelectorRef = useRef<any>();
   const isDown = useRef<boolean>(false);
@@ -117,6 +121,7 @@ export default function ColorPickerComponent({
   const setLightness = 50;
   const MAX_HUE = 240; // hue range
   const MIN_HUE = 60;
+  const theme = useContext(ThemeContext);
 
   const handleHueCursorPosition = (
     e: React.MouseEvent<HTMLDivElement> | MouseEvent
@@ -144,7 +149,8 @@ export default function ColorPickerComponent({
       colorConverterService.hslToHex(hue, setSaturation, setLightness)
     );
     // setColorPicked(hex);
-    setColorPicked([hex.r, hex.g, hex.b, 1]);
+    theme?.setColorPicked([hex.r, hex.g, hex.b, 1]);
+
     // inputRef.current.value = hex;
   };
 
@@ -175,7 +181,7 @@ export default function ColorPickerComponent({
   return (
     <HueWrapper>
       <Hue
-        color={colorPicked}
+        color={theme?.colorPicked}
         ref={hueRef}
         onMouseDown={(e) => handleMouseDown(e)}
         // onClick={(e) => handleHueCursorPosition(e)}

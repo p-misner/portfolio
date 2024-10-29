@@ -8,9 +8,9 @@ export const LightOverlay_80: ArrayRGBA = [255, 255, 255, 0.8];
 export const DarkOverlay_80: ArrayRGBA = [0, 0, 0, 0.7];
 export const DarkOverlay_50: ArrayRGBA = [0, 0, 0, 0.6];
 
-export const coreColor: ArrayRGBA = [6, 147, 227, 1];
+// export const coreColor: ArrayRGBA = [6, 147, 227, 1];
 export type CoreColorInput = {
-  color: ArrayRGBA;
+  color: any;
 };
 export const borderWidth = "1px";
 

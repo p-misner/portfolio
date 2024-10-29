@@ -1,3 +1,4 @@
+"use client";
 import ColorPickerComponent from "@/app/components/controls";
 import PageHeader from "@/app/components/header";
 import { Content, FullWidthImageWrapper } from "@/app/style/contentPageStyle";
@@ -6,31 +7,24 @@ import { BottomBit, PageWrapper } from "@/app/style/gridLayout";
 import { ArrayRGBA } from "@/app/utils/utils";
 import { League_Spartan } from "next/font/google";
 import Image from "next/image";
-import { useState } from "react";
-import BeyondDashboardsImg from "../public/Gro/VectorDashboard.png";
-import BespokeCharts from "../public/Gro/BespokeCharts.png";
-import ChartDS from "../public/Gro/ChartDS_Gro.png";
-import Widget from "../public/Gro/Widgets.png";
+import { useContext, useState } from "react";
+import BeyondDashboardsImg from "../../../../public/Gro/VectorDashboard.png";
+import BespokeCharts from "../../../../public/Gro/BespokeCharts.png";
+import ChartDS from "../../../../public/Gro/ChartDS_Gro.png";
+import Widget from "../../../../public/Gro/Widgets.png";
 import About from "@/app/components/about";
+import { ThemeContext } from "@/app/components/providers";
 
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
 
 export default function GroIntelligence() {
-  const defaultColor: ArrayRGBA = [25, 149, 230, 1];
-  const [colorPicked, setColorPicked] = useState<ArrayRGBA>(defaultColor);
+  const theme = useContext(ThemeContext);
 
   return (
     <div className={leaguespartan.className}>
-      <ControlPanelWrapper>
-        <ColorPickerComponent
-          setColorPicked={setColorPicked}
-          colorPicked={colorPicked}
-        />
-      </ControlPanelWrapper>
-      <PageHeader color={colorPicked} />
-      <PageWrapper color={colorPicked}>
+      <PageWrapper color={theme?.colorPicked}>
         <div>
-          <Content color={colorPicked}>
+          <Content color={theme?.colorPicked}>
             <h1> Gro Intelligence</h1>
             <h2>
               A peek into some of the projects I've worked on. Working across
@@ -107,8 +101,8 @@ export default function GroIntelligence() {
           </Content>
         </div>
       </PageWrapper>{" "}
-      <BottomBit color={colorPicked}>
-        <About color={colorPicked} />
+      <BottomBit color={theme?.colorPicked}>
+        <About />
       </BottomBit>
     </div>
   );

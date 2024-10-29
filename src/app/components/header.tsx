@@ -1,3 +1,5 @@
+"use client";
+import { useContext } from "react";
 import {
   Header,
   HeaderWrapper,
@@ -5,16 +7,18 @@ import {
   NameHeader,
 } from "../style/headerStyle";
 import { CoreColorInput } from "../style/styleConstants";
+import { ThemeContext } from "./providers";
 
-export default function PageHeader({ color }: CoreColorInput) {
+export default function PageHeader() {
+  const theme = useContext(ThemeContext);
   return (
-    <HeaderWrapper color={color}>
+    <HeaderWrapper color={theme?.colorPicked}>
       <Header>
-        <NameHeader color={color}>
+        <NameHeader color={theme?.colorPicked}>
           {" "}
           <a href="/">Priya Misner</a>
         </NameHeader>
-        <MenuHeader color={color}>
+        <MenuHeader color={theme?.colorPicked}>
           <a href="/#work">work</a>
           <a href="/#play">play</a>
           {/* <a href="#">about</a> */}

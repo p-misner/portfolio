@@ -72,7 +72,7 @@ export const ScrollInstructions = styled.h3<CoreColorInput>`
 `;
 
 type FunProjInput = {
-  color: ArrayRGBA;
+  color: any;
   rotate?: string;
 };
 export const FunProjectWrapper = styled.div<FunProjInput>`
@@ -157,7 +157,7 @@ export const FunProjectTitle = styled.a<CoreColorInput>`
 type ScrollInput = {
   t: string;
   left?: string;
-  color: ArrayRGBA;
+  color: any;
 };
 export const ScrollAbsolute = styled.p<ScrollInput>`
   color: ${(props) =>

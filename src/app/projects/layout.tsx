@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
-import "./globals.css";
-import StyledComponentsRegistry from "./lib/registry";
-import PageHeader from "./components/header";
-import ThemeProvider from "./components/providers";
-import { ControlPanelWrapper } from "./style/controlsStyle";
-import ColorPickerComponent, { Settings } from "./components/controls";
+import "../globals.css";
+import StyledComponentsRegistry from "../lib/registry";
+import PageHeader from "../components/header";
+import ThemeProvider from "../components/providers";
+import { ControlPanelWrapper } from "../style/controlsStyle";
+import ColorPickerComponent, { Settings } from "../components/controls";
 
 // const inter = Inter({ subsets: ["latin"] });
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
@@ -28,7 +28,7 @@ export default function RootLayout({
             {" "}
             <PageHeader />
             <ControlPanelWrapper>
-              <Settings />
+              {/* <Settings /> */}
               <ColorPickerComponent />
             </ControlPanelWrapper>
             {children}

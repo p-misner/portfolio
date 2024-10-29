@@ -13,7 +13,7 @@ import Link from "next/link";
 
 type ProjectStyleInput = {
   filled?: "true" | "false";
-  color: ArrayRGBA;
+  color: any;
 };
 
 export const ImageWrapper = styled.div`
