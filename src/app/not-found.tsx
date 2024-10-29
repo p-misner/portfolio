@@ -28,12 +28,11 @@ export default function Custom404() {
 
   return (
     <div>
+      {/* <PageHeader /> */}
       <ControlPanelWrapper>
-        {/* <Settings color={colorPicked} /> */}
         <Settings />
         <ColorPickerComponent />
-      </ControlPanelWrapper>{" "}
-      <PageHeader />
+      </ControlPanelWrapper>
       <BackgroundPageWrapper color={theme.colorPicked}>
         <PageWrapper color={theme.colorPicked} projectpage={false}>
           <CanvasWave />

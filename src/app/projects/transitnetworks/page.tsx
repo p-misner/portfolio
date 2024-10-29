@@ -9,6 +9,8 @@ import TransitNetworks from "../../../../public/Playground/TransitNetworks.gif";
 import Comparison from "../../../../public/Playground/comparisonMap.gif";
 import About from "@/app/components/about";
 import { ThemeContext } from "@/app/components/providers";
+import { ControlPanelWrapper } from "@/app/style/controlsStyle";
+import ColorPickerComponent from "@/app/components/controls";
 
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
 
@@ -20,6 +22,9 @@ export default function GroIntelligence() {
   return (
     <div className={leaguespartan.className}>
       <PageWrapper projectpage={true} color={theme?.colorPicked}>
+        <ControlPanelWrapper>
+          <ColorPickerComponent />
+        </ControlPanelWrapper>
         <div>
           <Content color={theme?.colorPicked}>
             <h1> Transit Networks</h1>

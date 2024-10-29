@@ -23,6 +23,9 @@ export default function CharlesRiver() {
   return (
     <div className={leaguespartan.className}>
       <PageWrapper projectpage={false} color={theme?.colorPicked}>
+        <ControlPanelWrapper>
+          <ColorPickerComponent />
+        </ControlPanelWrapper>
         <div>
           <Content color={theme?.colorPicked}>
             <h1> Charles River Labs</h1>

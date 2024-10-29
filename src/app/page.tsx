@@ -31,6 +31,10 @@ export default function Home() {
     <div>
       <BackgroundPageWrapper color={theme?.colorPicked}>
         <PageWrapper projectpage={false} color={theme?.colorPicked}>
+          <ControlPanelWrapper>
+            <Settings />
+            <ColorPickerComponent />
+          </ControlPanelWrapper>
           <CanvasWave />
           <SineWave />
           <div id="work" style={{ paddingTop: "80px" }}></div>

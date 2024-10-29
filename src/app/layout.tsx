@@ -27,10 +27,10 @@ export default function RootLayout({
           <StyledComponentsRegistry>
             {" "}
             <PageHeader />
-            <ControlPanelWrapper>
+            {/* <ControlPanelWrapper>
               <Settings />
               <ColorPickerComponent />
-            </ControlPanelWrapper>
+            </ControlPanelWrapper> */}
             {children}
           </StyledComponentsRegistry>
         </ThemeProvider>

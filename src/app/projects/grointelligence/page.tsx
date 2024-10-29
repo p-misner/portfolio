@@ -23,6 +23,9 @@ export default function GroIntelligence() {
   return (
     <div className={leaguespartan.className}>
       <PageWrapper projectpage={true} color={theme?.colorPicked}>
+        <ControlPanelWrapper>
+          <ColorPickerComponent />
+        </ControlPanelWrapper>
         <div>
           <Content color={theme?.colorPicked}>
             <h1> Gro Intelligence</h1>
