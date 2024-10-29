@@ -12,6 +12,10 @@ export const DarkOverlay_50: ArrayRGBA = [0, 0, 0, 0.6];
 export type CoreColorInput = {
   color: any;
 };
+export type ProjectPage = {
+  projectpage: boolean;
+  color: any;
+};
 export const borderWidth = "1px";
 
 export const breakpoints = {

@@ -30,7 +30,7 @@ export default function UrbanismX() {
 
   return (
     <div className={leaguespartan.className}>
-      <PageWrapper color={theme?.colorPicked}>
+      <PageWrapper projectpage={true} color={theme?.colorPicked}>
         <div>
           <Content color={theme?.colorPicked}>
             <h1> UrbanismX at Tufts</h1>
@@ -193,7 +193,7 @@ export default function UrbanismX() {
           </Content>
         </div>
       </PageWrapper>{" "}
-      <BottomBit color={theme?.colorPicked}>
+      <BottomBit projectpage={true} color={theme?.colorPicked}>
         <About />
       </BottomBit>
     </div>

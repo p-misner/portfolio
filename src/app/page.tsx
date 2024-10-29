@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div>
       <BackgroundPageWrapper color={theme?.colorPicked}>
-        <PageWrapper color={theme?.colorPicked}>
+        <PageWrapper projectpage={false} color={theme?.colorPicked}>
           <CanvasWave />
           <SineWave />
           <div id="work" style={{ paddingTop: "80px" }}></div>
@@ -43,7 +43,7 @@ export default function Home() {
       </BackgroundPageWrapper>
       <Playground />
       <BackgroundPageWrapper color={theme?.colorPicked}>
-        <BottomBit color={theme?.colorPicked}>
+        <BottomBit projectpage={false} color={theme?.colorPicked}>
           <About />
         </BottomBit>
       </BackgroundPageWrapper>

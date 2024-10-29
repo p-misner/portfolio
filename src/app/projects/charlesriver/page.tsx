@@ -22,7 +22,7 @@ export default function CharlesRiver() {
 
   return (
     <div className={leaguespartan.className}>
-      <PageWrapper color={theme?.colorPicked}>
+      <PageWrapper projectpage={false} color={theme?.colorPicked}>
         <div>
           <Content color={theme?.colorPicked}>
             <h1> Charles River Labs</h1>
@@ -45,7 +45,7 @@ export default function CharlesRiver() {
           </Content>
         </div>
       </PageWrapper>{" "}
-      <BottomBit color={theme?.colorPicked}>
+      <BottomBit projectpage={true} color={theme?.colorPicked}>
         <About />
       </BottomBit>
     </div>
