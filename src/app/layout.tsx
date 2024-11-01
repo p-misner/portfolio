@@ -5,6 +5,8 @@ import StyledComponentsRegistry from "./lib/registry";
 import PageHeader from "./components/header";
 import ThemeProvider from "./components/providers";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { ControlPanelWrapper } from "./style/controlsStyle";
+import ColorPickerComponent from "./components/controls";
 // const inter = Inter({ subsets: ["latin"] });
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
 
@@ -25,7 +27,9 @@ export default function RootLayout({
 
         <ThemeProvider>
           <StyledComponentsRegistry>
-            {" "}
+            <ControlPanelWrapper>
+              <ColorPickerComponent />
+            </ControlPanelWrapper>
             <PageHeader />
             {children}
           </StyledComponentsRegistry>

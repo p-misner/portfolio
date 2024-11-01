@@ -22,9 +22,9 @@ export default function GroIntelligence() {
   return (
     <div className={leaguespartan.className}>
       <PageWrapper projectpage={true} color={theme?.colorPicked}>
-        <ControlPanelWrapper>
+        {/* <ControlPanelWrapper>
           <ColorPickerComponent />
-        </ControlPanelWrapper>
+        </ControlPanelWrapper> */}
         <div>
           <Content color={theme?.colorPicked}>
             <h1> Transit Networks</h1>

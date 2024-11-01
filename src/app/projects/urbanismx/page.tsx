@@ -31,9 +31,9 @@ export default function UrbanismX() {
   return (
     <div className={leaguespartan.className}>
       <PageWrapper projectpage={true} color={theme?.colorPicked}>
-        <ControlPanelWrapper>
+        {/* <ControlPanelWrapper>
           <ColorPickerComponent />
-        </ControlPanelWrapper>
+        </ControlPanelWrapper> */}
         <div>
           <Content color={theme?.colorPicked}>
             <h1> UrbanismX at Tufts</h1>

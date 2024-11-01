@@ -188,7 +188,11 @@ export const ColoredInput = styled.input<CoreColorInput>`
 export const SettingWrapper = styled.div`
   width: 24px;
   height: 24px;
-  position: relative;
+  position: fixed;
+  top: 40%;
+  transform: translate(0, -136px);
+  right: 20px;
+  z-index: 22;
 `;
 export const SettingModal = styled.div<CoreColorInput>`
   width: 240px;
