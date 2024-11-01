@@ -4,9 +4,7 @@ import "./globals.css";
 import StyledComponentsRegistry from "./lib/registry";
 import PageHeader from "./components/header";
 import ThemeProvider from "./components/providers";
-import { ControlPanelWrapper } from "./style/controlsStyle";
-import ColorPickerComponent, { Settings } from "./components/controls";
-
+import { GoogleTagManager } from "@next/third-parties/google";
 // const inter = Inter({ subsets: ["latin"] });
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
 
@@ -23,14 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={leaguespartan.className}>
+        <GoogleTagManager gtmId="G-DBKNS31SWM" />
+
         <ThemeProvider>
           <StyledComponentsRegistry>
             {" "}
             <PageHeader />
-            {/* <ControlPanelWrapper>
-              <Settings />
-              <ColorPickerComponent />
-            </ControlPanelWrapper> */}
             {children}
           </StyledComponentsRegistry>
         </ThemeProvider>
