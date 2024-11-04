@@ -22,7 +22,7 @@ export default function CharlesRiver() {
 
   return (
     <div className={leaguespartan.className}>
-      <PageWrapper projectpage={false} color={theme?.colorPicked}>
+      <PageWrapper projectpage={true} color={theme?.colorPicked}>
         {/* <ControlPanelWrapper>
           <ColorPickerComponent />
         </ControlPanelWrapper> */}

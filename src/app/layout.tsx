@@ -7,6 +7,7 @@ import ThemeProvider from "./components/providers";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { ControlPanelWrapper } from "./style/controlsStyle";
 import ColorPickerComponent from "./components/controls";
+import GoogleAnalytics from "./components/googleAnalytics";
 // const inter = Inter({ subsets: ["latin"] });
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
 
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={leaguespartan.className}>
-        <GoogleTagManager gtmId="G-DBKNS31SWM" />
+        <GoogleAnalytics />
 
         <ThemeProvider>
           <StyledComponentsRegistry>

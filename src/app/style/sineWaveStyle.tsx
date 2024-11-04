@@ -172,6 +172,7 @@ export const MoveLineGroup = styled.g`
 export const Line = styled.line<MovePathInput>`
   stroke-width: 8px;
   stroke: ${(props) => (props.color ? `rgba(${props.color})` : "black")};
+  stroke-linecap="round"
 `;
 
 export const Axis = styled.path`
