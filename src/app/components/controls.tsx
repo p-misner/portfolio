@@ -148,10 +148,7 @@ export default function ColorPickerComponent() {
     const hex = colorConverterService.hexToRGB(
       colorConverterService.hslToHex(hue, setSaturation, setLightness)
     );
-    // setColorPicked(hex);
     theme?.setColorPicked([hex.r, hex.g, hex.b, 1]);
-
-    // inputRef.current.value = hex;
   };
 
   const handleMouseMove = (e: MouseEvent): void => {

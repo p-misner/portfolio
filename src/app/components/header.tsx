@@ -21,6 +21,7 @@ export default function PageHeader() {
         <MenuHeader color={theme?.colorPicked}>
           <a href="/#work">work</a>
           <a href="/#play">play</a>
+          <a href="https://blog.priyamisner.com">blog</a>
           {/* <a href="#">about</a> */}
         </MenuHeader>
       </Header>
