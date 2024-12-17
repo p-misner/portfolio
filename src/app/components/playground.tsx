@@ -21,6 +21,7 @@ import Munsell from "../../../public/Playground/Munsell.png";
 import TransitNetworks from "../../../public/Playground/TransitNetworks.gif";
 import Senator from "../../../public/Playground/Senator.png";
 import MatterofTime from "../../../public/Playground/MatterofTime.png";
+import DLPInmates from "../../../public/Playground/DLP_inmates.png";
 import { ThemeContext } from "./providers";
 
 export default function Playground() {
@@ -114,6 +115,25 @@ export default function Playground() {
           </SquareImageWrapper>
         </FunProjectWrapper>
 
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"3deg"}>
+          {" "}
+          <FunProjectTitle
+            // target="_blank"
+            // rel="noopener noreferrer"
+            href="https://blog.priyamisner.com/projects/inmatedeaths"
+            color={theme?.colorPicked}
+          >
+            {" "}
+            DLP: Federal Inmates
+          </FunProjectTitle>
+          <SquareImageWrapper>
+            <Image
+              src={DLPInmates}
+              alt="image of web page with text and chart"
+              draggable="false"
+            />
+          </SquareImageWrapper>
+        </FunProjectWrapper>
         <FunProjectWrapper color={theme?.colorPicked} rotate={"23deg"}>
           {" "}
           <FunProjectTitle
