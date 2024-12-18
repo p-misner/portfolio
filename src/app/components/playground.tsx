@@ -184,7 +184,7 @@ export default function Playground() {
           <FunProjectTitle
             // target="_blank"
             // rel="noopener noreferrer"
-            href="/transitnetworks"
+            href="/projects/transitnetworks"
             color={theme?.colorPicked}
           >
             {" "}
