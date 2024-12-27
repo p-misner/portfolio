@@ -118,8 +118,6 @@ export default function Playground() {
         <FunProjectWrapper color={theme?.colorPicked} rotate={"3deg"}>
           {" "}
           <FunProjectTitle
-            // target="_blank"
-            // rel="noopener noreferrer"
             href="https://blog.priyamisner.com/projects/inmatedeaths"
             color={theme?.colorPicked}
           >
@@ -137,8 +135,6 @@ export default function Playground() {
         <FunProjectWrapper color={theme?.colorPicked} rotate={"23deg"}>
           {" "}
           <FunProjectTitle
-            // target="_blank"
-            // rel="noopener noreferrer"
             href="https://goldenyearsapp.herokuapp.com/"
             color={theme?.colorPicked}
           >
@@ -152,8 +148,6 @@ export default function Playground() {
 
         <FunProjectWrapper color={theme?.colorPicked} rotate={"-15deg"}>
           <FunProjectTitle
-            // target="_blank"
-            // rel="noopener noreferrer"
             href="https://p-misner.github.io/wdvp/"
             color={theme?.colorPicked}
           >
@@ -167,8 +161,6 @@ export default function Playground() {
 
         <FunProjectWrapper color={theme?.colorPicked} rotate={"-15deg"}>
           <FunProjectTitle
-            // target="_blank"
-            // rel="noopener noreferrer"
             href="https://observablehq.com/@pmisner/state-soils?collection=@pmisner/soil"
             color={theme?.colorPicked}
           >
@@ -182,8 +174,6 @@ export default function Playground() {
 
         <FunProjectWrapper color={theme?.colorPicked} rotate={"17deg"}>
           <FunProjectTitle
-            // target="_blank"
-            // rel="noopener noreferrer"
             href="/projects/transitnetworks"
             color={theme?.colorPicked}
           >
@@ -196,8 +186,6 @@ export default function Playground() {
         </FunProjectWrapper>
         <FunProjectWrapper color={theme?.colorPicked} rotate={"-15deg"}>
           <FunProjectTitle
-            // target="_blank"
-            // rel="noopener noreferrer"
             href="https://observablehq.com/@pmisner/soil-colors"
             color={theme?.colorPicked}
           >

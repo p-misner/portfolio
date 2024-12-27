@@ -4,7 +4,6 @@ import "./globals.css";
 import StyledComponentsRegistry from "./lib/registry";
 import PageHeader from "./components/header";
 import ThemeProvider from "./components/providers";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { ControlPanelWrapper } from "./style/controlsStyle";
 import ColorPickerComponent from "./components/controls";
 import GoogleAnalytics from "./components/googleAnalytics";

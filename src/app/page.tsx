@@ -5,12 +5,9 @@ import {
   GridWrapper,
   PageWrapper,
 } from "./style/gridLayout";
-import PageHeader from "./components/header";
 import SineWave, { CanvasWave } from "./components/sineWave";
-import { ControlPanelWrapper } from "./style/controlsStyle";
 import ColorPickerComponent, { Settings } from "./components/controls";
 import { useContext, useState } from "react";
-import { ArrayRGBA } from "./utils/utils";
 import {
   CharlesRiver,
   GroIntelligenceProject,
