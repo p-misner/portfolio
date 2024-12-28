@@ -6,7 +6,8 @@ import PageHeader from "./components/header";
 import ThemeProvider from "./components/providers";
 import { ControlPanelWrapper } from "./style/controlsStyle";
 import ColorPickerComponent from "./components/controls";
-import GoogleAnalytics from "./components/googleAnalytics";
+import { GoogleAnalytics } from "@next/third-parties/google";
+// import GoogleAnalytics from "./components/googleAnalytics";
 // const inter = Inter({ subsets: ["latin"] });
 const leaguespartan = League_Spartan({ subsets: ["latin"] });
 
@@ -23,8 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={leaguespartan.className}>
-        <GoogleAnalytics />
+        <GoogleAnalytics gaId="G-DBKNS31SWM" />
 
+        {/* <GoogleAnalytics /> */}
         <ThemeProvider>
           <StyledComponentsRegistry>
             <ControlPanelWrapper>
