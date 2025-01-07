@@ -1,5 +1,5 @@
 "use client";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { GridWrapper } from "./gridLayout";
 import {
   borderWidth,
@@ -15,7 +15,6 @@ type ProjectStyleInput = {
   filled?: "true" | "false";
   color: any;
 };
-
 export const ImageWrapper = styled.div`
   width: 100%;
   height: auto;
@@ -44,6 +43,18 @@ export const CRImageWrapper = styled.div`
   }
 `;
 
+export const ExpandImg = keyframes`
+  from { transform: scale(1)}
+  to {
+    transform: scale(1.02);
+  }
+`;
+export const ShrinkImg = keyframes`
+  from { transform: scale(1.02)}
+  to {
+    transform: scale(1);
+  }
+`;
 export const ProjectWrapper = styled.div<ProjectStyleInput>`
   background-color: ${(props) =>
     ColorMixer({
@@ -76,11 +87,26 @@ export const ProjectWrapper = styled.div<ProjectStyleInput>`
   -webkit-backdrop-filter: blur(6.8px);
   // min-height: 400px;
   grid-column: 2 / span 10;
-  padding: 24px 24px 0px 24px;
+  padding: 32px 32px 0px 32px;
   display: flex;
   flex-direction: column;
   column-gap: 20px;
+  img {
+    animation-name: ${ShrinkImg};
+    animation-duration: 1s;
+  }
+  span {
+    visibility: hidden;
+  }
   &:hover {
+    img {
+      animation-name: ${ExpandImg};
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    span {
+      visibility: visible;
+    }
     background-color: ${(props) =>
       ColorMixer({
         bottomLayer: props.color,
@@ -88,6 +114,9 @@ export const ProjectWrapper = styled.div<ProjectStyleInput>`
         returnFormat: "rgba",
         opacity: 0.7,
       })};
+  }
+  @media screen and (max-width: 1000px) {
+    padding: 24px 24px 0px 24px;
   }
 `;
 
@@ -117,14 +146,27 @@ export const SectionTitle = styled.h3<CoreColorInput>`
       returnFormat: "rgba",
     })};
 `;
-export const ProjectSubtitle = styled.h3`
+export const ProjectSubtitle = styled.h3<CoreColorInput>`
   line-height: 1.2;
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 8px;
+  color: ${(props) =>
+    ColorMixer({
+      bottomLayer: props.color,
+      topLayer: DarkOverlay_80,
+      returnFormat: "rgba",
+    })};
+  @media screen and (max-width: 1000px) {
+    font-size: 18px;
+  }
 `;
 export const ProjectLink = styled(Link)<CoreColorInput>`
   cursor: pointer;
+  text-decoration: none;
+`;
+
+export const ProjectTitle = styled.h1<CoreColorInput>`
   font-size: 40px;
   font-weight: 500;
   letter-spacing: 2px;
@@ -135,5 +177,7 @@ export const ProjectLink = styled(Link)<CoreColorInput>`
       topLayer: DarkOverlay_80,
       returnFormat: "rgba",
     })};
-  text-decoration: none;
+  @media screen and (max-width: 1000px) {
+    font-size: 32px;
+  }
 `;

@@ -22,6 +22,7 @@ import TransitNetworks from "../../../public/Playground/TransitNetworks.gif";
 import Senator from "../../../public/Playground/Senator.png";
 import MatterofTime from "../../../public/Playground/MatterofTime.png";
 import DLPInmates from "../../../public/Playground/DLP_inmates.png";
+import MapDesignerCover from "../../../public/Playground/MapDesigner_CoverPhoto.png";
 import { ThemeContext } from "./providers";
 
 export default function Playground() {
@@ -99,23 +100,26 @@ export default function Playground() {
         ref={scrollRef}
         onMouseDown={mouseDownHandler}
       >
-        <FunProjectWrapper color={theme?.colorPicked} rotate={"-19deg"}>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"-9deg"}>
           {" "}
           <FunProjectTitle
             // target="_blank"
             // rel="noopener noreferrer"
-            href="https://matteroftime.priyamisner.com/"
+            href="https://www.figma.com/community/plugin/1450656859179241046/map-designer"
             color={theme?.colorPicked}
           >
-            {" "}
-            A Matter of Time
+            Map Designer
           </FunProjectTitle>
           <SquareImageWrapper>
-            <Image src={MatterofTime} alt="image of map" draggable="false" />
+            <Image
+              src={MapDesignerCover}
+              alt="image of map"
+              draggable="false"
+            />
           </SquareImageWrapper>
         </FunProjectWrapper>
 
-        <FunProjectWrapper color={theme?.colorPicked} rotate={"3deg"}>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"19deg"}>
           {" "}
           <FunProjectTitle
             href="https://blog.priyamisner.com/projects/inmatedeaths"
@@ -130,6 +134,21 @@ export default function Playground() {
               alt="image of web page with text and chart"
               draggable="false"
             />
+          </SquareImageWrapper>
+        </FunProjectWrapper>
+        <FunProjectWrapper color={theme?.colorPicked} rotate={"3deg"}>
+          {" "}
+          <FunProjectTitle
+            // target="_blank"
+            // rel="noopener noreferrer"
+            href="https://matteroftime.priyamisner.com/"
+            color={theme?.colorPicked}
+          >
+            {" "}
+            A Matter of Time
+          </FunProjectTitle>
+          <SquareImageWrapper>
+            <Image src={MatterofTime} alt="image of map" draggable="false" />
           </SquareImageWrapper>
         </FunProjectWrapper>
         <FunProjectWrapper color={theme?.colorPicked} rotate={"23deg"}>
