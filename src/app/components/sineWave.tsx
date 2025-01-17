@@ -40,7 +40,7 @@ export default function SineWave() {
             <Link
               // target="_blank"
               // rel="noopener noreferrer"
-              href="https://observablehq.com/@pmisner?tab=recents"
+              href="https://observablehq.com/@pmisner?page=1&sort=stars&direction=desc"
             >
               <LogoSVG
                 viewBox="0 0 24 25"
